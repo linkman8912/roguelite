@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://chopi5evv54bg"]
+
+[ext_resource type="Script" uid="uid://dd7e2br1w8xiu" path="res://charecter godotman.gd" id="1_iqe8l"]
+[ext_resource type="Texture2D" uid="uid://ddxmxgyyfy8mn" path="res://icon.svg" id="1_u51b5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iqe8l"]
+radius = 84.00595
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_iqe8l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_u51b5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_iqe8l")

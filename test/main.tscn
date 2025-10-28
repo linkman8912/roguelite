@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://db3x6hhv5s5yi"]
+
+[ext_resource type="PackedScene" uid="uid://chopi5evv54bg" path="res://godotman.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cfqfocnys4r54" path="res://floor.tscn" id="2_h2yge"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_0xm2m")]
+position = Vector2(323, 145)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(527, 661)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(182, 310)
+rotation = 1.5707964
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(882, 318)
+rotation = -1.5707964
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(525, -38)
+rotation = 3.1415927

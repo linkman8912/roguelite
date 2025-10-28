@@ -1,0 +1,4 @@
+StaticBody2D
+CollisionShape2D
+CharacterBody2D
+Sprite2D

@@ -11,5 +11,6 @@ config_version=5
 [application]
 
 config/name="roguelite"
+run/main_scene="uid://c7hrtp58ah2wf"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"

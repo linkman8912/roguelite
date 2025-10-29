@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 400.0
+const SPEED = 1200.0
 const slow = 10
 func _ready():
 	velocity = Vector2(-200,-200).normalized() * SPEED
@@ -12,9 +12,7 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity.bounce(collision_info.get_normal())
 		#velocity.x += SPEED
 
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x += direction * SPEED * 0.05
+
 		
 
 	print(velocity.x)

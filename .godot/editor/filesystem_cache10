@@ -1,14 +1,14 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1761743097
-charecter godotman.gd::GDScript::7436179834526880744::1761742421::0::1::::<>CharacterBody2D<><>0<>0<><>::
-enemy.gd::GDScript::5964586894837361963::1761742218::0::1::::<>CharacterBody2D<><>0<>0<><>::
-enemy.tscn::PackedScene::1259371058051658906::1761742734::0::1::::<><><>0<>0<><>::uid://cq8j40gbb47id::::res://enemy.gd<>uid://ddxmxgyyfy8mn::::res://icon.svg
-floor.tscn::PackedScene::5157144341964643749::1761669577::0::1::::<><><>0<>0<><>::uid://ddxmxgyyfy8mn::::res://icon.svg
-godotman.tscn::PackedScene::5293991185515143420::1761742735::0::1::::<><><>0<>0<><>::uid://dd7e2br1w8xiu::::res://charecter godotman.gd<>uid://ddxmxgyyfy8mn::::res://icon.svg
-icon.svg::CompressedTexture2D::7418079300823305913::1761661137::1761661148::1::::<><><>0<>0<>602e96f782c14412d7e3384112bfc805<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-main.tscn::PackedScene::7288705701747748608::1761742250::0::1::::<><><>0<>0<><>::uid://chopi5evv54bg::::res://godotman.tscn<>uid://cfqfocnys4r54::::res://floor.tscn<>uid://r7bwl4xlp7vi::::res://enemy.tscn
-node_2d.tscn::PackedScene::2825061028349242010::1761670130::0::1::::<><><>0<>0<><>::
-rigid.tscn::PackedScene::6131020647854081832::1761663677::0::1::::<><><>0<>0<><>::uid://ddxmxgyyfy8mn::::res://icon.svg
-white-outline-circle-transparent-background-701751694615464q6tebvyuwa.png::CompressedTexture2D::2182499461559030499::1761661364::1761661365::1::::<><><>0<>0<>a54343c79131708bef38d70ae4ee62b1<>res://.godot/imported/white-outline-circle-transparent-background-701751694615464q6tebvyuwa.png-df317f67081788a339b9b0935664015f.ctex::
-::res://rogueleite/::1761675793
-::res://test/::1761743014
+::res://::1761743514
+charecter godotman.gd::GDScript::7436179834526880744::1761743382::0::1::::<>CharacterBody2D<><>0<>0<><>::
+enemy.gd::GDScript::5964586894837361963::1761743382::0::1::::<>CharacterBody2D<><>0<>0<><>::
+enemy.tscn::PackedScene::1259371058051658906::1761743385::0::1::::<><><>0<>0<><>::uid://cq8j40gbb47id::::res://enemy.gd<>uid://ddxmxgyyfy8mn::::res://icon.svg
+floor.tscn::PackedScene::5157144341964643749::1761675264::0::1::::<><><>0<>0<><>::uid://ddxmxgyyfy8mn::::res://icon.svg
+godotman.tscn::PackedScene::5293991185515143420::1761743382::0::1::::<><><>0<>0<><>::uid://dd7e2br1w8xiu::::res://charecter godotman.gd<>uid://ddxmxgyyfy8mn::::res://icon.svg
+icon.svg::CompressedTexture2D::7418079300823305913::1761675264::1761675292::1::::<><><>0<>0<>602e96f782c14412d7e3384112bfc805<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+main.tscn::PackedScene::7288705701747748608::1761743382::0::1::::<><><>0<>0<><>::uid://chopi5evv54bg::::res://godotman.tscn<>uid://cfqfocnys4r54::::res://floor.tscn<>uid://r7bwl4xlp7vi::::res://enemy.tscn
+node_2d.tscn::PackedScene::2825061028349242010::1761675264::0::1::::<><><>0<>0<><>::
+rigid.tscn::PackedScene::6131020647854081832::1761675264::0::1::::<><><>0<>0<><>::uid://ddxmxgyyfy8mn::::res://icon.svg
+white-outline-circle-transparent-background-701751694615464q6tebvyuwa.png::CompressedTexture2D::2182499461559030499::1761675264::1761675292::1::::<><><>0<>0<>a54343c79131708bef38d70ae4ee62b1<>res://.godot/imported/white-outline-circle-transparent-background-701751694615464q6tebvyuwa.png-df317f67081788a339b9b0935664015f.ctex::
+::res://rogueleite/::1761676119
+::res://test/::1761676119

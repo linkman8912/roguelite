@@ -1,16 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://chopi5evv54bg"]
+[gd_scene load_steps=6 format=3 uid="uid://chopi5evv54bg"]
 
 [ext_resource type="Script" uid="uid://dd7e2br1w8xiu" path="res://charecter godotman.gd" id="1_iqe8l"]
 [ext_resource type="Texture2D" uid="uid://ddxmxgyyfy8mn" path="res://icon.svg" id="1_u51b5"]
+[ext_resource type="Shader" uid="uid://kkjf1i0mmbbp" path="res://godotman.gdshader" id="2_c73xj"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_iqe8l"]
-radius = 61.008198
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c73xj"]
+shader = ExtResource("2_c73xj")
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_iqe8l"]
+points = PackedVector2Array(-20, 0, -15, -15, 0, -20, 15, -15, 20, 0, 15, 15, 0, 20, -15, 15)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_iqe8l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_c73xj")
 texture = ExtResource("1_u51b5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_iqe8l")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+scale = Vector2(3.25, 3.25)
+shape = SubResource("ConvexPolygonShape2D_iqe8l")

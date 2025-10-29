@@ -14,7 +14,7 @@ func _physics_process(delta: float) -> void:
 
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
-		velocity.x += direction * SPEED * 0.05
+		velocity.x += direction * SPEED * 0.005
 		
 
 	print(velocity.x)

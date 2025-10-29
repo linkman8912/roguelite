@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 
 const SPEED = 400.0
-const slow = 10
 func _ready():
 	pass
 	

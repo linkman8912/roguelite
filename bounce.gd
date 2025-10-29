@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 		#	characterBody.velocity.x += direction * speed * 0.05
 			
 
-		print(characterBody.velocity.x)
+		#print(characterBody.velocity.x)
 		if characterBody.velocity.x > speed :
 			characterBody.velocity.x = move_toward(characterBody.velocity.x, speed * 2, slow)
 		if characterBody.velocity.x < speed * -1:

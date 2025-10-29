@@ -19,5 +19,5 @@ material = SubResource("ShaderMaterial_iifgy")
 texture = ExtResource("1_7k104")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(4.155, 4.155)
+scale = Vector2(3.25, 3.25)
 shape = SubResource("ConvexPolygonShape2D_4gyqm")

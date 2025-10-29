@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dnogxrf0pe2j2" path="res://fixedenemy.gd" id="1_rmaxf"]
 [ext_resource type="Texture2D" uid="uid://ddxmxgyyfy8mn" path="res://icon.svg" id="2_rmaxf"]
-[ext_resource type="Shader" path="res://godotman.gdshader" id="3_bquj1"]
+[ext_resource type="Shader" uid="uid://kkjf1i0mmbbp" path="res://godotman.gdshader" id="3_bquj1"]
 [ext_resource type="Script" uid="uid://oe11vv58qi6s" path="res://bounce.gd" id="3_l3oux"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jrft1"]

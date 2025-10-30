@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 400.0
-const maxDegreesPerSecond = 30
+const maxDegreesPerSecond = 90
 
 func _ready():
 	pass
@@ -20,6 +20,8 @@ func _physics_process(delta: float) -> void:
 		var anglediff = wrapf(direction.angle() - velocity.angle(), -PI, PI)
 		var anglechange = clamp(anglediff, -maxRadians, maxRadians)
 		velocity = velocity.rotated(anglechange)
-		print(rad_to_deg(anglediff))
+		#print(rad_to_deg(anglediff))
+	print(velocity.length())
 		#print(direction.normalized().angle() - velocity.normalized().angle())
 		#velocity.x += direction * SPEED * 0.05 * delta
+	

@@ -1,8 +1,0 @@
-bounce
-Node
-RigidBody2D
-CollisionShape2D
-Sprite2D
-Area2D
-StaticBody2D
-CharacterBody2D

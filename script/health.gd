@@ -13,3 +13,4 @@ func damage(attack):
 	health -= attack
 	if health <=0:
 		get_parent().queue_free()
+		

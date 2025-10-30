@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7vfwav600vm1"]
+
+[ext_resource type="Texture2D" uid="uid://ddxmxgyyfy8mn" path="res://icon.svg" id="1_swcir"]
+
+[sub_resource type="GDScript" id="GDScript_swcir"]
+script/source = "extends Node2D
+
+var rotation_speed = -360 # degrees per second
+var scale_speed = 4
+
+func _process(delta):
+	rotation_degrees += rotation_speed * delta
+
+func incres_rotation_speed():
+	rotation_speed += 100
+
+func increase_length():
+	scale.x += scale_speed * get_process_delta_time()
+
+func decrease_length():
+	scale.x = max(0.1, scale.x - scale_speed * get_process_delta_time())
+
+func reverse_rotation():
+	rotation_speed = -rotation_speed  
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2wld"]
+size = Vector2(312.50003, 16)
+
+[node name="weapon" type="Area2D"]
+position = Vector2(331, 282)
+script = SubResource("GDScript_swcir")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(214.74998, 0)
+shape = SubResource("RectangleShape2D_o2wld")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(215.75, -1)
+scale = Vector2(2.4882815, 0.140625)
+texture = ExtResource("1_swcir")

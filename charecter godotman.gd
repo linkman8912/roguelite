@@ -17,7 +17,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x += direction * SPEED * 0.005
 		
 
-	print(velocity.x)
 	if velocity.x >SPEED :
 		velocity.x = move_toward(velocity.x, SPEED*2, slow)
 	if velocity.x <SPEED*-1:

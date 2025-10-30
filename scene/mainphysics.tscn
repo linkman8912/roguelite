@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://da6prqrpqn1w3"]
 
-[ext_resource type="PackedScene" uid="uid://cfqfocnys4r54" path="res://floor.tscn" id="1_deq7d"]
-[ext_resource type="PackedScene" uid="uid://i5bdfrtqj1jw" path="res://enemyphysics.tscn" id="2_deq7d"]
-[ext_resource type="PackedScene" uid="uid://cpkyotv88r54e" path="res://characterphysics.tscn" id="3_jco2w"]
+[ext_resource type="PackedScene" uid="uid://cfqfocnys4r54" path="res://scene/floor.tscn" id="1_deq7d"]
+[ext_resource type="PackedScene" uid="uid://i5bdfrtqj1jw" path="res://scene/enemyphysics.tscn" id="2_deq7d"]
+[ext_resource type="PackedScene" uid="uid://cpkyotv88r54e" path="res://scene/characterphysics.tscn" id="3_jco2w"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_deq7d"]
 bounce = 1.0

@@ -5,7 +5,7 @@ void fragment() {
     vec2 uv = UV;
 
     // Center of the circle (0.5, 0.5 = middle of the image)
-    vec2 center = vec2(sin(TIME), 0.5);
+    vec2 center = vec2(0.5, 0.5);
 
     // Distance from current pixel to the center
     float dist = distance(uv, center);

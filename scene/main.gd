@@ -1,5 +1,6 @@
 extends Node2D
 
+var Enemy_node = load("res://fixedenemy.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -9,4 +10,5 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if not get_node_or_null("Enemy"):
-		print("nigger")
+		var enemey = Enemy_node.instantiate()
+		add_child(enemey)

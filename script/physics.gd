@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 			#characterBody.velocity.x = move_toward(characterBody.velocity.x, speed * 2, slow)
 		#if characterBody.velocity.x < speed * -1:
 			#characterBody.velocity.x = move_toward(characterBody.velocity.x, speed * -2, slow)
-		print(rigidBody.linear_velocity.length())
+		#print(rigidBody.linear_velocity.length())
 func _bounce(body: Node2D) -> void:
 	if body:
 		pass

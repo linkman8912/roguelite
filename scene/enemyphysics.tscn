@@ -8,8 +8,8 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jrft1"]
 shader = ExtResource("3_vlore")
 
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_ifg0p"]
-points = PackedVector2Array(-20, 0, -15, -15, 0, -20, 15, -15, 20, 0, 15, 15, 0, 20, -15, 15)
+[sub_resource type="CircleShape2D" id="CircleShape2D_5i1lo"]
+radius = 18.002266
 
 [node name="EnemyPhysics" type="RigidBody2D"]
 physics_material_override = ExtResource("1_cy7ge")
@@ -23,16 +23,10 @@ material = SubResource("ShaderMaterial_jrft1")
 texture = ExtResource("4_ieuuq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(3.25, 3.25)
-shape = SubResource("ConvexPolygonShape2D_ifg0p")
+scale = Vector2(3.5, 3.5)
+shape = SubResource("CircleShape2D_5i1lo")
 
 [node name="physics" type="Node" parent="." node_paths=PackedStringArray("rigidBody")]
 script = ExtResource("3_yfni7")
 rigidBody = NodePath("..")
 metadata/_custom_type_script = "uid://r37s6i7psgc6"
-
-[node name="fling" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="fling"]
-scale = Vector2(3.665, 3.665)
-shape = SubResource("ConvexPolygonShape2D_ifg0p")

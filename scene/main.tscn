@@ -1,36 +1,34 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7yaum4lot2wg"]
+[gd_scene load_steps=5 format=3 uid="uid://b1f50jv5y114i"]
 
-[ext_resource type="Script" uid="uid://c1y81ttrmfsba" path="res://scene/main.gd" id="1_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://b601km7ojh1bo" path="res://scene/character.tscn" id="2_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://cfqfocnys4r54" path="res://scene/floor.tscn" id="2_h2yge"]
-[ext_resource type="PackedScene" uid="uid://cqe41rylpau02" path="res://scene/fixedenemy.tscn" id="3_lquwl"]
+[ext_resource type="PackedScene" uid="uid://cfqfocnys4r54" path="res://scene/floor.tscn" id="1_deq7d"]
+[ext_resource type="PackedScene" uid="uid://i5bdfrtqj1jw" path="res://scene/enemyphysics.tscn" id="2_deq7d"]
+[ext_resource type="PackedScene" uid="uid://cpkyotv88r54e" path="res://scene/characterphysics.tscn" id="3_jco2w"]
 
-[node name="Node2D" type="Node2D"]
-script = ExtResource("1_1bvp3")
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_deq7d"]
+bounce = 1.0
 
-[node name="wall" parent="." instance=ExtResource("2_h2yge")]
+[node name="Main" type="Node2D"]
+
+[node name="StaticBody2D" parent="." instance=ExtResource("1_deq7d")]
 position = Vector2(527, 661)
 
-[node name="wall2" parent="." instance=ExtResource("2_h2yge")]
+[node name="StaticBody2D2" parent="." instance=ExtResource("1_deq7d")]
 position = Vector2(182, 310)
 rotation = 1.5707964
+scale = Vector2(0.92, 0.92)
 
-[node name="wall3" parent="." instance=ExtResource("2_h2yge")]
-position = Vector2(882, 318)
+[node name="StaticBody2D3" parent="." instance=ExtResource("1_deq7d")]
+position = Vector2(884.00006, 310)
 rotation = -1.5707964
+scale = Vector2(0.915, 0.915)
 
-[node name="wall4" parent="." instance=ExtResource("2_h2yge")]
+[node name="StaticBody2D4" parent="." instance=ExtResource("1_deq7d")]
 position = Vector2(525, -38)
 rotation = 3.1415927
 
-[node name="Player1" parent="." instance=ExtResource("2_1bvp3")]
-position = Vector2(477, 208)
+[node name="EnemyPhysics" parent="." instance=ExtResource("2_deq7d")]
+position = Vector2(700, 144)
 
-[node name="Enemy" parent="." instance=ExtResource("3_lquwl")]
-position = Vector2(701, 297)
-
-[node name="P_start" type="Node2D" parent="."]
-position = Vector2(808, 321)
-
-[node name="E_start" type="Node2D" parent="."]
-position = Vector2(288, 317)
+[node name="CharacterPhysics" parent="." instance=ExtResource("3_jco2w")]
+position = Vector2(387, 152)
+physics_material_override = SubResource("PhysicsMaterial_deq7d")

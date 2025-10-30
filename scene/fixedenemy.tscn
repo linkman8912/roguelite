@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://cqe41rylpau02"]
 
-[ext_resource type="Script" uid="uid://dnogxrf0pe2j2" path="res://script/fixedenemy.gd" id="1_rmaxf"]
+[ext_resource type="Script" uid="uid://cq8j40gbb47id" path="res://script/enemy.gd" id="1_rmaxf"]
 [ext_resource type="Texture2D" uid="uid://ddxmxgyyfy8mn" path="res://icon.svg" id="2_rmaxf"]
-[ext_resource type="Shader" path="res://godotman.gdshader" id="3_bquj1"]
+[ext_resource type="Shader" uid="uid://kkjf1i0mmbbp" path="res://godotman.gdshader" id="3_bquj1"]
 [ext_resource type="Script" uid="uid://oe11vv58qi6s" path="res://script/bounce.gd" id="3_l3oux"]
-[ext_resource type="PackedScene" uid="uid://baxs661mw2wpk" path="res://seen/hit_box.tscn" id="5_bquj1"]
-[ext_resource type="PackedScene" uid="uid://cj2hs2mmf1jin" path="res://seen/health_node.tscn" id="6_jrft1"]
+[ext_resource type="PackedScene" uid="uid://baxs661mw2wpk" path="res://scene/hit_box.tscn" id="5_bquj1"]
+[ext_resource type="PackedScene" uid="uid://cj2hs2mmf1jin" path="res://scene/health_node.tscn" id="6_jrft1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jrft1"]
 shader = ExtResource("3_bquj1")

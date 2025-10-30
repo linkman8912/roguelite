@@ -4,7 +4,7 @@ class_name bounce
 @export var characterBody : CharacterBody2D # For assigning a Character Body
 @export_range(-1.0, 1.0, 2.0) var dir := 1.0 # Set the movement direction on start
 @export_range(100, 2000.0, 100.0) var speed := 400.0 # Set movement speed
-const slow = 10
+const slow = -0.1
 func _ready():
 	if characterBody:
 		characterBody.velocity = Vector2(-200,-200).normalized() * speed

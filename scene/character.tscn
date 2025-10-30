@@ -1,40 +1,33 @@
-[gd_scene load_steps=9 format=3 uid="uid://b601km7ojh1bo"]
+[gd_scene load_steps=8 format=3 uid="uid://cpkyotv88r54e"]
 
-[ext_resource type="Script" uid="uid://dtenvj5mdyabd" path="res://script/character.gd" id="1_wa5vi"]
-[ext_resource type="Texture2D" uid="uid://ddxmxgyyfy8mn" path="res://icon.svg" id="2_wa5vi"]
-[ext_resource type="Script" uid="uid://oe11vv58qi6s" path="res://script/bounce.gd" id="3_wa5vi"]
-[ext_resource type="Shader" uid="uid://kkjf1i0mmbbp" path="res://godotman.gdshader" id="3_wfnr8"]
-[ext_resource type="PackedScene" uid="uid://baxs661mw2wpk" path="res://scene/hit_box.tscn" id="5_px5sl"]
-[ext_resource type="PackedScene" uid="uid://dgfiexw08noni" path="res://scene/attack_node.tscn" id="6_yxww1"]
+[ext_resource type="PhysicsMaterial" uid="uid://p5garr5kkysn" path="res://bounce.tres" id="1_p8w88"]
+[ext_resource type="Script" uid="uid://dtenvj5mdyabd" path="res://script/character.gd" id="2_fnv2w"]
+[ext_resource type="Script" uid="uid://r37s6i7psgc6" path="res://script/physics.gd" id="3_gbf5f"]
+[ext_resource type="Shader" uid="uid://kkjf1i0mmbbp" path="res://godotman.gdshader" id="3_kdycu"]
+[ext_resource type="Texture2D" uid="uid://ddxmxgyyfy8mn" path="res://icon.svg" id="4_p3gv0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wfnr8"]
-shader = ExtResource("3_wfnr8")
+shader = ExtResource("3_kdycu")
 
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_px5sl"]
-points = PackedVector2Array(-20, 0, -15, -15, 0, -20, 15, -15, 20, 0, 15, 15, 0, 20, -15, 15)
+[sub_resource type="CircleShape2D" id="CircleShape2D_fnv2w"]
+radius = 18.586756
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
-script = ExtResource("1_wa5vi")
-
-[node name="bounce" type="Node" parent="." node_paths=PackedStringArray("characterBody")]
-script = ExtResource("3_wa5vi")
-characterBody = NodePath("..")
-metadata/_custom_type_script = "uid://oe11vv58qi6s"
+[node name="CharacterPhysics" type="RigidBody2D"]
+physics_material_override = ExtResource("1_p8w88")
+lock_rotation = true
+linear_damp_mode = 1
+angular_damp_mode = 1
+script = ExtResource("2_fnv2w")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
 material = SubResource("ShaderMaterial_wfnr8")
-texture = ExtResource("2_wa5vi")
+texture = ExtResource("4_p3gv0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(3.25, 3.25)
-shape = SubResource("ConvexPolygonShape2D_px5sl")
+scale = Vector2(3.4, 3.4)
+shape = SubResource("CircleShape2D_fnv2w")
 
-[node name="hit_box_node" parent="." instance=ExtResource("5_px5sl")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_box_node"]
-scale = Vector2(3.585, 3.585)
-shape = SubResource("ConvexPolygonShape2D_px5sl")
-
-[node name="attack_node" parent="." instance=ExtResource("6_yxww1")]
-dammage = 10
+[node name="physics" type="Node" parent="." node_paths=PackedStringArray("rigidBody")]
+script = ExtResource("3_gbf5f")
+rigidBody = NodePath("..")
+metadata/_custom_type_script = "uid://r37s6i7psgc6"

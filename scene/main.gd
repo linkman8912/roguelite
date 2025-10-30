@@ -1,6 +1,6 @@
 extends Node2D
 
-var Enemy_scene = load("res://scene/fixedenemy.tscn")
+var Enemy_scene = load("res://scene/enemy.tscn")
 var Player_scene = load("res://scene/character.tscn")
 var nogod = 0
 var player_n = "Player" + str(nogod)
@@ -16,9 +16,6 @@ func _process(delta: float) -> void:
 		nogod += 1
 		print(player_n)
 		(Player_node).queue_free()
-		
-		print("british slang for ciggerate")
-		
 		
 		
 		var enemey = Enemy_scene.instantiate()

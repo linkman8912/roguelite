@@ -11,8 +11,10 @@ func damage(attack):
 
 func _on_area_entered(area: Area2D) -> void:
 	var collider = area.get_parent() # often the main node that owns the area
-	print("Collided with: ", collider.name)
+	#print("Collided with: ", collider.name)
 	var attack_node = collider.get_node_or_null("attack_node")
+	
 	if attack_node:
+		print(attack_node)
 		var attack = attack_node.attack_points()
 		damage(attack) 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://i5bdfrtqj1jw"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://p5garr5kkysn" path="res://bounce.tres" id="1_cy7ge"]
-[ext_resource type="Shader" path="res://godotman.gdshader" id="3_vlore"]
+[ext_resource type="Shader" uid="uid://kkjf1i0mmbbp" path="res://godotman.gdshader" id="3_vlore"]
 [ext_resource type="Script" uid="uid://r37s6i7psgc6" path="res://physics.gd" id="3_yfni7"]
 [ext_resource type="Texture2D" uid="uid://ddxmxgyyfy8mn" path="res://icon.svg" id="4_ieuuq"]
 
@@ -27,8 +27,8 @@ script = ExtResource("3_yfni7")
 rigidBody = NodePath("..")
 metadata/_custom_type_script = "uid://r37s6i7psgc6"
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="fling" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2(3.25, 3.25)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fling"]
+scale = Vector2(3.665, 3.665)
 shape = SubResource("ConvexPolygonShape2D_ifg0p")

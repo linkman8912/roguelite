@@ -21,7 +21,7 @@ func _physics_process(delta: float) -> void:
 		var anglechange = clamp(anglediff, -maxRadians, maxRadians)
 		velocity = velocity.rotated(anglechange)
 		#print(rad_to_deg(anglediff))
-	print(velocity.length())
+	#print(velocity.length())
 		#print(direction.normalized().angle() - velocity.normalized().angle())
 		#velocity.x += direction * SPEED * 0.05 * delta
 	

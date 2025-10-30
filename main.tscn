@@ -1,23 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7yaum4lot2wg"]
+[gd_scene load_steps=5 format=3 uid="uid://c7yaum4lot2wg"]
 
+[ext_resource type="Script" uid="uid://c1y81ttrmfsba" path="res://main.gd" id="1_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://b601km7ojh1bo" path="res://character.tscn" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://cfqfocnys4r54" path="res://floor.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cqe41rylpau02" path="res://fixedenemy.tscn" id="3_lquwl"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_1bvp3")
 
-[node name="StaticBody2D" parent="." instance=ExtResource("2_h2yge")]
+[node name="wall" parent="." instance=ExtResource("2_h2yge")]
 position = Vector2(527, 661)
 
-[node name="StaticBody2D2" parent="." instance=ExtResource("2_h2yge")]
+[node name="wall2" parent="." instance=ExtResource("2_h2yge")]
 position = Vector2(182, 310)
 rotation = 1.5707964
 
-[node name="StaticBody2D3" parent="." instance=ExtResource("2_h2yge")]
+[node name="wall3" parent="." instance=ExtResource("2_h2yge")]
 position = Vector2(882, 318)
 rotation = -1.5707964
 
-[node name="StaticBody2D4" parent="." instance=ExtResource("2_h2yge")]
+[node name="wall4" parent="." instance=ExtResource("2_h2yge")]
 position = Vector2(525, -38)
 rotation = 3.1415927
 

@@ -7,7 +7,7 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_deq7d"]
 bounce = 1.0
 
-[node name="Node2D" type="Node2D"]
+[node name="Main" type="Node2D"]
 
 [node name="StaticBody2D" parent="." instance=ExtResource("1_deq7d")]
 position = Vector2(527, 661)
@@ -15,10 +15,12 @@ position = Vector2(527, 661)
 [node name="StaticBody2D2" parent="." instance=ExtResource("1_deq7d")]
 position = Vector2(182, 310)
 rotation = 1.5707964
+scale = Vector2(0.92, 0.92)
 
 [node name="StaticBody2D3" parent="." instance=ExtResource("1_deq7d")]
-position = Vector2(882, 318)
+position = Vector2(884.00006, 310)
 rotation = -1.5707964
+scale = Vector2(0.915, 0.915)
 
 [node name="StaticBody2D4" parent="." instance=ExtResource("1_deq7d")]
 position = Vector2(525, -38)

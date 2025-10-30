@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cfqfocnys4r54"]
 
 [ext_resource type="Texture2D" uid="uid://ddxmxgyyfy8mn" path="res://icon.svg" id="1_oj3tl"]
-[ext_resource type="Script" uid="uid://b0bm8cevrxpyg" path="res://area_2d.gd" id="2_cgngl"]
+[ext_resource type="Script" uid="uid://b0bm8cevrxpyg" path="res://hitbox.gd" id="2_cgngl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cgngl"]
 size = Vector2(697, 20)
@@ -9,7 +9,7 @@ size = Vector2(697, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wd3ws"]
 size = Vector2(716, 22)
 
-[node name="StaticBody2D" type="StaticBody2D"]
+[node name="floor" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0)
@@ -20,11 +20,11 @@ position = Vector2(-0.99998474, 4.7683716e-07)
 scale = Vector2(5.5312505, 0.15625)
 texture = ExtResource("1_oj3tl")
 
-[node name="wallhit" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("2_cgngl")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wallhit"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_wd3ws")
 
-[connection signal="area_entered" from="wallhit" to="wallhit" method="_on_area_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

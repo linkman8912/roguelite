@@ -7,6 +7,8 @@ const slow = 10
 func _ready():
 	if rigidBody:
 		rigidBody.gravity_scale = 0
+		rigidBody.linear_damp = -0.1
+		rigidBody.angular_damp = 0
 		rigidBody.apply_impulse(Vector2(200, 200).normalized() * speed)
 
 		#rigidBody.velocity = Vector2(-200,-200).normalized() * speed
@@ -14,9 +16,14 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	if rigidBody:
-		var collision_info = rigidBody.move_and_collide(rigidBody.linear_velocity*delta)
-		if collision_info:
+		var collision_info = rigidBody.move_and_collide(rigidBody.linear_velocity*delta, true)
+		if collision_info && collision_info.get_collider().is_class("StaticBody2D"):
+			#rigidBody.move_and_collide(rigidBody.linear_velocity*delta)
 			rigidBody.linear_velocity = rigidBody.linear_velocity.bounce(collision_info.get_normal())
+			print(collision_info.get_collider())
+			print(collision_info.get_collider().is_class("StaticBody2D"))
+		#else:
+		#	rigidBody.move_and_collide(-rigidBody.linear_velocity*delta)
 
 		#var direction := Input.get_axis("ui_left", "ui_right")
 		#if direction:
@@ -28,3 +35,6 @@ func _physics_process(delta: float) -> void:
 			#characterBody.velocity.x = move_toward(characterBody.velocity.x, speed * 2, slow)
 		#if characterBody.velocity.x < speed * -1:
 			#characterBody.velocity.x = move_toward(characterBody.velocity.x, speed * -2, slow)
+func _bounce(body: Node2D) -> void:
+	if body:
+		pass

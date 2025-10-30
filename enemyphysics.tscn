@@ -13,6 +13,7 @@ points = PackedVector2Array(-20, 0, -15, -15, 0, -20, 15, -15, 20, 0, 15, 15, 0,
 
 [node name="EnemyPhysics" type="RigidBody2D"]
 physics_material_override = ExtResource("1_cy7ge")
+gravity_scale = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_jrft1")

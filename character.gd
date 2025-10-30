@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 400.0
-const maxDegreesPerSecond = 30
+const maxDegreesPerSecond = 90
 
 func _ready():
 	pass

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://i5bdfrtqj1jw"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://p5garr5kkysn" path="res://bounce.tres" id="1_cy7ge"]
-[ext_resource type="Shader" path="res://godotman.gdshader" id="3_vlore"]
+[ext_resource type="Shader" uid="uid://kkjf1i0mmbbp" path="res://godotman.gdshader" id="3_vlore"]
 [ext_resource type="Script" uid="uid://r37s6i7psgc6" path="res://physics.gd" id="3_yfni7"]
 [ext_resource type="Texture2D" uid="uid://ddxmxgyyfy8mn" path="res://icon.svg" id="4_ieuuq"]
 
@@ -13,6 +13,7 @@ points = PackedVector2Array(-20, 0, -15, -15, 0, -20, 15, -15, 20, 0, 15, 15, 0,
 
 [node name="EnemyPhysics" type="RigidBody2D"]
 physics_material_override = ExtResource("1_cy7ge")
+gravity_scale = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_jrft1")

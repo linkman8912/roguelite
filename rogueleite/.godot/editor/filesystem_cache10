@@ -1,7 +1,0 @@
-63f7b34db8d8cdea90c76aacccf841ec
-::res://::1761675149
-CharacterBody2D.gd::GDScript::4815633062812370566::1761672843::0::1::::<>CharacterBody2D<><>0<>0<><>::
-character_body_2d.gd::GDScript::5000851855589521088::1761672843::0::1::::<>CharacterBody2D<><>0<>0<><>::
-game_mane.tscn::PackedScene::4910460675921546937::1761672843::0::1::::<><><>0<>0<><>::
-icon.svg::CompressedTexture2D::3919417468463641185::1761662000::1761674930::1::::<><><>0<>0<>de58fb57e08c149f765aeedca840736d<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-node_2d.tscn::PackedScene::7034401962736940469::1761672843::0::1::::<><><>0<>0<><>::uid://cdipkgeymj86w::::res://character_body_2d.gd<>uid://bv3uh6ov5enh6::::res://icon.svg

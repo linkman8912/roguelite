@@ -21,8 +21,8 @@ rotation = -1.5707964
 position = Vector2(525, -38)
 rotation = 3.1415927
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_1bvp3")]
-position = Vector2(312, 103)
+[node name="Character" parent="." instance=ExtResource("2_1bvp3")]
+position = Vector2(403, 288)
 
-[node name="CharacterBody2D2" parent="." instance=ExtResource("3_lquwl")]
-position = Vector2(642, 244)
+[node name="Enemy" parent="." instance=ExtResource("3_lquwl")]
+position = Vector2(701, 297)

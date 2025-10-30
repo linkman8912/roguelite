@@ -1,8 +1,16 @@
+Area2D
+<<<<<<< HEAD
+Node
+bounce
+RigidBody2D
+=======
+CollisionPolygon2D
+physics
+RigidBody2D
 bounce
 Node
-RigidBody2D
+>>>>>>> ca5d89b45817250692947ef005d6630ab4cf94ca
 CollisionShape2D
 Sprite2D
-Area2D
 StaticBody2D
 CharacterBody2D

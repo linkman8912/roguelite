@@ -25,3 +25,7 @@ func _physics_process(delta: float) -> void:
 			characterBody.velocity.x = move_toward(characterBody.velocity.x, speed * 2, slow)
 		if characterBody.velocity.x < speed * -1:
 			characterBody.velocity.x = move_toward(characterBody.velocity.x, speed * -2, slow)
+		if characterBody.velocity.y > speed :
+			characterBody.velocity.y = move_toward(characterBody.velocity.y, speed * 2, slow)
+		if characterBody.velocity.y < speed * -1:
+			characterBody.velocity.y = move_toward(characterBody.velocity.y, speed * -2, slow)

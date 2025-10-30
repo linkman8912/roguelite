@@ -10,16 +10,13 @@ func _physics_process(delta: float) -> void:
 	var collision_info = move_and_collide(velocity*delta)
 	if collision_info:
 		velocity = velocity.bounce(collision_info.get_normal())
-<<<<<<< HEAD
 
 
 
 
 
-=======
 	
 	print(velocity.x)
->>>>>>> ca5d89b45817250692947ef005d6630ab4cf94ca
 	if velocity.x >SPEED :
 		velocity.x = move_toward(velocity.x, SPEED*1, slow)
 	if velocity.x <SPEED*-1:

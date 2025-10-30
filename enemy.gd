@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 400.0
-const slow = 10
+const slow = -10
 func _ready():
 	velocity = Vector2(-200,-200).normalized() * SPEED
 

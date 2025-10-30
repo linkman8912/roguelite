@@ -24,3 +24,4 @@ func _physics_process(delta: float) -> void:
 	print(velocity.length())
 		#print(direction.normalized().angle() - velocity.normalized().angle())
 		#velocity.x += direction * SPEED * 0.05 * delta
+	

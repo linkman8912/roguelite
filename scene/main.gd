@@ -1,7 +1,7 @@
 extends Node2D
 
-var Enemy_scene = load("res://scene/enemy.tscn")
-var Player_scene = load("res://scene/character.tscn")
+var Enemy_scene = load("res://scene/oldenemy.tscn")
+var Player_scene = load("res://scene/oldcharacter.tscn")
 var nogod = 0
 var player_n = "Player" + str(nogod)
 var enemy_n = "Enemy"
@@ -12,10 +12,11 @@ var enemy_n = "Enemy"
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if not (get_node_or_null("Enemy")):
-		
 		nogod += 1
+		player_n = "Player" + str(nogod)
+		Player_node = get_node(player_n)
 		print(player_n)
-		#(Player_node).queue_free()
+		(Player_node).queue_free()
 		
 		
 		var enemey = Enemy_scene.instantiate()

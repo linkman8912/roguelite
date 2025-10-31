@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 		
 		nogod += 1
 		print(player_n)
-		(Player_node).queue_free()
+		#(Player_node).queue_free()
 		
 		
 		var enemey = Enemy_scene.instantiate()

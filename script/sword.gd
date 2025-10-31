@@ -15,3 +15,6 @@ func set_sword(speed,offset,dammage):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	rotate( rot_speed * delta)
+
+func set_rot_speed(rot):
+	rot_speed = rot

@@ -5,7 +5,7 @@ const SPEED = 400.0
 const maxDegreesPerSecond = 90
 
 func _ready() -> void:
-	$sword_spawner.spawn_sword(10,200,10)
+	$sword_spawner.spawn_sword(10,150,2)
 	
 	
 func _physics_process(delta: float) -> void:

@@ -1,12 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7yaum4lot2wg"]
+[gd_scene load_steps=5 format=3 uid="uid://b1f50jv5y114i"]
 
-[ext_resource type="Script" uid="uid://c1y81ttrmfsba" path="res://seen/main.gd" id="1_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://b601km7ojh1bo" path="res://seen/character.tscn" id="2_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://cfqfocnys4r54" path="res://seen/floor.tscn" id="2_h2yge"]
-[ext_resource type="PackedScene" uid="uid://cqe41rylpau02" path="res://seen/fixedenemy.tscn" id="3_lquwl"]
+<<<<<<< HEAD
+[ext_resource type="Script" uid="uid://c1y81ttrmfsba" path="res://scene/main.gd" id="1_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://b601km7ojh1bo" path="res://scene/character.tscn" id="2_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://cfqfocnys4r54" path="res://scene/floor.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://cqe41rylpau02" path="res://scene/fixedenemy.tscn" id="3_lquwl"]
+=======
+[ext_resource type="PackedScene" uid="uid://b601km7ojh1bo" path="res://scene/oldcharacter.tscn" id="2_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://cfqfocnys4r54" path="res://scene/floor.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://cqe41rylpau02" path="res://scene/oldenemy.tscn" id="3_lquwl"]
+[ext_resource type="Script" uid="uid://xsje50xmja0r" path="res://script/oldcharacter.gd" id="4_b1pvg"]
+>>>>>>> a36a4f0f26fb399dd954705d48bff792464d19c5
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_1bvp3")
 
 [node name="wall" parent="." instance=ExtResource("2_h2yge")]
 position = Vector2(527, 661)
@@ -23,8 +29,19 @@ rotation = -1.5707964
 position = Vector2(525, -38)
 rotation = 3.1415927
 
-[node name="Character" parent="." instance=ExtResource("2_1bvp3")]
+[node name="Player1" parent="." instance=ExtResource("2_1bvp3")]
+<<<<<<< HEAD
 position = Vector2(403, 288)
+=======
+position = Vector2(477, 208)
+>>>>>>> a36a4f0f26fb399dd954705d48bff792464d19c5
 
 [node name="Enemy" parent="." instance=ExtResource("3_lquwl")]
 position = Vector2(701, 297)
+script = ExtResource("4_b1pvg")
+
+[node name="P_start" type="Node2D" parent="."]
+position = Vector2(808, 321)
+
+[node name="E_start" type="Node2D" parent="."]
+position = Vector2(288, 317)

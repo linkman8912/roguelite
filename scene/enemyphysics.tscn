@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://i5bdfrtqj1jw"]
+[gd_scene load_steps=7 format=3 uid="uid://dlbieqkegmx2d"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://p5garr5kkysn" path="res://bounce.tres" id="1_cy7ge"]
 [ext_resource type="Shader" uid="uid://kkjf1i0mmbbp" path="res://godotman.gdshader" id="3_vlore"]

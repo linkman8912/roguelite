@@ -1,23 +1,32 @@
-[gd_scene load_steps=6 format=3 uid="uid://r7bwl4xlp7vi"]
+[gd_scene load_steps=7 format=3 uid="uid://i5bdfrtqj1jw"]
 
-[ext_resource type="Script" uid="uid://cq8j40gbb47id" path="res://script/enemy.gd" id="1_4gyqm"]
-[ext_resource type="Texture2D" uid="uid://ddxmxgyyfy8mn" path="res://icon.svg" id="1_7k104"]
-[ext_resource type="Shader" path="res://godotman.gdshader" id="2_qi2p4"]
+[ext_resource type="PhysicsMaterial" uid="uid://p5garr5kkysn" path="res://bounce.tres" id="1_cy7ge"]
+[ext_resource type="Shader" uid="uid://kkjf1i0mmbbp" path="res://godotman.gdshader" id="3_vlore"]
+[ext_resource type="Script" uid="uid://r37s6i7psgc6" path="res://script/physics.gd" id="3_yfni7"]
+[ext_resource type="Texture2D" uid="uid://ddxmxgyyfy8mn" path="res://icon.svg" id="4_ieuuq"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_iifgy"]
-shader = ExtResource("2_qi2p4")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jrft1"]
+shader = ExtResource("3_vlore")
 
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_4gyqm"]
-points = PackedVector2Array(-20, 0, -15, -15, 0, -20, 15, -15, 20, 0, 15, 15, 0, 20, -15, 15)
+[sub_resource type="CircleShape2D" id="CircleShape2D_5i1lo"]
+radius = 18.002266
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
-script = ExtResource("1_4gyqm")
+[node name="EnemyPhysics" type="RigidBody2D"]
+physics_material_override = ExtResource("1_cy7ge")
+gravity_scale = 0.0
+lock_rotation = true
+linear_damp_mode = 1
+angular_damp_mode = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 0, 1, 1)
-material = SubResource("ShaderMaterial_iifgy")
-texture = ExtResource("1_7k104")
+material = SubResource("ShaderMaterial_jrft1")
+texture = ExtResource("4_ieuuq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(3.25, 3.25)
-shape = SubResource("ConvexPolygonShape2D_4gyqm")
+scale = Vector2(3.5, 3.5)
+shape = SubResource("CircleShape2D_5i1lo")
+
+[node name="physics" type="Node" parent="." node_paths=PackedStringArray("rigidBody")]
+script = ExtResource("3_yfni7")
+rigidBody = NodePath("..")
+metadata/_custom_type_script = "uid://r37s6i7psgc6"

@@ -9,7 +9,7 @@ func _ready():
 		rigidBody.gravity_scale = 0
 		rigidBody.linear_damp = -0.0
 		rigidBody.angular_damp = 0
-		rigidBody.apply_impulse(Vector2(200, 200).normalized() * speed)
+		#rigidBody.apply_impulse(Vector2(200, 200).normalized() * speed)
 		rigidBody.linear_damp_mode = RigidBody2D.DAMP_MODE_REPLACE
 		rigidBody.angular_damp_mode = RigidBody2D.DAMP_MODE_REPLACE
 

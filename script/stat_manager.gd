@@ -5,6 +5,15 @@ var health_node = null
 var physics_node = null
 var parent_node= null
 var parent_name = ""
+var stats = {
+	"health": 10,
+	"damage": 10,
+	"playerSpeed": 10,
+	"playerControl": 10,
+	"weaponSpeed": 10,
+	"weaponLength": 10,
+	"luck": 10,
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,15 +24,26 @@ func _ready() -> void:
 	if parent_node:
 		parent_name = parent_node.name +"_"
 	Console.add_command((parent_name+"set_damage"),set_damage,1)
-	Console.add_command(parent_name+"set_attack_speed",set_attack_speed,1)
+	Console.add_command(parent_name+"set_weapon_speed",set_weapon_speed,1)
 	Console.add_command(parent_name+"set_health",set_health,1)
 	Console.add_command(parent_name+"set_speed",set_speed,1)
 	Console.add_command(parent_name+"set_max_health",set_max_health,1)
+	apply_stats()
 
-func set_damage(d):
+
+func _kill():
+	print("is it nuvu pink")
+
+
+func get_attack_speed():
 	if attack_node:
+		return attack_node.attack_speed()
+func set_damage(d):
+	print("attack set tryed")
+	if attack_node:
+		print("attack set")
 		attack_node.set_damage(d)
-func set_attack_speed(s):
+func set_weapon_speed(s):
 	if attack_node:
 		print("attack speed set")
 		attack_node.set_d_speed(s)
@@ -36,3 +56,10 @@ func set_max_health(s):
 func set_speed(s):
 	if physics_node:
 		physics_node.set_speed(s)
+func set_stats(new_stats: Dictionary):
+	stats = new_stats
+func apply_stats():
+	set_damage(stats["damage"])
+	set_weapon_speed(stats["weaponSpeed"])
+	set_max_health(stats["health"])
+	set_speed(stats["playerSpeed"])

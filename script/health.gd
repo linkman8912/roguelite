@@ -9,8 +9,15 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	print(health)
 func damage(attack):
 	health -= attack
 	if health <=0:
 		get_parent().queue_free()
-		
+
+func set_health(s):
+	health = float(s)
+
+func set_max_health(s):
+	max_health = float(s)

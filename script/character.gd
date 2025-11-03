@@ -2,8 +2,7 @@ extends RigidBody2D
 
 const maxDegreesPerSecond = 90
 
-func _ready() -> void:
-	$sword_spawner.spawn_sword(10,150,1)
+
 
 
 

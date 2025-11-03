@@ -25,7 +25,6 @@ func reset():
 	spawn_enemy()
 	
 func spawn_enemy():
-	print("en")
 	Enemy_node = Enemy_scene.instantiate()
 	add_child(Enemy_node)
 	Enemy_node.name = enemy_n
@@ -35,4 +34,4 @@ func spawn_player():
 	Player_node = Player_scene.instantiate()
 	add_child(Player_node)
 	Player_node.name = player_n
-	Player_node.global_position = $P_start.global_position()
+	Player_node.global_position = $P_start.global_position

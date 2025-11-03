@@ -53,4 +53,4 @@ script = ExtResource("9_v3qwr")
 rigidBody = NodePath("..")
 metadata/_custom_type_script = "uid://r37s6i7psgc6"
 
-[node name="attack" parent="." instance=ExtResource("10_v3qwr")]
+[node name="attack_node" parent="." instance=ExtResource("10_v3qwr")]

@@ -1,11 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://qbi4bmmalddp"]
+[gd_scene load_steps=8 format=3 uid="uid://qbi4bmmalddp"]
 
 [ext_resource type="Texture2D" uid="uid://bx446swxm3mr2" path="res://Sprite sheet for Basic Pack.png" id="1_62e2m"]
+[ext_resource type="Script" uid="uid://c8livjby3t4b2" path="res://script/health.gd" id="1_fj5cn"]
+[ext_resource type="Script" uid="uid://ccsmhcxpvoobk" path="res://stats_display_manager.gd" id="2_ee4bf"]
 [ext_resource type="FontFile" uid="uid://dnnp4odw6akjh" path="res://pixelFont-7-8x14-sproutLands.ttf" id="2_qtu10"]
+[ext_resource type="Script" uid="uid://c0ufiuh26jsim" path="res://stat_button.gd" id="4_ee4bf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ee4bf"]
 texture = ExtResource("1_62e2m")
 region_rect = Rect2(837, 132, 22, 23)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbped"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -26,6 +41,7 @@ grow_vertical = 2
 
 [node name="StatsMenu" type="MarginContainer" parent="GeneralMenu"]
 layout_mode = 2
+script = ExtResource("1_fj5cn")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="GeneralMenu/StatsMenu"]
 layout_mode = 2
@@ -44,11 +60,12 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_override_constants/separation = 50
+script = ExtResource("2_ee4bf")
 
 [node name="HealthHolder" type="HBoxContainer" parent="GeneralMenu/StatsMenu/Holder/StatsHolder"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="GeneralMenu/StatsMenu/Holder/StatsHolder/HealthHolder"]
+[node name="health_display" type="Label" parent="GeneralMenu/StatsMenu/Holder/StatsHolder/HealthHolder"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_qtu10")
 theme_override_font_sizes/font_size = 60
@@ -57,7 +74,7 @@ text = "HEALTH:"
 [node name="DamageHolder" type="HBoxContainer" parent="GeneralMenu/StatsMenu/Holder/StatsHolder"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="GeneralMenu/StatsMenu/Holder/StatsHolder/DamageHolder"]
+[node name="damage_display" type="Label" parent="GeneralMenu/StatsMenu/Holder/StatsHolder/DamageHolder"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_qtu10")
 theme_override_font_sizes/font_size = 60
@@ -118,15 +135,19 @@ theme_override_constants/separation = 47
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="GeneralMenu/StatsMenu/Holder/ButtonHolder/MarginContainer"]
+[node name="HealthButton" type="Button" parent="GeneralMenu/StatsMenu/Holder/ButtonHolder/MarginContainer" node_paths=PackedStringArray("stat_manager", "stat_display")]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_ee4bf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kbped")
+script = ExtResource("4_ee4bf")
+stat_manager = NodePath("../../../..")
+stat_display = NodePath("../../../StatsHolder")
 
 [node name="MarginContainer2" type="MarginContainer" parent="GeneralMenu/StatsMenu/Holder/ButtonHolder"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="GeneralMenu/StatsMenu/Holder/ButtonHolder/MarginContainer2"]
+[node name="DamageButton" type="Button" parent="GeneralMenu/StatsMenu/Holder/ButtonHolder/MarginContainer2"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_ee4bf")
 
@@ -134,7 +155,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_ee4bf")
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="GeneralMenu/StatsMenu/Holder/ButtonHolder/MarginContainer3"]
+[node name="PlayerSpeedButton" type="Button" parent="GeneralMenu/StatsMenu/Holder/ButtonHolder/MarginContainer3"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_ee4bf")
 
@@ -142,7 +163,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_ee4bf")
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="GeneralMenu/StatsMenu/Holder/ButtonHolder/MarginContainer4"]
+[node name="WeaponSpeedButton" type="Button" parent="GeneralMenu/StatsMenu/Holder/ButtonHolder/MarginContainer4"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_ee4bf")
 
@@ -150,7 +171,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_ee4bf")
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="GeneralMenu/StatsMenu/Holder/ButtonHolder/MarginContainer5"]
+[node name="WeaponLengthButtonButton" type="Button" parent="GeneralMenu/StatsMenu/Holder/ButtonHolder/MarginContainer5"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_ee4bf")
 
@@ -158,7 +179,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_ee4bf")
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="GeneralMenu/StatsMenu/Holder/ButtonHolder/MarginContainer6"]
+[node name="LuckButton" type="Button" parent="GeneralMenu/StatsMenu/Holder/ButtonHolder/MarginContainer6"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_ee4bf")
 
@@ -166,6 +187,6 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_ee4bf")
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="GeneralMenu/StatsMenu/Holder/ButtonHolder/MarginContainer7"]
+[node name="PlayerControlButton" type="Button" parent="GeneralMenu/StatsMenu/Holder/ButtonHolder/MarginContainer7"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_ee4bf")

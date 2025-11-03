@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bv0bpj3oi4u42"]
 
-[ext_resource type="Script" uid="uid://dxapno8usfjaq" path="res://scene/sword.gd" id="1_rlqbj"]
+[ext_resource type="Script" path="res://script/sword.gd" id="1_rlqbj"]
 [ext_resource type="Texture2D" uid="uid://ddxmxgyyfy8mn" path="res://icon.svg" id="1_v2yo3"]
 [ext_resource type="PackedScene" uid="uid://baxs661mw2wpk" path="res://scene/hit_box.tscn" id="2_rlqbj"]
 [ext_resource type="PackedScene" uid="uid://dgfiexw08noni" path="res://scene/attack_node.tscn" id="3_so1pe"]
@@ -27,7 +27,6 @@ scale = Vector2(1.225, 1)
 shape = SubResource("RectangleShape2D_d5tdf")
 
 [node name="attack_node" parent="Sword" instance=ExtResource("3_so1pe")]
-dammage = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sword"]
 position = Vector2(0, -8.25)

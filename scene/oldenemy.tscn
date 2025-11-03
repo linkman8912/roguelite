@@ -1,15 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://cqe41rylpau02"]
+[gd_scene load_steps=12 format=3 uid="uid://cqe41rylpau02"]
 
-[ext_resource type="Script" path="res://script/charecter godotman.gd" id="1_yr788"]
+[ext_resource type="Script" uid="uid://dd7e2br1w8xiu" path="res://script/charecter godotman.gd" id="1_yr788"]
 [ext_resource type="Texture2D" uid="uid://ddxmxgyyfy8mn" path="res://icon.svg" id="2_rmaxf"]
-[ext_resource type="Shader" path="res://godotman.gdshader" id="3_bquj1"]
-[ext_resource type="Script" path="res://script/bounce.gd" id="3_l3oux"]
+[ext_resource type="Shader" uid="uid://kkjf1i0mmbbp" path="res://godotman.gdshader" id="3_bquj1"]
+[ext_resource type="Script" uid="uid://oe11vv58qi6s" path="res://script/bounce.gd" id="3_l3oux"]
 [ext_resource type="PackedScene" uid="uid://baxs661mw2wpk" path="res://scene/hit_box.tscn" id="5_bquj1"]
 [ext_resource type="PackedScene" uid="uid://cj2hs2mmf1jin" path="res://scene/health_node.tscn" id="6_jrft1"]
-[ext_resource type="Script" path="res://script/health.gd" id="7_d14mj"]
 [ext_resource type="PackedScene" uid="uid://ctab8b8i86avd" path="res://scene/sword_spawner.tscn" id="7_ycwaw"]
-[ext_resource type="PackedScene" uid="uid://dgfiexw08noni" path="res://scene/attack_node.tscn" id="9_yr3cy"]
-[ext_resource type="PackedScene" uid="uid://cxafltdm0ogom" path="res://scene/stat_manager.tscn" id="10_7ubrj"]
+[ext_resource type="PackedScene" uid="uid://cxafltdm0ogom" path="res://scene/stat_manager.tscn" id="8_6yv18"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jrft1"]
 shader = ExtResource("3_bquj1")
@@ -43,10 +41,8 @@ scale = Vector2(3.585, 3.585)
 shape = SubResource("ConvexPolygonShape2D_jrft1")
 
 [node name="health_node" parent="." instance=ExtResource("6_jrft1")]
-script = ExtResource("7_d14mj")
+max_health = 8
 
 [node name="sword_spawner" parent="." instance=ExtResource("7_ycwaw")]
 
-[node name="attack_node" parent="." instance=ExtResource("9_yr3cy")]
-
-[node name="stat_manager" parent="." instance=ExtResource("10_7ubrj")]
+[node name="stat_manager" parent="." instance=ExtResource("8_6yv18")]

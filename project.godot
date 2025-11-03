@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="school game"
+config/name="test"
 run/main_scene="uid://b1f50jv5y114i"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"

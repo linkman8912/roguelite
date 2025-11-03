@@ -3,10 +3,9 @@ extends CharacterBody2D
 
 const SPEED = 400.0
 const slow = 10
-
 func _ready():
-	velocity = Vector2(-200,-200).normalized() * SPEED #speed,offset,dammage
-
+	velocity = Vector2(-200,-200).normalized() * SPEED
+	$sword_spawner.spawn_sword(10,200,2)
 
 
 func _physics_process(delta: float) -> void:

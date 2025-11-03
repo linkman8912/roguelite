@@ -11,23 +11,14 @@ config_version=5
 [application]
 
 config/name="test"
-run/main_scene="res://main.tscn"
+run/main_scene="uid://b1f50jv5y114i"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
-
-[autoload]
-
-Console="*res://addons/console/console.gd"
-GameStats="*res://script/game_stats.gd"
 
 [display]
 
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/console/plugin.cfg")
 
 [physics]
 

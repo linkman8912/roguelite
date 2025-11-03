@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends CharacterBody2D
 
 
 const SPEED = 400.0
@@ -11,7 +11,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var maxRadians = deg_to_rad(maxDegreesPerSecond * delta)
 	var directionx = Input.get_axis("ui_left", "ui_right")
-	linear_velocity = linear_velocity.rotated(maxRadians * directionx)
+	velocity = velocity.rotated(maxRadians * directionx)
 	var directiony = 0
 	directionx = Input.get_axis("ui_left", "ui_right")
 	directiony = Input.get_axis("ui_down", "ui_up")

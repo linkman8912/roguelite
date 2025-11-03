@@ -2,7 +2,7 @@ extends Node
 
 var attack_node = null
 var health_node = null
-var bounce_node = null
+var physics_node = null
 var parent_node= null
 var parent_name = ""
 
@@ -10,7 +10,7 @@ var parent_name = ""
 func _ready() -> void:
 	attack_node = get_parent().get_node_or_null("attack_node")
 	health_node = get_parent().get_node_or_null("health_node")
-	bounce_node = get_parent().get_node_or_null("bounce")
+	physics_node = get_parent().get_node_or_null("physics")
 	parent_node = get_parent()
 	if parent_node:
 		parent_name = parent_node.name +"_"
@@ -34,5 +34,5 @@ func set_max_health(s):
 	if health_node:
 		health_node.set_max_health(s)
 func set_speed(s):
-	if bounce_node:
-		bounce_node.set_speed(s)
+	if physics_node:
+		physics_node.set_speed(s)

@@ -35,4 +35,4 @@ func spawn_player():
 	Player_node = Player_scene.instantiate()
 	add_child(Player_node)
 	Player_node.name = player_n
-	Player_node.global_position = $P_start.global_position
+	Player_node.global_position = $P_start.global_position()

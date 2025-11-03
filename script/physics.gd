@@ -41,3 +41,6 @@ func _physics_process(delta: float) -> void:
 func _bounce(body: Node2D) -> void:
 	if body:
 		pass
+func set_speed(s):
+	speed = float(s)
+	

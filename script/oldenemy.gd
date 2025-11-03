@@ -1,12 +1,10 @@
-extends Node
+extends RigidBody2D
 
-@export var dammage = 0
 
 # Called when the node enters the scene tree for the first time.
-
-func set_damage(d):
-	dammage = float(d)
+func _ready() -> void:
+	$sword_spawner.spawn_sword(10,200,2)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func attack_points():
-	return dammage
+func _process(delta: float) -> void:
+	pass

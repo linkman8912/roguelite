@@ -11,7 +11,7 @@ size = Vector2(16, 153.5)
 [node name="Sword" type="Node2D"]
 script = ExtResource("1_rlqbj")
 
-[node name="Sword" type="StaticBody2D" parent="."]
+[node name="Sword" type="Node2D" parent="."]
 position = Vector2(0, -102.355)
 
 [node name="Sprite2D" type="Sprite2D" parent="Sword"]

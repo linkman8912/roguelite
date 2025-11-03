@@ -2,16 +2,17 @@ extends RigidBody2D
 
 const maxDegreesPerSecond = 90
 
-func _ready():
-	print("gay gay gay")
-	pass
-	
+func _ready() -> void:
+	$sword_spawner.spawn_sword(10,150,1)
+
+
+
 func _physics_process(delta: float) -> void:
 	
 	var maxRadians = deg_to_rad(maxDegreesPerSecond * delta)
 	var directionx = Input.get_axis("ui_left", "ui_right")
 	linear_velocity = linear_velocity.rotated(maxRadians * directionx)
-	print(rad_to_deg(directionx))
+	#print(rad_to_deg(directionx))
 	"""var directionx = 0
 	var directiony = 0
 	directionx = Input.get_axis("ui_left", "ui_right")

@@ -9,9 +9,9 @@ func _ready() -> void:
 	
 	
 func _physics_process(delta: float) -> void:
-	
 	var maxRadians = deg_to_rad(maxDegreesPerSecond * delta)
-	var directionx = 0
+	var directionx = Input.get_axis("ui_left", "ui_right")
+	velocity = velocity.rotated(maxRadians * directionx)
 	var directiony = 0
 	directionx = Input.get_axis("ui_left", "ui_right")
 	directiony = Input.get_axis("ui_down", "ui_up")

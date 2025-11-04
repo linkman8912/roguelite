@@ -2,19 +2,20 @@
 
 [ext_resource type="Texture2D" uid="uid://dggri3oxwwthv" path="res://assets/hilt.png" id="1_rjghh"]
 [ext_resource type="Script" uid="uid://c2fui46gta6gs" path="res://script/sword_extender.gd" id="1_yys60"]
-[ext_resource type="Texture2D" uid="uid://dfm2dr3p2drbk" path="res://assets/tip.png" id="3_1aq1k"]
+[ext_resource type="Texture2D" uid="uid://c583po368h1dc" path="res://assets/pixil-frame-0 (8).png" id="3_rjghh"]
 
 [node name="sword_extender" type="Node2D"]
 script = ExtResource("1_yys60")
 
 [node name="hilt" type="Sprite2D" parent="."]
-position = Vector2(-1, -1)
+rotation = 0.79236597
 texture = ExtResource("1_rjghh")
 
 [node name="mid container" type="Node2D" parent="."]
 
 [node name="tip" type="Sprite2D" parent="."]
-texture = ExtResource("3_1aq1k")
+rotation = 0.7853982
+texture = ExtResource("3_rjghh")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(18, 0)

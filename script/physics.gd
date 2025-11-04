@@ -2,7 +2,8 @@ extends Node
 class_name physics
 @export var rigidBody : RigidBody2D # For assigning a RigidBody
 @export_range(-1.0, 1.0, 2.0) var dir := 1.0 # Set the movement direction on start
-@export_range(100, 2000.0, 100.0) var speed := 400.0 # Set movement speed
+const speedModifier = 20.0 # Set movement speed
+var speed = 10 # speed stat
 const slow = 10
 func _ready():
 	if rigidBody:
@@ -12,6 +13,8 @@ func _ready():
 		#rigidBody.apply_impulse(Vector2(200, 200).normalized() * speed)
 		rigidBody.linear_damp_mode = RigidBody2D.DAMP_MODE_REPLACE
 		rigidBody.angular_damp_mode = RigidBody2D.DAMP_MODE_REPLACE
+		
+		#rigidBody.linear_velocity = Vector2(speed*speedModifier, speed*speedModifier)
 
 		#rigidBody.velocity = Vector2(-200,-200).normalized() * speed
 		#rigidBody.apply_impulse(Vector2(200, 200).normalized() * speed)
@@ -43,4 +46,6 @@ func _bounce(body: Node2D) -> void:
 		pass
 func set_speed(s):
 	speed = float(s)
+	rigidBody.linear_velocity = Vector2(speed*speedModifier, speed*speedModifier)
+
 	

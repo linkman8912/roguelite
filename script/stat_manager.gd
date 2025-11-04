@@ -57,6 +57,7 @@ func set_max_health(s):
 		health_node.set_max_health(s)
 func set_speed(s):
 	if physics_node:
+		print("physics bitch",s)
 		physics_node.set_speed(s)
 func set_stats(new_stats: Dictionary):
 	stats = new_stats

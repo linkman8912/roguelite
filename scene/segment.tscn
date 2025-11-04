@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dfkqr4265q6nm"]
 
-[ext_resource type="Texture2D" uid="uid://dplabc7sto4o2" path="res://assets/mid.png" id="1_rlyg3"]
+[ext_resource type="Texture2D" uid="uid://k0sgpc214686" path="res://assets/mid.png" id="1_rlyg3"]
 
 [node name="segment" type="Sprite2D"]
-rotation = 0.7853982
 texture = ExtResource("1_rlyg3")
+offset = Vector2(0, -32)

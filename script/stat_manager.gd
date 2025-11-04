@@ -6,8 +6,8 @@ var physics_node = null
 var parent_node= null
 var parent_name = ""
 var stats = {
-	"health": 10,
-	"damage": 10,
+	"health": 1,
+	"damage": 0,
 	"playerSpeed": 10,
 	"playerControl": 10,
 	"weaponSpeed": 10,
@@ -41,7 +41,7 @@ func get_attack_speed():
 func set_damage(d):
 	print("attack set tryed")
 	if attack_node:
-		print("attack set")
+		print("attack set",get_parent(), d)
 		attack_node.set_damage(d)
 func set_weapon_speed(s):
 	if attack_node:
@@ -49,9 +49,11 @@ func set_weapon_speed(s):
 		attack_node.set_d_speed(s)
 func set_health(s):
 	if health_node:
+		
 		health_node.set_health(s)
 func set_max_health(s):
 	if health_node:
+		print("health set",s)
 		health_node.set_max_health(s)
 func set_speed(s):
 	if physics_node:

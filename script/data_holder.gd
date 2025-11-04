@@ -1,8 +1,8 @@
 extends HBoxContainer
 
 var stats  = {
-	"health": 10,
-	"damage": 10,
+	"health": 1,
+	"damage": 0,
 	"playerSpeed": 10,
 	"playerControl": 10,
 	"weaponSpeed": 10,
@@ -21,5 +21,6 @@ func _process(delta: float) -> void:
 func increase(stat: String, number: int):
 	stats[stat] += number
 func start():
+	print("started")
 	get_node("/root/Node2D").set_stats(stats)
 	get_node("/root/Node2D").reset()

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dggri3oxwwthv" path="res://assets/hilt.png" id="1_rjghh"]
 [ext_resource type="Script" uid="uid://c2fui46gta6gs" path="res://script/sword_extender.gd" id="1_yys60"]
-[ext_resource type="Texture2D" uid="uid://c583po368h1dc" path="res://assets/pixil-frame-0 (8).png" id="3_rjghh"]
+[ext_resource type="Texture2D" uid="uid://c583po368h1dc" path="res://assets/tip.png" id="3_rjghh"]
 
 [node name="sword_extender" type="Node2D"]
 script = ExtResource("1_yys60")

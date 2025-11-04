@@ -5,7 +5,7 @@ extends Node2D
 @onready var tip = $tip
 
 @onready var seg = load("res://scene/segment.tscn")
-@export var segment_count: int = 0
+@export var segment_count: int = 50
 @export var segment_width: float = 1.0
 @export var x_offset_per_segment: float = -1.0
 @export var y_offset_per_segment: float = -1.0

@@ -10,7 +10,15 @@ extends Node2D
 @export var x_offset_per_segment: float = -1.0
 @export var y_offset_per_segment: float = -1.0
 
-func _ready():
+func  set_segment(s):
+	segment_count = s
+	set_sword()
+func _ready() -> void:
+	set_sword()
+
+func set_sword():
+	#🤳🤳🤳🤳
+	#🤢🤢🤢🤢🤢🤢🤢🤢🤢🤢🤢🤢🤢🤢
 	var next_segment_x = 0.0
 	var next_segment_y = 0.0
 

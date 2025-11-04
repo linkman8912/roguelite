@@ -2,6 +2,7 @@ extends Node
 
 @export var dammage = 0
 @export var d_speed = 0
+@export var length = 0
 
 # Called when the node enters the scene tree for the first time.
 
@@ -17,3 +18,7 @@ func set_d_speed(s):
 	d_speed = s
 func attack_speed():
 	return d_speed
+func set_length(l):
+	length = l
+func get_length():
+	return length

@@ -5,25 +5,30 @@ var sword_scene = load("res://scene/sword.tscn")
 var attack_node = null
 var attack = 0
 var attack_speed = 10
+var sword_length = 1
 
 func _ready() -> void:
 	spawn_sword(200)
+	set_sword()
+	sword_node.set_sword(sword_length,attack_speed,150,attack)
 
 func set_sword():
 	attack_node = get_parent().get_node_or_null("attack_node")
 	if attack_node:
 		attack = attack_node.attack_points()
 		attack_speed = attack_node.attack_speed()
-		
-func _process(delta: float) -> void:
-	if sword_node:
-		set_sword()
-		sword_node.set_sword(attack_speed,200,attack)
+		sword_length = attack_node.get_length()
+
+#
+#func _process(delta: float) -> void:
+	#if sword_node:
+		#set_sword()
+		#sword_node.set_sword(sword_length,attack_speed,150,attack)
 
 func spawn_sword(offset):
 	sword_node = sword_scene.instantiate()
 	add_child(sword_node)
 	set_sword()
-	sword_node.set_sword(attack_speed,offset,attack)
+	sword_node.set_sword(sword_length,attack_speed,offset,attack)
 	sword_node.name = sword_id
 	#print("sword spawn")

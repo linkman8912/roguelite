@@ -15,12 +15,14 @@ var stats = {
 	"luck": 10,
 }
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	attack_node = get_parent().get_node_or_null("attack_node")
 	health_node = get_parent().get_node_or_null("health_node")
 	physics_node = get_parent().get_node_or_null("physics")
 	parent_node = get_parent()
+	
 	if parent_node:
 		parent_name = parent_node.name +"_"
 	Console.add_command((parent_name+"set_damage"),set_damage,1)
@@ -48,6 +50,10 @@ func set_weapon_speed(s):
 	if attack_node:
 		print("attack speed set")
 		attack_node.set_d_speed(s)
+
+func set_weapon_length(l):
+	if attack_node:
+		attack_node.set_length(l)
 func set_health(s):
 	if health_node:
 		health_node.set_health(s)
@@ -69,3 +75,5 @@ func apply_stats():
 	set_max_health(stats["health"])
 	set_speed(stats["playerSpeed"])
 	set_control(stats["playerControl"])
+	set_weapon_length(1000)
+	

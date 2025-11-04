@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c583po368h1dc" path="res://assets/tip.png" id="3_rjghh"]
 
 [node name="sword_extender" type="Node2D"]
+scale = Vector2(3, 3)
 script = ExtResource("1_yys60")
 
 [node name="hilt" type="Sprite2D" parent="."]
@@ -16,7 +17,3 @@ texture = ExtResource("1_rjghh")
 [node name="tip" type="Sprite2D" parent="."]
 rotation = 0.7853982
 texture = ExtResource("3_rjghh")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(18, 0)
-zoom = Vector2(4, 4)

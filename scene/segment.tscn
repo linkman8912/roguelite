@@ -3,4 +3,5 @@
 [ext_resource type="Texture2D" uid="uid://dplabc7sto4o2" path="res://assets/mid.png" id="1_rlyg3"]
 
 [node name="segment" type="Sprite2D"]
+rotation = 0.7853982
 texture = ExtResource("1_rlyg3")

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://j7681yn438t8" path="res://character.tscn" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://chtij01joeo2o" path="res://floor.tscn" id="2_h2yge"]
-[ext_resource type="PackedScene" uid="uid://b2lm3gc5v6t66" path="res://fixedenemy.tscn" id="3_lquwl"]
+[ext_resource type="PackedScene" uid="uid://b2lm3gc5v6t66" path="res://scene/fixedenemy.tscn" id="3_lquwl"]
 
 [node name="Node2D" type="Node2D"]
 

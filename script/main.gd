@@ -46,6 +46,7 @@ func spawn_player():
 	Player_node.global_position = $game/P_start.global_position
 func set_stats(new_stats: Dictionary):
 	stats = new_stats
+	#print("set+stats",new_stats)
 func apply_stats():
 	if stat_manager:
 		stat_manager.set_stats(stats)

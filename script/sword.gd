@@ -11,7 +11,7 @@ func set_sword(speed,offset,dammage):
 		attack_node.set_damage(dammage)
 	rot_speed = speed
 	$Sword.position.y = offset * -1
-	
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	

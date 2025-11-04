@@ -26,4 +26,4 @@ func spawn_sword(offset):
 	set_sword()
 	sword_node.set_sword(attack_speed,offset,attack)
 	sword_node.name = sword_id
-	print("sword spawn")
+	#print("sword spawn")

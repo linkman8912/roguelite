@@ -126,62 +126,68 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 47
 
-[node name="Health" type="MarginContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder"]
+[node name="health" type="MarginContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder/Health"]
+[node name="Button" type="Button" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder/health"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_ee4bf")
 script = ExtResource("3_qtu10")
 
-[node name="Damage" type="MarginContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder"]
+[node name="damage" type="MarginContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder/Damage"]
+[node name="Button" type="Button" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder/damage"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_ee4bf")
+script = ExtResource("3_qtu10")
 
-[node name="PlayerSpeed" type="MarginContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder"]
+[node name="playerSpeed" type="MarginContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder/PlayerSpeed"]
+[node name="Button" type="Button" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder/playerSpeed"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_ee4bf")
+script = ExtResource("3_qtu10")
 
-[node name="WeaponSpeed" type="MarginContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder"]
+[node name="weaponSpeed" type="MarginContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder/WeaponSpeed"]
+[node name="Button" type="Button" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder/weaponSpeed"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_ee4bf")
+script = ExtResource("3_qtu10")
 
-[node name="WeaponLength" type="MarginContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder"]
+[node name="weaponLength" type="MarginContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder/WeaponLength"]
+[node name="Button" type="Button" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder/weaponLength"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_ee4bf")
+script = ExtResource("3_qtu10")
 
-[node name="Luck" type="MarginContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder"]
+[node name="luck" type="MarginContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder/Luck"]
+[node name="Button" type="Button" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder/luck"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_ee4bf")
+script = ExtResource("3_qtu10")
 
-[node name="PlayerControl" type="MarginContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder"]
+[node name="playerControl" type="MarginContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder/PlayerControl"]
+[node name="Button" type="Button" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder/playerControl"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_ee4bf")
+script = ExtResource("3_qtu10")
 
 [node name="MenuButtonHolder" type="VBoxContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer"]
 custom_minimum_size = Vector2(40, 0)

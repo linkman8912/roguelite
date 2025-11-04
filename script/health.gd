@@ -21,3 +21,4 @@ func set_health(s):
 
 func set_max_health(s):
 	max_health = float(s)
+	print(max_health,"max_health")

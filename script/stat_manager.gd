@@ -28,6 +28,7 @@ func _ready() -> void:
 	Console.add_command(parent_name+"set_health",set_health,1)
 	Console.add_command(parent_name+"set_speed",set_speed,1)
 	Console.add_command(parent_name+"set_max_health",set_max_health,1)
+	Console.add_command(parent_name+"set_control",set_control,1)
 	apply_stats()
 
 
@@ -49,7 +50,6 @@ func set_weapon_speed(s):
 		attack_node.set_d_speed(s)
 func set_health(s):
 	if health_node:
-		
 		health_node.set_health(s)
 func set_max_health(s):
 	if health_node:
@@ -60,8 +60,11 @@ func set_speed(s):
 		physics_node.set_speed(s)
 func set_stats(new_stats: Dictionary):
 	stats = new_stats
+func set_control(c):
+	parent_node.set_control(c)
 func apply_stats():
 	set_damage(stats["damage"])
 	set_weapon_speed(stats["weaponSpeed"])
 	set_max_health(stats["health"])
 	set_speed(stats["playerSpeed"])
+	set_control(stats["playerControl"])

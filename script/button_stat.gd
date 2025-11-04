@@ -14,13 +14,15 @@ func _ready() -> void:
 	container_node = get_node("../../..")
 	
 func _on_button_pressed():
-	print("+1 health")
+	var name = get_parent().name 
+	print("name:", name)
+	#print("+1 health")
 	#if stat_manager_node:
 		#var current_health =  stat_manager_node.get_health()
 		#stat_manager_node.set_health(current_health + 1)
 	if container_node:
 		print(container_node,"+health")
-		container_node.increase("health", 1)
+		container_node.increase(name, 1)
 		
 	return
 

@@ -19,6 +19,7 @@ func _on_button_pressed():
 		#var current_health =  stat_manager_node.get_health()
 		#stat_manager_node.set_health(current_health + 1)
 	if container_node:
+		print(container_node,"+health")
 		container_node.increase("health", 1)
 		
 	return

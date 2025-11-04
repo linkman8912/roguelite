@@ -40,8 +40,8 @@ func spawn_player():
 	Player_node = Player_scene.instantiate()
 	add_child(Player_node)
 	stat_manager = Player_node.get_node("stat_manager")
-	
-	
+	apply_stats()
+	stat_manager.apply_stats()
 	Player_node.name = player_n
 	Player_node.global_position = $game/P_start.global_position
 func set_stats(new_stats: Dictionary):

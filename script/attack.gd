@@ -1,7 +1,7 @@
 extends Node
 
 @export var dammage = 0
-@export var d_speed = 10
+var d_speed = 10
 @export var length = 0
 
 # Called when the node enters the scene tree for the first time.
@@ -15,9 +15,11 @@ func set_damage(d):
 func attack_points():
 	return dammage
 
-func set_d_speed(s):
-	d_speed = s
+func set_d_speed(a):
+	d_speed = float(a)
 	print("chud set:",d_speed)
+
+
 func attack_speed():
 	return d_speed
 func set_length(l):

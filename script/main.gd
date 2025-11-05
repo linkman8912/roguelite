@@ -34,15 +34,18 @@ func spawn_enemy():
 	add_child(Enemy_node)
 	Enemy_node.name = enemy_n
 	Enemy_node.global_position = $game/E_start.global_position
-	
+
 func spawn_player():
 	Player_node = Player_scene.instantiate()
 	add_child(Player_node)
 	stat_manager = Player_node.get_node("stat_manager")
+	var sword_spawner = Player_node.get_node("sword_spawner")
+	
 	apply_stats()
 	stat_manager.apply_stats()
 	Player_node.name = player_n
 	Player_node.global_position = $game/P_start.global_position
+	sword_spawner.set_sword()
 func set_stats(new_stats: Dictionary):
 	stats = new_stats
 	#print("set+stats",new_stats)

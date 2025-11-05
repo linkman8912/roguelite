@@ -11,10 +11,10 @@
 [ext_resource type="Script" uid="uid://r37s6i7psgc6" path="res://script/physics.gd" id="10_p0hp8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3beg3"]
-radius = 19.387058
+radius = 4.70679
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p0hp8"]
-radius = 17.62848
+radius = 4.1841
 
 [node name="Player" type="RigidBody2D"]
 physics_material_override = ExtResource("1_y6i60")
@@ -25,7 +25,6 @@ script = ExtResource("1_p0hp8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(3.985, 3.985)
 texture = ExtResource("4_p0hp8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

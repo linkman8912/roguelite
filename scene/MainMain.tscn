@@ -21,15 +21,15 @@ position = Vector2(527, 661)
 
 [node name="wall2" parent="game" instance=ExtResource("3_roxkl")]
 position = Vector2(182, 310)
-rotation = 1.5707964
+rotation = 1.5708
 
 [node name="wall3" parent="game" instance=ExtResource("3_roxkl")]
 position = Vector2(882, 318)
-rotation = -1.5707964
+rotation = -1.5708
 
 [node name="wall4" parent="game" instance=ExtResource("3_roxkl")]
 position = Vector2(525, -38)
-rotation = -3.1415925
+rotation = -3.14159
 
 [node name="P_start" type="Node2D" parent="game"]
 position = Vector2(808, 321)

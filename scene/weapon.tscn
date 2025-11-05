@@ -25,17 +25,17 @@ func reverse_rotation():
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o2wld"]
-size = Vector2(312.50003, 16)
+size = Vector2(312.5, 16)
 
 [node name="weapon" type="Area2D"]
 position = Vector2(331, 282)
 script = SubResource("GDScript_swcir")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(214.74998, 0)
+position = Vector2(214.75, 0)
 shape = SubResource("RectangleShape2D_o2wld")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(215.75, -1)
-scale = Vector2(2.4882815, 0.140625)
+scale = Vector2(2.48828, 0.140625)
 texture = ExtResource("1_swcir")

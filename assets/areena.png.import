@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3k2cvxb1ibr4"
-path="res://.godot/imported/cared.png-f997cf6a3d0f23cc8a3d10b6384b03c6.ctex"
+uid="uid://cj61fniwyxrh2"
+path="res://.godot/imported/areena.png-bc501e0fef8868c7eb354c315d30759a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cared.png"
-dest_files=["res://.godot/imported/cared.png-f997cf6a3d0f23cc8a3d10b6384b03c6.ctex"]
+source_file="res://assets/areena.png"
+dest_files=["res://.godot/imported/areena.png-bc501e0fef8868c7eb354c315d30759a.ctex"]
 
 [params]
 

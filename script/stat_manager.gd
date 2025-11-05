@@ -5,6 +5,7 @@ var health_node = null
 var physics_node = null
 var parent_node= null
 var parent_name = ""
+var sword_spawner = null
 var stats = {
 	"health": 1,
 	"damage": 0,
@@ -22,6 +23,7 @@ func _ready() -> void:
 	health_node = get_parent().get_node_or_null("health_node")
 	physics_node = get_parent().get_node_or_null("physics")
 	parent_node = get_parent()
+	sword_spawner = parent_node.get_node_or_null("sword_spawner")
 	
 	if parent_node:
 		parent_name = parent_node.name +"_"
@@ -37,23 +39,29 @@ func _ready() -> void:
 func _kill():
 	print("is it nuvu pink")
 
+func set_sword():
+	sword_spawner.set_sword()
 
 func get_attack_speed():
 	if attack_node:
 		return attack_node.attack_speed()
+		set_sword()
 func set_damage(d):
 	print("attack set tryed")
 	if attack_node:
 		print("attack set",get_parent(), d)
 		attack_node.set_damage(d)
+		set_sword()
 func set_weapon_speed(s):
 	if attack_node:
-		print("attack speed set")
+		print("attack speed set: ",s)
 		attack_node.set_d_speed(s)
+		set_sword()
 
 func set_weapon_length(l):
 	if attack_node:
 		attack_node.set_length(l)
+		set_sword()
 func set_health(s):
 	if health_node:
 		health_node.set_health(s)

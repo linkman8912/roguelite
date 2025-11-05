@@ -1,18 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://b601km7ojh1bo"]
+[gd_scene load_steps=12 format=3 uid="uid://b601km7ojh1bo"]
 
 [ext_resource type="Script" uid="uid://dtenvj5mdyabd" path="res://script/character.gd" id="1_p0hp8"]
 [ext_resource type="PhysicsMaterial" uid="uid://p5garr5kkysn" path="res://bounce.tres" id="1_y6i60"]
-[ext_resource type="Texture2D" uid="uid://ddxmxgyyfy8mn" path="res://icon.svg" id="2_wa5vi"]
-[ext_resource type="Shader" uid="uid://kkjf1i0mmbbp" path="res://godotman.gdshader" id="3_wfnr8"]
+[ext_resource type="Texture2D" uid="uid://0isidaqkrqpn" path="res://assets/pixil-frame-0 (10).png" id="4_p0hp8"]
 [ext_resource type="PackedScene" uid="uid://baxs661mw2wpk" path="res://scene/hit_box.tscn" id="5_px5sl"]
 [ext_resource type="PackedScene" uid="uid://dgfiexw08noni" path="res://scene/attack_node.tscn" id="6_yxww1"]
 [ext_resource type="PackedScene" uid="uid://ctab8b8i86avd" path="res://scene/sword_spawner.tscn" id="7_pe3nu"]
 [ext_resource type="PackedScene" uid="uid://cj2hs2mmf1jin" path="res://scene/health_node.tscn" id="8_5nqea"]
 [ext_resource type="PackedScene" uid="uid://cxafltdm0ogom" path="res://scene/stat_manager.tscn" id="9_3beg3"]
 [ext_resource type="Script" uid="uid://r37s6i7psgc6" path="res://script/physics.gd" id="10_p0hp8"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wfnr8"]
-shader = ExtResource("3_wfnr8")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3beg3"]
 radius = 19.387058
@@ -29,8 +25,8 @@ script = ExtResource("1_p0hp8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-material = SubResource("ShaderMaterial_wfnr8")
-texture = ExtResource("2_wa5vi")
+scale = Vector2(3.985, 3.985)
+texture = ExtResource("4_p0hp8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(3.25, 3.25)

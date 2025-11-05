@@ -11,11 +11,6 @@ script = ExtResource("1_yys60")
 [node name="hilt" type="Sprite2D" parent="."]
 texture = ExtResource("1_rjghh")
 
-[node name="mid container" type="Node2D" parent="."]
-
 [node name="tip" type="Sprite2D" parent="."]
 texture = ExtResource("3_rjghh")
 offset = Vector2(0, -32)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)

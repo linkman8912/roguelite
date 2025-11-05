@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bthewjwmwmojb"
-path="res://.godot/imported/hilt.png-57f4bd5ca08d013f0e336cc0fe988999.ctex"
+uid="uid://bvbcv1dggrt4l"
+path="res://.godot/imported/caffen.png-3113f0131675ac53bfa1aa8ea30df6e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hilt.png"
-dest_files=["res://.godot/imported/hilt.png-57f4bd5ca08d013f0e336cc0fe988999.ctex"]
+source_file="res://assets/caffen.png"
+dest_files=["res://.godot/imported/caffen.png-3113f0131675ac53bfa1aa8ea30df6e9.ctex"]
 
 [params]
 

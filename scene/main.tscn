@@ -14,17 +14,17 @@ position = Vector2(527, 661)
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("1_deq7d")]
 position = Vector2(182, 310)
-rotation = 1.5707964
+rotation = 1.5708
 scale = Vector2(0.92, 0.92)
 
 [node name="StaticBody2D3" parent="." instance=ExtResource("1_deq7d")]
-position = Vector2(884.00006, 310)
-rotation = -1.5707964
+position = Vector2(884, 310)
+rotation = -1.5708
 scale = Vector2(0.915, 0.915)
 
 [node name="StaticBody2D4" parent="." instance=ExtResource("1_deq7d")]
 position = Vector2(525, -38)
-rotation = 3.1415927
+rotation = 3.14159
 
 [node name="EnemyPhysics" parent="." instance=ExtResource("2_deq7d")]
 position = Vector2(700, 144)

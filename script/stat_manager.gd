@@ -48,7 +48,7 @@ func set_damage(d):
 		attack_node.set_damage(d)
 func set_weapon_speed(s):
 	if attack_node:
-		print("attack speed set")
+		print("attack speed set: ",s)
 		attack_node.set_d_speed(s)
 
 func set_weapon_length(l):

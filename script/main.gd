@@ -9,10 +9,9 @@ var stat_manager = null
 var stats = {}
 
 func _ready() -> void:
-	#reset()
+
 	Console.add_command("reset",reset,0)
 	Console.add_command("who_is_in_paris",paris,0)
-
 
 
 func paris():
@@ -47,6 +46,7 @@ func spawn_player():
 func set_stats(new_stats: Dictionary):
 	stats = new_stats
 	#print("set+stats",new_stats)
+
 func apply_stats():
 	if stat_manager:
 		stat_manager.set_stats(stats)

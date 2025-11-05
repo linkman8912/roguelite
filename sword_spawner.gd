@@ -7,10 +7,12 @@ var attack = 0
 var attack_speed = 10
 var sword_length = 1
 
+
 func _ready() -> void:
 	spawn_sword(200)
 	set_sword()
 	sword_node.set_sword(sword_length,attack_speed,150,attack)
+
 
 func set_sword():
 	attack_node = get_parent().get_node_or_null("attack_node")
@@ -18,12 +20,13 @@ func set_sword():
 		attack = attack_node.attack_points()
 		attack_speed = attack_node.attack_speed()
 		sword_length = attack_node.get_length()
+		print("sword set: ",attack_speed)
 
-#
-#func _process(delta: float) -> void:
-	#if sword_node:
-		#set_sword()
-		#sword_node.set_sword(sword_length,attack_speed,150,attack)
+
+func _process(delta: float) -> void:
+	if sword_node:
+		set_sword()
+		sword_node.set_sword(sword_length,attack_speed,150,attack)
 
 func spawn_sword(offset):
 	sword_node = sword_scene.instantiate()

@@ -77,11 +77,12 @@ func set_stats(new_stats: Dictionary):
 	stats = new_stats
 func set_control(c):
 	parent_node.set_control(c)
+
 func apply_stats():
 	set_damage(stats["damage"])
 	set_weapon_speed(stats["weaponSpeed"])
 	set_max_health(stats["health"])
 	set_speed(stats["playerSpeed"])
 	set_control(stats["playerControl"])
-	set_weapon_length(1000)
+	set_weapon_length(stats["weaponLength"])
 	

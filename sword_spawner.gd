@@ -5,7 +5,7 @@ var sword_scene = load("res://scene/sword.tscn")
 var attack_node = null
 var attack = 0
 var attack_speed = 10
-var sword_length = 10
+var sword_length = 50
 func _ready() -> void:
 	spawn_sword(200)
 	s()

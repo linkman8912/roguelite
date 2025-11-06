@@ -12,13 +12,15 @@ region_rect = Rect2(837, 132, 22, 23)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qtu10"]
 texture = ExtResource("1_62e2m")
-region_rect = Rect2(163, 210, 90, 27)
+region_rect = Rect2(162.97, 209.964, 90.0812, 27.0643)
 
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -28,6 +30,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -38,30 +42,34 @@ layout_mode = 2
 layout_mode = 2
 texture = ExtResource("1_62e2m")
 region_rect = Rect2(59, 107, 26, 26)
-patch_margin_left = 4
-patch_margin_top = 4
-patch_margin_right = 4
-patch_margin_bottom = 4
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
 
 [node name="Holder" type="MarginContainer" parent="GeneralMenu/StatsMenu"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="GeneralMenu/StatsMenu/Holder"]
 layout_mode = 2
-theme_override_constants/separation = 150
+theme_override_constants/separation = 135
+alignment = 1
 script = ExtResource("2_j0f1v")
 
 [node name="StatsHolder" type="VBoxContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 50
+theme_override_constants/separation = 45
 
 [node name="HealthHolder" type="HBoxContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatsHolder"]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatsHolder/HealthHolder"]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_qtu10")
 theme_override_font_sizes/font_size = 60
 text = "HEALTH:"
@@ -124,7 +132,7 @@ text = "PLAYER CONTROL:"
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 47
+theme_override_constants/separation = 45
 
 [node name="health" type="MarginContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder"]
 custom_minimum_size = Vector2(50, 50)
@@ -190,7 +198,6 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_ee4bf")
 script = ExtResource("3_qtu10")
 
 [node name="MenuButtonHolder" type="VBoxContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer"]
-custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4

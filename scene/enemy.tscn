@@ -9,7 +9,7 @@
 shader = ExtResource("3_vlore")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5i1lo"]
-radius = 18.002266
+radius = 18.0023
 
 [node name="EnemyPhysics" type="RigidBody2D"]
 physics_material_override = ExtResource("1_cy7ge")

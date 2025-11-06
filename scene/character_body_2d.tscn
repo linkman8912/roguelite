@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://buqu4u5q10vbs"]
 
-[ext_resource type="Script" uid="uid://dfulegxwh04fh" path="res://script/character.gd" id="1_b8c3x"]
+[ext_resource type="Script" uid="uid://dtenvj5mdyabd" path="res://script/character.gd" id="1_b8c3x"]
 [ext_resource type="Script" uid="uid://oe11vv58qi6s" path="res://script/bounce.gd" id="2_ogaei"]
-[ext_resource type="Shader" path="res://godotman.gdshader" id="3_mjxbh"]
+[ext_resource type="Shader" uid="uid://kkjf1i0mmbbp" path="res://godotman.gdshader" id="3_mjxbh"]
 [ext_resource type="Texture2D" uid="uid://ddxmxgyyfy8mn" path="res://icon.svg" id="4_pykq2"]
-[ext_resource type="PackedScene" path="res://seen/hit_box.tscn" id="5_7y57j"]
-[ext_resource type="PackedScene" path="res://seen/attack_node.tscn" id="6_1hjxj"]
+[ext_resource type="PackedScene" uid="uid://baxs661mw2wpk" path="res://scene/hit_box.tscn" id="5_7y57j"]
+[ext_resource type="PackedScene" uid="uid://dgfiexw08noni" path="res://scene/attack_node.tscn" id="6_1hjxj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wfnr8"]
 shader = ExtResource("3_mjxbh")

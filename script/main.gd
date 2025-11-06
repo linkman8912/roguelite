@@ -7,7 +7,8 @@ var enemy_n = "Enemy"
 @onready var Player_node = get_node(player_n)
 var stat_manager = null
 var stats = {}
-
+var ui_cam_zoom = 1
+var play_cam_zoom = 2.4
 func _ready() -> void:
 
 	Console.add_command("reset",reset,0)
@@ -19,6 +20,7 @@ func paris():
 func reset():
 	$Control.visible = false
 	$game.visible = true
+	$Camera2D.zoom = Vector2 (2.4,2.4) #zooms in on the area
 	if is_instance_valid(Player_node):
 		(Player_node).queue_free()
 	if is_instance_valid(Enemy_node):

@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4vjo13i8lh2k"]
-
-[ext_resource type="Texture2D" uid="uid://cj61fniwyxrh2" path="res://assets/areena.png" id="1_04xp2"]
-
-[node name="arena" type="Node2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_04xp2")

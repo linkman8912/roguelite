@@ -28,18 +28,20 @@ texture_filter = 1
 texture = ExtResource("4_p0hp8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.3)
 scale = Vector2(3.25, 3.25)
 shape = SubResource("CircleShape2D_3beg3")
 
 [node name="hit_box_node" parent="." instance=ExtResource("5_px5sl")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_box_node"]
-scale = Vector2(3.585, 3.585)
+position = Vector2(0.5, 0.3)
+scale = Vector2(3.75, 3.75)
 shape = SubResource("CircleShape2D_p0hp8")
 
-[node name="attack_node" parent="." instance=ExtResource("6_yxww1")]
-
 [node name="sword_spawner" parent="." instance=ExtResource("7_pe3nu")]
+
+[node name="attack_node" parent="." instance=ExtResource("6_yxww1")]
 
 [node name="health_node" parent="." instance=ExtResource("8_5nqea")]
 

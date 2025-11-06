@@ -1,0 +1,212 @@
+[gd_scene load_steps=8 format=3 uid="uid://ckawqotg4arx6"]
+
+[ext_resource type="Texture2D" uid="uid://bx446swxm3mr2" path="res://Sprite sheet for Basic Pack.png" id="1_62e2m"]
+[ext_resource type="Script" uid="uid://cpb5bp6x0h42w" path="res://script/data_holder.gd" id="2_j0f1v"]
+[ext_resource type="FontFile" uid="uid://dnnp4odw6akjh" path="res://pixelFont-7-8x14-sproutLands.ttf" id="2_qtu10"]
+[ext_resource type="Script" uid="uid://dr0mbywu1tlhj" path="res://script/button_stat.gd" id="3_qtu10"]
+[ext_resource type="Script" uid="uid://c0qblcdwvgmxk" path="res://script/playbutton.gd" id="4_ee4bf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ee4bf"]
+texture = ExtResource("1_62e2m")
+region_rect = Rect2(837, 132, 22, 23)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qtu10"]
+texture = ExtResource("1_62e2m")
+region_rect = Rect2(162.97, 209.964, 90.0812, 27.0643)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GeneralMenu" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StatsMenu" type="MarginContainer" parent="GeneralMenu"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="GeneralMenu/StatsMenu"]
+layout_mode = 2
+texture = ExtResource("1_62e2m")
+region_rect = Rect2(59, 107, 26, 26)
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="Holder" type="MarginContainer" parent="GeneralMenu/StatsMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GeneralMenu/StatsMenu/Holder"]
+layout_mode = 2
+theme_override_constants/separation = 135
+alignment = 1
+script = ExtResource("2_j0f1v")
+
+[node name="StatsHolder" type="VBoxContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 45
+
+[node name="HealthHolder" type="HBoxContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatsHolder"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatsHolder/HealthHolder"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_qtu10")
+theme_override_font_sizes/font_size = 60
+text = "HEALTH:"
+
+[node name="DamageHolder" type="HBoxContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatsHolder"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatsHolder/DamageHolder"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qtu10")
+theme_override_font_sizes/font_size = 60
+text = "DAMAGE:"
+
+[node name="PlayerSpeedHolder" type="HBoxContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatsHolder"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatsHolder/PlayerSpeedHolder"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qtu10")
+theme_override_font_sizes/font_size = 60
+text = "PLAYER SPEED:"
+
+[node name="WeaponSpeedHolder" type="HBoxContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatsHolder"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatsHolder/WeaponSpeedHolder"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qtu10")
+theme_override_font_sizes/font_size = 60
+text = "WEAPON SPEED:"
+
+[node name="WeaponLengthHolder" type="HBoxContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatsHolder"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatsHolder/WeaponLengthHolder"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qtu10")
+theme_override_font_sizes/font_size = 60
+text = "WEAPON LENGTH:"
+
+[node name="LuckHolder" type="HBoxContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatsHolder"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatsHolder/LuckHolder"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qtu10")
+theme_override_font_sizes/font_size = 60
+text = "LUCK:"
+
+[node name="PlayerControlHolder" type="HBoxContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatsHolder"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatsHolder/PlayerControlHolder"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qtu10")
+theme_override_font_sizes/font_size = 60
+text = "PLAYER CONTROL:"
+
+[node name="StatButtonHolder" type="VBoxContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 45
+
+[node name="health" type="MarginContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder/health"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_ee4bf")
+script = ExtResource("3_qtu10")
+
+[node name="damage" type="MarginContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder/damage"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_ee4bf")
+script = ExtResource("3_qtu10")
+
+[node name="playerSpeed" type="MarginContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder/playerSpeed"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_ee4bf")
+script = ExtResource("3_qtu10")
+
+[node name="weaponSpeed" type="MarginContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder/weaponSpeed"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_ee4bf")
+script = ExtResource("3_qtu10")
+
+[node name="weaponLength" type="MarginContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder/weaponLength"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_ee4bf")
+script = ExtResource("3_qtu10")
+
+[node name="luck" type="MarginContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder/luck"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_ee4bf")
+script = ExtResource("3_qtu10")
+
+[node name="playerControl" type="MarginContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/StatButtonHolder/playerControl"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_ee4bf")
+script = ExtResource("3_qtu10")
+
+[node name="MenuButtonHolder" type="VBoxContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Play" type="MarginContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/MenuButtonHolder"]
+custom_minimum_size = Vector2(250, 90)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/MenuButtonHolder/Play"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_qtu10")
+script = ExtResource("4_ee4bf")

@@ -25,7 +25,6 @@ func reset():
 	spawn_enemy()
 	
 func spawn_enemy():
-	print("en")
 	Enemy_node = Enemy_scene.instantiate()
 	add_child(Enemy_node)
 	Enemy_node.name = enemy_n

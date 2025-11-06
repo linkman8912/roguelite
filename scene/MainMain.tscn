@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1f50jv5y114i"]
+
+[ext_resource type="Script" uid="uid://c1y81ttrmfsba" path="res://script/main.gd" id="1_h75n3"]
+[ext_resource type="PackedScene" uid="uid://ckawqotg4arx6" path="res://scene/control.tscn" id="2_ued4e"]
+[ext_resource type="PackedScene" uid="uid://b4vjo13i8lh2k" path="res://scene/arena.tscn" id="3_h75n3"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_h75n3")
+
+[node name="Control" parent="." instance=ExtResource("2_ued4e")]
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="game" type="Node2D" parent="."]
+visible = false
+
+[node name="arena" parent="game" instance=ExtResource("3_h75n3")]
+
+[node name="P_start" type="Node2D" parent="game"]
+position = Vector2(90, 0)
+
+[node name="E_start" type="Node2D" parent="game"]
+position = Vector2(-95, 0)

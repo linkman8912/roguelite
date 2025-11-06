@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://8p23oyycnp4v"]
+
+[ext_resource type="Texture2D" uid="uid://bthewjwmwmojb" path="res://assets/hilt.png" id="1_rjghh"]
+[ext_resource type="Script" uid="uid://c2fui46gta6gs" path="res://script/sword_extender.gd" id="1_yys60"]
+[ext_resource type="Texture2D" uid="uid://da5f717bseisb" path="res://assets/pixil-frame-0 (19).png" id="3_rjghh"]
+
+[node name="sword_extender" type="Node2D"]
+scale = Vector2(3, 3)
+script = ExtResource("1_yys60")
+
+[node name="hilt" type="Sprite2D" parent="."]
+texture = ExtResource("1_rjghh")
+
+[node name="tip" type="Sprite2D" parent="."]
+texture = ExtResource("3_rjghh")
+offset = Vector2(0, -32)

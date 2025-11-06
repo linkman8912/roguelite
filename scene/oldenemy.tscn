@@ -1,52 +1,53 @@
-[gd_scene load_steps=14 format=3 uid="uid://cqe41rylpau02"]
+[gd_scene load_steps=12 format=3 uid="uid://cqe41rylpau02"]
 
-[ext_resource type="Script" path="res://script/charecter godotman.gd" id="1_yr788"]
-[ext_resource type="Texture2D" uid="uid://ddxmxgyyfy8mn" path="res://icon.svg" id="2_rmaxf"]
-[ext_resource type="Shader" path="res://godotman.gdshader" id="3_bquj1"]
-[ext_resource type="Script" path="res://script/bounce.gd" id="3_l3oux"]
+[ext_resource type="Script" uid="uid://cqr870ror5dbk" path="res://script/oldenemy.gd" id="1_uinsm"]
+[ext_resource type="PhysicsMaterial" uid="uid://p5garr5kkysn" path="res://bounce.tres" id="1_v3qwr"]
+[ext_resource type="Texture2D" uid="uid://4xxit83kmo0t" path="res://assets/bad_gay.png" id="3_uinsm"]
 [ext_resource type="PackedScene" uid="uid://baxs661mw2wpk" path="res://scene/hit_box.tscn" id="5_bquj1"]
 [ext_resource type="PackedScene" uid="uid://cj2hs2mmf1jin" path="res://scene/health_node.tscn" id="6_jrft1"]
-[ext_resource type="Script" path="res://script/health.gd" id="7_d14mj"]
 [ext_resource type="PackedScene" uid="uid://ctab8b8i86avd" path="res://scene/sword_spawner.tscn" id="7_ycwaw"]
-[ext_resource type="PackedScene" uid="uid://dgfiexw08noni" path="res://scene/attack_node.tscn" id="9_yr3cy"]
-[ext_resource type="PackedScene" uid="uid://cxafltdm0ogom" path="res://scene/stat_manager.tscn" id="10_7ubrj"]
+[ext_resource type="PackedScene" uid="uid://cxafltdm0ogom" path="res://scene/stat_manager.tscn" id="8_6yv18"]
+[ext_resource type="Script" uid="uid://r37s6i7psgc6" path="res://script/physics.gd" id="9_v3qwr"]
+[ext_resource type="PackedScene" uid="uid://dgfiexw08noni" path="res://scene/attack_node.tscn" id="10_v3qwr"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jrft1"]
-shader = ExtResource("3_bquj1")
+[sub_resource type="CircleShape2D" id="CircleShape2D_6yv18"]
+radius = 5.0
 
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_ifg0p"]
-points = PackedVector2Array(-20, 0, -15, -15, 0, -20, 15, -15, 20, 0, 15, 15, 0, 20, -15, 15)
+[sub_resource type="CircleShape2D" id="CircleShape2D_uinsm"]
+radius = 5.0
 
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_jrft1"]
-points = PackedVector2Array(-20, 0, -15, -15, 0, -20, 15, -15, 20, 0, 15, 15, 0, 20, -15, 15)
-
-[node name="Enemy" type="CharacterBody2D"]
-script = ExtResource("1_yr788")
-
-[node name="bounce" type="Node" parent="." node_paths=PackedStringArray("characterBody")]
-script = ExtResource("3_l3oux")
-characterBody = NodePath("..")
-metadata/_custom_type_script = "uid://oe11vv58qi6s"
+[node name="Enemy" type="RigidBody2D"]
+physics_material_override = ExtResource("1_v3qwr")
+gravity_scale = 0.0
+lock_rotation = true
+linear_velocity = Vector2(200, 200)
+script = ExtResource("1_uinsm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_jrft1")
-texture = ExtResource("2_rmaxf")
+texture = ExtResource("3_uinsm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(3.25, 3.25)
-shape = SubResource("ConvexPolygonShape2D_ifg0p")
+position = Vector2(0.4, 0.3)
+scale = Vector2(3.05, 3.05)
+shape = SubResource("CircleShape2D_6yv18")
 
 [node name="hit_box_node" parent="." instance=ExtResource("5_bquj1")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_box_node"]
-scale = Vector2(3.585, 3.585)
-shape = SubResource("ConvexPolygonShape2D_jrft1")
+position = Vector2(0.4, 0.3)
+scale = Vector2(3.1, 3.1)
+shape = SubResource("CircleShape2D_uinsm")
 
 [node name="health_node" parent="." instance=ExtResource("6_jrft1")]
-script = ExtResource("7_d14mj")
+max_health = 8
 
 [node name="sword_spawner" parent="." instance=ExtResource("7_ycwaw")]
 
-[node name="attack_node" parent="." instance=ExtResource("9_yr3cy")]
+[node name="stat_manager" parent="." instance=ExtResource("8_6yv18")]
 
-[node name="stat_manager" parent="." instance=ExtResource("10_7ubrj")]
+[node name="physics" type="Node" parent="." node_paths=PackedStringArray("rigidBody")]
+script = ExtResource("9_v3qwr")
+rigidBody = NodePath("..")
+metadata/_custom_type_script = "uid://r37s6i7psgc6"
+
+[node name="attack_node" parent="." instance=ExtResource("10_v3qwr")]

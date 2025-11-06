@@ -14,7 +14,7 @@
 radius = 5.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uinsm"]
-radius = 5.0
+radius = 5.3557134
 
 [node name="Enemy" type="RigidBody2D"]
 physics_material_override = ExtResource("1_v3qwr")

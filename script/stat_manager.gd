@@ -8,10 +8,10 @@ var parent_name = ""
 var sword_spawner = null
 var stats = {
 	"health": 1,
-	"damage": 0,
-	"playerSpeed": 10,
+	"damage": 1,
+	"playerSpeed": 5,
 	"playerControl": 10,
-	"weaponSpeed": 10,
+	"weaponSpeed": 5,
 	"weaponLength": 10,
 	"luck": 10,
 }

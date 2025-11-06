@@ -14,3 +14,5 @@ texture = ExtResource("1_rjghh")
 [node name="tip" type="Sprite2D" parent="."]
 texture = ExtResource("3_rjghh")
 offset = Vector2(0, -32)
+
+[node name="Camera2D" type="Camera2D" parent="."]

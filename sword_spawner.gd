@@ -26,7 +26,7 @@ func s():
 func set_sword():
 	s()
 	await get_tree().create_timer(0.2).timeout
-	sword_node.set_sword(sword_length,attack_speed,150,attack)
+	sword_node.set_sword(sword_length,attack_speed,50,attack)
 
 
 #func _process(delta: float) -> void:

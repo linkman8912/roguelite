@@ -10,7 +10,7 @@ var stats = {}
 var ui_cam_zoom = 1
 var play_cam_zoom = 2.4
 func _ready() -> void:
-
+	Engine.max_fps = 60
 	Console.add_command("reset",reset,0)
 	Console.add_command("who_is_in_paris",paris,0)
 

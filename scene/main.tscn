@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1myslqo75pvt"]
+
+[ext_resource type="PackedScene" uid="uid://cfqfocnys4r54" path="res://scene/floor.tscn" id="1_deq7d"]
+[ext_resource type="PackedScene" uid="uid://i5bdfrtqj1jw" path="res://scene/enemy.tscn" id="2_deq7d"]
+[ext_resource type="PackedScene" uid="uid://cpkyotv88r54e" path="res://scene/character.tscn" id="3_jco2w"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_deq7d"]
+bounce = 1.0
+
+[node name="Main" type="Node2D"]
+
+[node name="StaticBody2D" parent="." instance=ExtResource("1_deq7d")]
+position = Vector2(527, 661)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("1_deq7d")]
+position = Vector2(182, 310)
+rotation = 1.5708
+scale = Vector2(0.92, 0.92)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("1_deq7d")]
+position = Vector2(884, 310)
+rotation = -1.5708
+scale = Vector2(0.915, 0.915)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("1_deq7d")]
+position = Vector2(525, -38)
+rotation = 3.14159
+
+[node name="EnemyPhysics" parent="." instance=ExtResource("2_deq7d")]
+position = Vector2(700, 144)
+linear_velocity = Vector2(200, 200)
+
+[node name="CharacterPhysics" parent="." instance=ExtResource("3_jco2w")]
+position = Vector2(387, 152)
+physics_material_override = SubResource("PhysicsMaterial_deq7d")
+linear_velocity = Vector2(-200, 200)

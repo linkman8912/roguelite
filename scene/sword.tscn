@@ -9,6 +9,7 @@ script = ExtResource("1_rlqbj")
 
 [node name="Sword" type="Node2D" parent="."]
 position = Vector2(0, -102.355)
+scale = Vector2(0.4, 0.4)
 
 [node name="attack_node" parent="Sword" instance=ExtResource("3_so1pe")]
 dammage = 1

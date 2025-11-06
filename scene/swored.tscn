@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://da5f717bseisb" path="res://assets/pixil-frame-0 (19).png" id="3_rjghh"]
 
 [node name="sword_extender" type="Node2D"]
-scale = Vector2(3, 3)
 script = ExtResource("1_yys60")
 
 [node name="hilt" type="Sprite2D" parent="."]

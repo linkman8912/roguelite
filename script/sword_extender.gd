@@ -5,13 +5,13 @@ extends Node2D
 @onready var mid_container= null
 @onready var mid_container_load = load("res://scene/mid_container.tscn")
 @onready var seg = load("res://scene/segment.tscn")
-@export var segment_count: int = 50
+@export var segment_count: int = 10
 @export var segment_width: float = 1.0
 @export var x_offset_per_segment: float = -1.0
 @export var y_offset_per_segment: float = -1.0
 
 func  set_segment(s):
-	segment_count = s
+	segment_count = int(s)
 	set_sword()
 func _ready() -> void:
 	add_mid_container()

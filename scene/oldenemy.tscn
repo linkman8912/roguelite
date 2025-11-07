@@ -17,6 +17,8 @@ radius = 5.0
 radius = 5.3557134
 
 [node name="Enemy" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 10
 physics_material_override = ExtResource("1_v3qwr")
 gravity_scale = 0.0
 lock_rotation = true

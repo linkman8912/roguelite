@@ -17,6 +17,8 @@ radius = 4.70679
 radius = 4.4007277
 
 [node name="Player" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 10
 physics_material_override = ExtResource("1_y6i60")
 gravity_scale = 0.0
 lock_rotation = true

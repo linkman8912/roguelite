@@ -10,6 +10,8 @@ texture = ExtResource("1_cvkn8")
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("2_5ovl6")
 
 [node name="CollisionShape2D12" type="CollisionPolygon2D" parent="Area2D"]
@@ -45,7 +47,8 @@ position = Vector2(407, -149)
 polygon = PackedVector2Array(-364, 252, -364, 262, -346, 262, -366, 270, -382, 274, -432, 274, -448, 270, -468, 262, -450, 262, -450, 252, -438, 264, -426, 264, -422, 268, -392, 268, -388, 264, -376, 264)
 
 [node name="Area2D2" type="StaticBody2D" parent="."]
-visible = false
+collision_layer = 15
+collision_mask = 15
 
 [node name="CollisionShape2D12" type="CollisionPolygon2D" parent="Area2D2"]
 position = Vector2(408, -149)

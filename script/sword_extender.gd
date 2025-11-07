@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var hilt = $hilt
 @onready var tip = $tip
-@onready var mid_container= $mid_container
+@onready var mid_container= null
 @onready var mid_container_load = load("res://scene/mid_container.tscn")
 @onready var seg = load("res://scene/segment.tscn")
 @export var segment_count: int = 50
@@ -18,7 +18,7 @@ func _ready() -> void:
 	set_sword()
 
 func add_mid_container():
-	var  mid_container = mid_container_load.instantiate()
+	mid_container = mid_container_load.instantiate()
 	add_child(mid_container)
 	
 	

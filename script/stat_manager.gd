@@ -8,10 +8,10 @@ var parent_name = ""
 var sword_spawner = null
 var stats = {
 	"health": 1,
-	"damage": 0,
-	"playerSpeed": 10,
+	"damage": 1,
+	"playerSpeed": 5,
 	"playerControl": 10,
-	"weaponSpeed": 10,
+	"weaponSpeed": 5,
 	"weaponLength": 10,
 	"luck": 10,
 }
@@ -77,11 +77,12 @@ func set_stats(new_stats: Dictionary):
 	stats = new_stats
 func set_control(c):
 	parent_node.set_control(c)
+
 func apply_stats():
 	set_damage(stats["damage"])
 	set_weapon_speed(stats["weaponSpeed"])
 	set_max_health(stats["health"])
 	set_speed(stats["playerSpeed"])
 	set_control(stats["playerControl"])
-	set_weapon_length(1000)
+	set_weapon_length(stats["weaponLength"])
 	

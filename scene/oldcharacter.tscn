@@ -14,7 +14,7 @@
 radius = 4.70679
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p0hp8"]
-radius = 4.1841
+radius = 4.4007277
 
 [node name="Player" type="RigidBody2D"]
 physics_material_override = ExtResource("1_y6i60")

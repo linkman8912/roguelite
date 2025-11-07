@@ -18,6 +18,7 @@ func _on_area_entered(area: Area2D) -> void:
 	var enemy = main.get_node_or_null("Enemy")
 
 	if attack_node and (not collider == player or collider == enemy):
-		print(attack_node.get_parent())
+		print(get_parent()," :attacked")
 		var attack = attack_node.attack_points()
 		damage(attack) 
+		

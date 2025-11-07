@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://1wpfq2yc0ddm"]
+[gd_scene load_steps=4 format=3 uid="uid://b20rlc4aremu2"]
 
-[ext_resource type="Script" uid="uid://bkb001vixyifo" path="res://button_test.gd" id="1_q5obu"]
-[ext_resource type="Texture2D" uid="uid://breklhv2ql56w" path="res://assets/BRYSON.png" id="1_rjlel"]
-[ext_resource type="Texture2D" uid="uid://c3k2cvxb1ibr4" path="res://assets/cared.png" id="2_q5obu"]
+[ext_resource type="Script" path="res://button_test.gd" id="1_q5obu"]
+[ext_resource type="Script" uid="uid://cewhjg5mwrkyp" path="res://card.gd" id="1_rjlel"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e484p"]
 
@@ -13,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_rjlel")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
@@ -44,7 +44,6 @@ offset_right = 78.0
 offset_bottom = 63.951996
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_rjlel")
 
 [node name="CardOutLine" type="NinePatchRect" parent="."]
 layout_mode = 0
@@ -52,7 +51,6 @@ offset_left = 480.0
 offset_top = 196.0
 offset_right = 672.0
 offset_bottom = 452.0
-texture = ExtResource("2_q5obu")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -62,7 +60,5 @@ offset_right = 644.0
 offset_bottom = 453.0
 size_flags_horizontal = 0
 size_flags_vertical = 8
-text = "Bryson
-
-Hes not evil
+text = "
 "

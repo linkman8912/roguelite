@@ -16,7 +16,7 @@ func _ready() -> void:
 
 
 func paris():
-	Console.print_line("Niggas")
+	Console.print_line("not a slur")
 func reset():
 	$Control.visible = false
 	$game.visible = true

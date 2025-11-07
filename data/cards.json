@@ -18,7 +18,7 @@
   ],
   [
     {
-      "id": 0,
+      "id": 3,
       "name": "increase of speed, uncommon",
       "text": "Increases Speed by 2",
       "rarity": "uncommon",
@@ -28,7 +28,7 @@
   ],
   [
     {
-      "id": 0,
+      "id": 4,
       "name": "increase of speed, rare",
       "text": "Increases Speed by 3",
       "rarity": "rare",
@@ -37,7 +37,7 @@
   ],
   [
     {
-      "id": 0,
+      "id": 5,
       "name": "increase of speed, rare",
       "text": "Increases Speed by 4",
       "rarity": "legendary",

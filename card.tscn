@@ -11,6 +11,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -165.0
+offset_right = -7.0
+offset_bottom = -165.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -32,6 +36,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_e484p")
 script = ExtResource("1_q5obu")
 
 [node name="CardArt" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(155, 125)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5

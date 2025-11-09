@@ -33,6 +33,8 @@ func _ready() -> void:
 	Console.add_command(parent_name+"set_speed",set_speed,1)
 	Console.add_command(parent_name+"set_max_health",set_max_health,1)
 	Console.add_command(parent_name+"set_control",set_control,1)
+	Console.add_command(parent_name+"set_weapon_length",set_weapon_length,1)
+
 	apply_stats()
 
 
@@ -85,4 +87,3 @@ func apply_stats():
 	set_speed(stats["playerSpeed"])
 	set_control(stats["playerControl"])
 	set_weapon_length(stats["weaponLength"])
-	

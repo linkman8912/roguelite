@@ -6,6 +6,7 @@ var attack_node = null
 var attack = 0
 var attack_speed = 10
 var sword_length = 50
+var sword_offset = 50
 func _ready() -> void:
 	spawn_sword(200)
 	s()
@@ -24,7 +25,7 @@ func s():
 func set_sword():
 	s()
 	await get_tree().create_timer(0.2).timeout
-	sword_node.set_sword(sword_length,attack_speed,50,attack)
+	sword_node.set_sword(sword_length,attack_speed,sword_offset,attack)
 
 
 #func _process(delta: float) -> void:

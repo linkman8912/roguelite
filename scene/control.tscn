@@ -1,10 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://ckawqotg4arx6"]
+[gd_scene load_steps=8 format=3 uid="uid://dxbt5oc2fhxg4"]
 
 [ext_resource type="Texture2D" uid="uid://bx446swxm3mr2" path="res://Sprite sheet for Basic Pack.png" id="1_62e2m"]
 [ext_resource type="Script" uid="uid://cpb5bp6x0h42w" path="res://script/data_holder.gd" id="2_j0f1v"]
 [ext_resource type="FontFile" uid="uid://dnnp4odw6akjh" path="res://pixelFont-7-8x14-sproutLands.ttf" id="2_qtu10"]
 [ext_resource type="Script" uid="uid://dr0mbywu1tlhj" path="res://script/button_stat.gd" id="3_qtu10"]
-[ext_resource type="Script" uid="uid://c0qblcdwvgmxk" path="res://script/playbutton.gd" id="4_ee4bf"]
+[ext_resource type="Script" path="res://script/playbutton.gd" id="4_ee4bf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ee4bf"]
 texture = ExtResource("1_62e2m")

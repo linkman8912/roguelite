@@ -1,11 +1,11 @@
 extends HBoxContainer
 
 var stats  = {
-	"health": 1,
-	"damage": 1,
-	"playerSpeed": 5,
+	"health": 10,
+	"damage": 0,
+	"playerSpeed": 10,
 	"playerControl": 10,
-	"weaponSpeed": 5,
+	"weaponSpeed": 10,
 	"weaponLength": 10,
 	"luck": 10,
 }

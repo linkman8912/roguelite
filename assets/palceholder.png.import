@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4xxit83kmo0t"
-path="res://.godot/imported/bad_gay.png-e724d65340afebcd546276b91d184ff2.ctex"
+uid="uid://cw37qt3lkxitk"
+path="res://.godot/imported/palceholder.png-c4a867235b483b0915c287f801a6e295.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bad_gay.png"
-dest_files=["res://.godot/imported/bad_gay.png-e724d65340afebcd546276b91d184ff2.ctex"]
+source_file="res://assets/palceholder.png"
+dest_files=["res://.godot/imported/palceholder.png-c4a867235b483b0915c287f801a6e295.ctex"]
 
 [params]
 

@@ -1,48 +1,48 @@
 [
   [
-    {
-      "id": 0,
-      "name": "increase of speed, common",
-      "text": "Increases Speed by 1",
-      "rarity": "common",
-      "stats": "{\"speed\": 1}"
-    },
-    {
-      "id": 1,
-      "name": "cost of speed, common",
-      "text": "Increases Speed by 2, decreases Player Control by 1",
-      "rarity": "common",
-      "stats": "{\"speed\": 2, \"playerControl\": -1}"
-    }
+	{
+	  "id": 0,
+	  "name": "increase of speed, common",
+	  "text": "Increases Speed by 1",
+	  "rarity": "common",
+	  "stats": "{\"speed\": 1}"
+	},
+	{
+	  "id": 1,
+	  "name": "cost of speed, common",
+	  "text": "Increases Speed by 2, decreases Player Control by 1",
+	  "rarity": "common",
+	  "stats": "{\"speed\": 2, \"playerControl\": -1}"
+	}
 
   ],
   [
-    {
-      "id": 3,
-      "name": "increase of speed, uncommon",
-      "text": "Increases Speed by 2",
-      "rarity": "uncommon",
-      "stats": "{\"speed\": 2}"
-    }
+	{
+	  "id": 3,
+	  "name": "increase of speed, uncommon",
+	  "text": "Increases Speed by 2",
+	  "rarity": "uncommon",
+	  "stats": "{\"speed\": 2}"
+	}
 
   ],
   [
-    {
-      "id": 4,
-      "name": "increase of speed, rare",
-      "text": "Increases Speed by 3",
-      "rarity": "rare",
-      "stats": "{\"speed\": 3}"
-    }
+	{
+	  "id": 4,
+	  "name": "increase of speed, rare",
+	  "text": "Increases Speed by 3",
+	  "rarity": "rare",
+	  "stats": "{\"speed\": 3}"
+	}
   ],
   [
-    {
-      "id": 5,
-      "name": "increase of speed, rare",
-      "text": "Increases Speed by 4",
-      "rarity": "legendary",
-      "stats": "{\"speed\": 5}"
-    }
+	{
+	  "id": 5,
+	  "name": "increase of speed, rare",
+	  "text": "Increases Speed by 4",
+	  "rarity": "legendary",
+	  "stats": "{\"speed\": 5}"
+	}
 
   ]
 ]

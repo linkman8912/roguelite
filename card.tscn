@@ -1,8 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://1wpfq2yc0ddm"]
+[gd_scene load_steps=6 format=3 uid="uid://1wpfq2yc0ddm"]
 
 [ext_resource type="Script" uid="uid://bkb001vixyifo" path="res://button_test.gd" id="1_q5obu"]
 [ext_resource type="Texture2D" uid="uid://breklhv2ql56w" path="res://assets/BRYSON.png" id="1_rjlel"]
 [ext_resource type="Texture2D" uid="uid://c3k2cvxb1ibr4" path="res://assets/cared.png" id="2_q5obu"]
+
+[sub_resource type="GDScript" id="GDScript_q5obu"]
+script/source = "extends Control
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	var data = JSON.parse_string(load_from_file())
+	print(data[1] )
+func load_from_file():
+	var file = FileAccess.open(\"res://data/formattedCards.json\", FileAccess.READ)
+	var content = file.get_as_text()
+	return content
+"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e484p"]
 
@@ -17,6 +29,7 @@ offset_right = -7.0
 offset_bottom = -165.0
 grow_horizontal = 2
 grow_vertical = 2
+script = SubResource("GDScript_q5obu")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
@@ -40,13 +53,13 @@ custom_minimum_size = Vector2(155, 125)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.42600003
+anchor_top = 0.426
 anchor_right = 0.5
-anchor_bottom = 0.42600003
+anchor_bottom = 0.426
 offset_left = -78.0
-offset_top = -64.048004
+offset_top = -64.048
 offset_right = 78.0
-offset_bottom = 63.951996
+offset_bottom = 63.952
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_rjlel")

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cqr870ror5dbk" path="res://script/oldenemy.gd" id="1_uinsm"]
 [ext_resource type="PhysicsMaterial" uid="uid://p5garr5kkysn" path="res://bounce.tres" id="1_v3qwr"]
-[ext_resource type="Texture2D" uid="uid://4xxit83kmo0t" path="res://assets/bad_gay.png" id="3_uinsm"]
+[ext_resource type="Texture2D" uid="uid://4xxit83kmo0t" path="res://assets/red.png" id="3_uinsm"]
 [ext_resource type="Shader" uid="uid://dg6r78ahf2duq" path="res://scene/hit.gdshader" id="3_v3qwr"]
 [ext_resource type="PackedScene" uid="uid://baxs661mw2wpk" path="res://scene/hit_box.tscn" id="5_bquj1"]
 [ext_resource type="PackedScene" uid="uid://cj2hs2mmf1jin" path="res://scene/health_node.tscn" id="6_jrft1"]
@@ -19,7 +19,7 @@ shader_parameter/show_white = false
 radius = 5.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uinsm"]
-radius = 5.3557134
+radius = 5.35571
 
 [node name="Enemy" type="RigidBody2D"]
 collision_layer = 2

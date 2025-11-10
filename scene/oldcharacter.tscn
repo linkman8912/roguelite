@@ -23,7 +23,7 @@ shader_parameter/show_white = false
 radius = 4.70679
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p0hp8"]
-radius = 4.4007277
+radius = 4.40073
 
 [node name="Player" type="RigidBody2D"]
 material = SubResource("ShaderMaterial_itbht")

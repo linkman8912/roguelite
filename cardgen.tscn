@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bajyvoidv2ebr"]
 
-[ext_resource type="Script" uid="uid://dx1ek73txfp40" path="res://script/cardgen.gd" id="1_3hmrn"]
+[ext_resource type="Script" uid="uid://qbokeu5vcvht" path="res://script/cardgen.gd" id="1_3hmrn"]
 
 [node name="Control" type="Control"]
 layout_mode = 3

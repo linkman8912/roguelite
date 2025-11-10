@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://breklhv2ql56w"
-path="res://.godot/imported/BRYSON.png-e37dd55e6265c4975a2b2047cedcefcb.ctex"
+uid="uid://4xxit83kmo0t"
+path="res://.godot/imported/red.png-d5f39e261e8585dfbc0a32aa9fd1a167.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/BRYSON.png"
-dest_files=["res://.godot/imported/BRYSON.png-e37dd55e6265c4975a2b2047cedcefcb.ctex"]
+source_file="res://assets/red.png"
+dest_files=["res://.godot/imported/red.png-d5f39e261e8585dfbc0a32aa9fd1a167.ctex"]
 
 [params]
 

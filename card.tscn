@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://1wpfq2yc0ddm"]
+[gd_scene load_steps=5 format=3 uid="uid://1wpfq2yc0ddm"]
 
 [ext_resource type="Script" uid="uid://bkb001vixyifo" path="res://button_test.gd" id="1_q5obu"]
-[ext_resource type="Texture2D" uid="uid://breklhv2ql56w" path="res://assets/BRYSON.png" id="1_rjlel"]
 [ext_resource type="Texture2D" uid="uid://c3k2cvxb1ibr4" path="res://assets/cared.png" id="2_q5obu"]
 
 [sub_resource type="GDScript" id="GDScript_q5obu"]
@@ -62,7 +61,6 @@ offset_right = 78.0
 offset_bottom = 63.952
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_rjlel")
 
 [node name="CardOutLine" type="NinePatchRect" parent="."]
 layout_mode = 0

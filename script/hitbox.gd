@@ -1,13 +1,12 @@
 extends Area2D
 
-
-
+@onready var sound = $AudioStreamPlayer
+var hit_sound = load("res://aduio/jixaw-metal-pipe-falling-sound.mp3")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func damage(attack):
 	var health_node = get_parent().get_node_or_null("health_node")
 	if health_node:
 		health_node.damage(attack)
-
 
 
 func _on_area_entered(area: Area2D) -> void:
@@ -20,15 +19,19 @@ func _on_area_entered(area: Area2D) -> void:
 	var parent = self.get_parent()
 	var sprite = parent.get_node_or_null("E")
 	var sword = get_parent().get_parent()
-	#print("sword2: ",sword.name)
+	#print("sword2: ",sword.name)=
 	if sword.name == "sword":
 		sword.switch()
 		print("sams ")
+		sound.stream = hit_sound
+		sound.play()
 
 	if attack_node and (not collider == player or collider == enemy):
 		print(get_parent()," :attacked")
 		var attack = attack_node.attack_points()
 		damage(attack)
+		
+		
 		# Example assuming your sprite has this shader material
 	
 	if sprite:

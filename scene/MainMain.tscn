@@ -25,3 +25,5 @@ position = Vector2(90, 0)
 
 [node name="E_start" type="Node2D" parent="game"]
 position = Vector2(-95, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

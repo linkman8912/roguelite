@@ -1,5 +1,7 @@
 extends Control
 
+var rarities = ["common", "uncommon", "rare", "legendary"]
+
 var borders = {
 	"common": "res://assets/card_common.png",
 	"uncommon": "res://assets/card_uncommon.png",
@@ -13,14 +15,16 @@ func _ready() -> void:
 	var rarity = rarity()
 	var card = random(len(data[rarity]) - 1)
 	print(card)
-	text(data[0][0]["text"])
+	text(data[rarity][card]["text"])
 	#cardart(data[0][0])
-	#cardart(data[rarity][card]["art"])
-	cardBorder(borders[data[rarity][card]["rarity"]])	
-	
+	print("rarity: " + str(rarity))
+	print("card: " + str(card))
+	cardart(data[rarity][card]["art"])
+	cardBorder(rarity)
+
 
 func load_from_file():
-	var file = FileAccess.open("res://data/formattedCards.json", FileAccess.READ)
+	var file = FileAccess.open("res://data/cards.json", FileAccess.READ)
 	var content = file.get_as_text()
 	return content
 
@@ -41,8 +45,8 @@ func rarity():
 	else:
 		return 3
 
-func cardBorder(border):
-	pass
+func cardBorder(rarity):
+	$CardOutLine.texture = load(borders[rarities[rarity]])
 
 func text(text): 
 	print("text run")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvbcv1dggrt4l"
-path="res://.godot/imported/caffen.png-3113f0131675ac53bfa1aa8ea30df6e9.ctex"
+uid="uid://ddwsa5gt1i58h"
+path="res://.godot/imported/luck.png-3eecf2afec7b6c9f478d2d3bebd5da23.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/caffen.png"
-dest_files=["res://.godot/imported/caffen.png-3113f0131675ac53bfa1aa8ea30df6e9.ctex"]
+source_file="res://assets/luck.png"
+dest_files=["res://.godot/imported/luck.png-3eecf2afec7b6c9f478d2d3bebd5da23.ctex"]
 
 [params]
 

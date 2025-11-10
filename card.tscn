@@ -1,19 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://1wpfq2yc0ddm"]
+[gd_scene load_steps=5 format=3 uid="uid://b20rlc4aremu2"]
 
+[ext_resource type="Script" uid="uid://qbokeu5vcvht" path="res://script/cardgen.gd" id="1_e484p"]
 [ext_resource type="Script" uid="uid://bkb001vixyifo" path="res://button_test.gd" id="1_q5obu"]
-[ext_resource type="Texture2D" uid="uid://c3k2cvxb1ibr4" path="res://assets/cared.png" id="2_q5obu"]
-
-[sub_resource type="GDScript" id="GDScript_q5obu"]
-script/source = "extends Control
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	var data = JSON.parse_string(load_from_file())
-	print(data[1] )
-func load_from_file():
-	var file = FileAccess.open(\"res://data/formattedCards.json\", FileAccess.READ)
-	var content = file.get_as_text()
-	return content
-"
+[ext_resource type="Texture2D" uid="uid://c3k2cvxb1ibr4" path="res://assets/card_common.png" id="2_q5obu"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e484p"]
 
@@ -28,7 +17,7 @@ offset_right = -7.0
 offset_bottom = -165.0
 grow_horizontal = 2
 grow_vertical = 2
-script = SubResource("GDScript_q5obu")
+script = ExtResource("1_e484p")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
@@ -78,7 +67,4 @@ offset_right = 644.0
 offset_bottom = 453.0
 size_flags_horizontal = 0
 size_flags_vertical = 8
-text = "Bryson
-
-Hes not evil
-"
+autowrap_mode = 2

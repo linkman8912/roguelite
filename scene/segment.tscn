@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://baxs661mw2wpk" path="res://scene/hit_box.tscn" id="2_igp1y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2y2ts"]
-size = Vector2(48.78049, 10.7143)
+size = Vector2(48.7805, 10.7143)
 
 [node name="segment" type="Sprite2D"]
 texture = ExtResource("1_rlyg3")

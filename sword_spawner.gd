@@ -6,7 +6,7 @@ var attack_node = null
 var attack = 0
 var attack_speed = 10
 var sword_length = 50
-var sword_offset = 60
+var sword_offset = 50
 func _ready() -> void:
 	spawn_sword(200)
 	s()

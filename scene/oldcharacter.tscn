@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://b601km7ojh1bo"]
 
-[ext_resource type="Script" uid="uid://dtenvj5mdyabd" path="res://script/character.gd" id="1_p0hp8"]
-[ext_resource type="Shader" uid="uid://dg6r78ahf2duq" path="res://scene/hit.gdshader" id="1_ua3vd"]
+[ext_resource type="Script" path="res://script/character.gd" id="1_p0hp8"]
+[ext_resource type="Shader" path="res://scene/hit.gdshader" id="1_ua3vd"]
 [ext_resource type="PhysicsMaterial" uid="uid://p5garr5kkysn" path="res://bounce.tres" id="1_y6i60"]
 [ext_resource type="Texture2D" uid="uid://0isidaqkrqpn" path="res://assets/pixil-frame-0 (10).png" id="4_p0hp8"]
 [ext_resource type="PackedScene" uid="uid://baxs661mw2wpk" path="res://scene/hit_box.tscn" id="5_px5sl"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ctab8b8i86avd" path="res://scene/sword_spawner.tscn" id="7_pe3nu"]
 [ext_resource type="PackedScene" uid="uid://cj2hs2mmf1jin" path="res://scene/health_node.tscn" id="8_5nqea"]
 [ext_resource type="PackedScene" uid="uid://cxafltdm0ogom" path="res://scene/stat_manager.tscn" id="9_3beg3"]
-[ext_resource type="Script" uid="uid://r37s6i7psgc6" path="res://script/physics.gd" id="10_p0hp8"]
+[ext_resource type="Script" path="res://script/physics.gd" id="10_p0hp8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_itbht"]
 shader = ExtResource("1_ua3vd")

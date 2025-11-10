@@ -14,7 +14,7 @@ func set_sword(length,speed,offset,dammage):
 	rot_speed = speed
 	$Sword.position.y = offset * -1
 	sword_sprite_node.set_segment(length)
-	
+
 func switch():
 	dir *= -1
 

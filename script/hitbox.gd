@@ -9,6 +9,7 @@ func damage(attack):
 		health_node.damage(attack)
 
 
+
 func _on_area_entered(area: Area2D) -> void:
 	var collider = area.get_parent() # often the main node that owns the area
 	#print("Collided with: ", collider.name)
@@ -18,10 +19,11 @@ func _on_area_entered(area: Area2D) -> void:
 	var enemy = main.get_node_or_null("Enemy")
 	var parent = self.get_parent()
 	var sprite = parent.get_node_or_null("E")
-	var sword = parent.get_parent()
-	
-	if sword.name == "Sword":
+	var sword = get_parent().get_parent()
+	#print("sword2: ",sword.name)
+	if sword.name == "sword":
 		sword.switch()
+		print("sams ")
 
 	if attack_node and (not collider == player or collider == enemy):
 		print(get_parent()," :attacked")

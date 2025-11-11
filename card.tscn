@@ -1,70 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://b20rlc4aremu2"]
+[gd_scene load_steps=3 format=3 uid="uid://1wpfq2yc0ddm"]
 
 [ext_resource type="Script" uid="uid://qbokeu5vcvht" path="res://script/cardgen.gd" id="1_e484p"]
-[ext_resource type="Script" uid="uid://bkb001vixyifo" path="res://button_test.gd" id="1_q5obu"]
-[ext_resource type="Texture2D" uid="uid://c3k2cvxb1ibr4" path="res://assets/card_common.png" id="2_q5obu"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e484p"]
+[ext_resource type="PackedScene" uid="uid://cd4olxf7mvuyj" path="res://card2.tscn" id="2_rjlel"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.179
+anchor_bottom = 0.40500003
 offset_left = -7.0
 offset_top = -165.0
-offset_right = -7.0
-offset_bottom = -165.0
+offset_right = 938.792
+offset_bottom = 220.55997
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
 script = ExtResource("1_e484p")
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -89.0
-offset_top = -124.0
-offset_right = 87.0
-offset_bottom = 123.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_styles/pressed = SubResource("StyleBoxTexture_e484p")
-script = ExtResource("1_q5obu")
-
-[node name="CardArt" type="NinePatchRect" parent="."]
-custom_minimum_size = Vector2(155, 125)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.426
-anchor_right = 0.5
-anchor_bottom = 0.426
-offset_left = -78.0
-offset_top = -64.048
-offset_right = 78.0
-offset_bottom = 63.952
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="CardOutLine" type="NinePatchRect" parent="."]
+[node name="Button" parent="." instance=ExtResource("2_rjlel")]
 layout_mode = 0
-offset_left = 480.0
-offset_top = 196.0
-offset_right = 672.0
-offset_bottom = 452.0
-texture = ExtResource("2_q5obu")
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 508.0
-offset_top = 352.0
-offset_right = 644.0
-offset_bottom = 453.0
-size_flags_horizontal = 0
-size_flags_vertical = 8
-autowrap_mode = 2
+anchors_preset = 0

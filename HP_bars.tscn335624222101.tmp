@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctivpghcqi37j"]
+
+[ext_resource type="Texture2D" uid="uid://ddxmxgyyfy8mn" path="res://icon.svg" id="1_ndx1m"]
+[ext_resource type="Texture2D" uid="uid://breklhv2ql56w" path="res://assets/BRYSON.png" id="1_qivs2"]
+[ext_resource type="Script" uid="uid://dbiitfrk6s04d" path="res://progress_bar_test.gd" id="2_8smbc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qivs2"]
+texture = ExtResource("1_qivs2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8smbc"]
+texture = ExtResource("1_qivs2")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(950, 0)
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_right = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(60, 648)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/HBoxContainer"]
+texture_repeat = 2
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxTexture_qivs2")
+theme_override_styles/fill = SubResource("StyleBoxTexture_8smbc")
+script = ExtResource("2_8smbc")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("1_ndx1m")

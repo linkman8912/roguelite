@@ -23,8 +23,12 @@ func _process(delta: float) -> void:
 			var p_health = p_h_node.get_health()
 			var health = stats["health"]
 			p_set_health(0,health,p_health)
+		else:
+			p_set_health(0,0,0)
 		if e_h_node:
 			var e_health = e_h_node.get_health()
 			var health = stats["health"]
 			e_set_health(0,health,e_health)
 			print(e_health,":health")
+		else:
+			e_set_health(0,10,0)

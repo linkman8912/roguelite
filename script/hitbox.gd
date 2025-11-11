@@ -6,6 +6,7 @@ extends Area2D
 @onready var parent = self.get_parent()
 @onready var sword = get_parent().get_parent()
 @onready var sound = $AudioStreamPlayer
+var pitch = 1
 var hit_sound = load("res://aduio/jixaw-metal-pipe-falling-sound.mp3")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func damage(attack,speed):
@@ -37,6 +38,9 @@ func _on_area_entered(area: Area2D) -> void:
 		sword.switch()
 		print("sams ")
 		sound.stream = hit_sound
+		var rng = RandomNumberGenerator.new()
+		rng.randomize()
+		sound.pitch_scale = rng.randf_range(0.1,2)
 		sound.play()
 	if attack_node and (not( collider.name == "Player"  or  collider.name == "Enemy")):
 		print(collider," :attacked")

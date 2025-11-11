@@ -33,6 +33,9 @@ func damage(attack):
 func set_health(s):
 	health = float(s)
 
+func get_health():
+	return health
+
 func set_max_health(s):
 	max_health = float(s)
 	print(max_health,"max_health")

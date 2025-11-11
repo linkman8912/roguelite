@@ -10,9 +10,11 @@ var stats = {}
 var ui_cam_zoom = 1
 var play_cam_zoom = 2.4
 func _ready() -> void:
+	
 	Engine.max_fps = 60
 	Console.add_command("reset",reset,0)
 	Console.add_command("who_is_in_paris",paris,0)
+
 
 
 func paris():
@@ -51,6 +53,9 @@ func spawn_player():
 func set_stats(new_stats: Dictionary):
 	stats = new_stats
 	#print("set+stats",new_stats)
+
+func get_stats():
+	return stats
 
 func apply_stats():
 	if stat_manager:

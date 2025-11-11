@@ -42,8 +42,8 @@ func _on_area_entered(area: Area2D) -> void:
 		print("sams ")
 		sound.stream = hit_sound
 		sound.play()
-	if attack_node and not( collider == player or collider == enemy):
-		print(get_parent()," :attacked")
+	if attack_node and (not( collider.name == "Player"  or  collider.name == "Enemy")):
+		print(collider," :attacked")
 		var attack = attack_node.attack_points()
 		damage(attack)
 		hit_stop = attack_node.attack_points()

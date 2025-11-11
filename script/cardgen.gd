@@ -59,7 +59,12 @@ func text(text):
 	print("text run")
 	label.text = text
 func isDupe():
-	var card1dupe = (card == $"/root/Control/HBoxContainer/Container1/Control".card and not name == "Control")
-	var card2dupe = (card == $"/root/Control/HBoxContainer/Container2/Control2".card and not name == "Control2") 
-	var card3dupe = (card == $"/root/Control/HBoxContainer/Container3/Control3".card and not name == "Control3")
-	return card1dupe or card2dupe or card3dupe 
+	var card1dupe = (card == $"../../../HBoxContainer/Container1/Control".card and not name == "Control")
+	var card2dupe = (card == $"../../../HBoxContainer/Container2/Control2".card and not name == "Control2") 
+	var card3dupe = (card == $"../../../HBoxContainer/Container3/Control3".card and not name == "Control3")
+	return card1dupe or card2dupe or card3dupe
+
+
+func _on_button_pressed() -> void:
+	pass # Replace with function body.
+	$"../../..".card_chosen($".")

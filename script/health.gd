@@ -29,6 +29,10 @@ func damage(attack):
 		sound_node.play()
 		get_tree().paused = false
 		#await get_tree().create_timer(10).timeout
+		if get_parent().name == "Player":
+			$"/root/Node2D".game_over()
+		else:
+			$"/root/Node2D".shop()
 		get_parent().queue_free()
 
 func set_health(s):

@@ -2,7 +2,7 @@ extends HBoxContainer
 
 var stats  = {
 	"health": 10,
-	"damage": 0,
+	"damage": 2,
 	"playerSpeed": 10,
 	"playerControl": 10,
 	"weaponSpeed": 10,
@@ -12,12 +12,13 @@ var stats  = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	get_node("/root/Node2D").set_stats(stats)
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	get_node("/root/Node2D").set_stats(stats)
 func increase(stat: String, number: int):
 	stats[stat] += number
 func start():

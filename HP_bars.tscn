@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://ctivpghcqi37j"]
 
-[ext_resource type="Texture2D" uid="uid://cgoayfmud6hh7" path="res://assets/Progressbarred.png" id="1_8smbc"]
+[ext_resource type="Script" path="res://hp_bars.gd" id="1_hhm35"]
 [ext_resource type="Texture2D" uid="uid://8acmvwsm6j2m" path="res://assets/PlayerHealthBackground.png" id="1_roobr"]
-[ext_resource type="Texture2D" uid="uid://8jq1y3lelelx" path="res://assets/Progressbar.png" id="2_aktln"]
 [ext_resource type="Texture2D" uid="uid://d12brsrbumruk" path="res://assets/HealthBarOutline.png" id="2_hhm35"]
+[ext_resource type="Texture2D" uid="uid://vxlda3fajrwu" path="res://assets/ProgressBarGrey-export.png" id="2_roobr"]
 [ext_resource type="Texture2D" uid="uid://g7h3u10afnwp" path="res://assets/Sprite-0002.png" id="3_8smbc"]
 
 [node name="Control" type="Control"]
@@ -13,9 +13,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_hhm35")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-custom_minimum_size = Vector2(950, 0)
+custom_minimum_size = Vector2(947.63, 0)
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -36,12 +37,12 @@ size_flags_vertical = 8
 texture_repeat = 2
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
-value = 100.0
-fill_mode = 2
+value = 11.0
+fill_mode = 3
 nine_patch_stretch = true
-texture_under = ExtResource("1_roobr")
+texture_under = ExtResource("2_roobr")
 texture_over = ExtResource("2_hhm35")
-texture_progress = ExtResource("1_8smbc")
+texture_progress = ExtResource("1_roobr")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer"]
 custom_minimum_size = Vector2(60, 0)
@@ -51,10 +52,11 @@ size_flags_horizontal = 8
 [node name="TextureProgressBar" type="TextureProgressBar" parent="MarginContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
-step = 10.0
-value = 40.0
-fill_mode = 2
+max_value = 10.0
+value = 10.0
+exp_edit = true
+fill_mode = 3
 nine_patch_stretch = true
-texture_under = ExtResource("3_8smbc")
+texture_under = ExtResource("2_roobr")
 texture_over = ExtResource("2_hhm35")
-texture_progress = ExtResource("2_aktln")
+texture_progress = ExtResource("3_8smbc")

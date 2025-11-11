@@ -48,4 +48,5 @@ func set_speed(s):
 	speed = float(s)
 	rigidBody.linear_velocity = Vector2(speed*speedModifier, speed*speedModifier)
 
-	
+func get_speed():
+	return speed

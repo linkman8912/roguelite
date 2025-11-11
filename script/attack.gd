@@ -1,6 +1,6 @@
 extends Node
 
-@export var dammage = 0
+@export var dammage = 0.0
 var d_speed = 10
 @export var length = 0
 

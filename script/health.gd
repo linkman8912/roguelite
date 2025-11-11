@@ -12,6 +12,8 @@ var health = 0.0
 func _ready() -> void:
 	health=max_health 
 
+func slow():
+	get_parent()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

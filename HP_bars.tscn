@@ -39,9 +39,9 @@ layout_mode = 2
 value = 100.0
 fill_mode = 2
 nine_patch_stretch = true
-texture_under = ExtResource("1_roobr")
+texture_under = ExtResource("1_8smbc")
 texture_over = ExtResource("2_hhm35")
-texture_progress = ExtResource("1_8smbc")
+texture_progress = ExtResource("1_roobr")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer"]
 custom_minimum_size = Vector2(60, 0)

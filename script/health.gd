@@ -27,6 +27,7 @@ func damage(attack):
 	if health <=0:
 		sound_node.stream = sound
 		sound_node.play()
+		get_tree().paused = false
 		#await get_tree().create_timer(10).timeout
 		get_parent().queue_free()
 

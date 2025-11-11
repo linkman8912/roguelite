@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cd4olxf7mvuyj"]
 
-[ext_resource type="Script" path="res://button_test.gd" id="1_wmmup"]
+[ext_resource type="Script" uid="uid://bkb001vixyifo" path="res://button_test.gd" id="1_wmmup"]
 [ext_resource type="Texture2D" uid="uid://c3k2cvxb1ibr4" path="res://assets/card_common.png" id="2_tkc71"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e484p"]

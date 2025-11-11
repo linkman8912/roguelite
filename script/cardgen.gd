@@ -1,4 +1,4 @@
-extends Control
+extends Node2D
 
 var rarities = ["common", "uncommon", "rare", "legendary"]
 

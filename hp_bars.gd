@@ -16,8 +16,8 @@ func e_set_health(min,max,value):
 func _process(delta: float) -> void:
 	var parent = get_parent().get_parent()
 	if parent:
-		var p_h_node = parent.get_node_or_null("Player/health_node")
-		var e_h_node = parent.get_node_or_null("Enemy/health_node")
+		var e_h_node = parent.get_node_or_null("Player/health_node")
+		var p_h_node = parent.get_node_or_null("Enemy/health_node")
 		stats = parent.get_stats()
 		if p_h_node:
 			var p_health = p_h_node.get_health()

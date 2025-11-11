@@ -10,15 +10,22 @@ var borders = {
 }
 @onready var label: Label = $Label
 # Called when the node enters the scene tree for the first time.
+
+var card
+var rarity
+
 func _ready() -> void:
 	var data = JSON.parse_string(load_from_file())
-	var rarity = rarity()
-	var card = random(len(data[rarity]) - 1)
-	print(card)
+	rarity = genRarity()
+	card = random(len(data[rarity]) - 1)
+	
+	while(isDupe()):
+		card = random(len(data[rarity]) - 1)
+	#print(card)
 	text(data[rarity][card]["text"])
 	#cardart(data[0][0])
-	print("rarity: " + str(rarity))
-	print("card: " + str(card))
+	#print("rarity: " + str(rarity))
+	#print("card: " + str(card))
 	cardart(data[rarity][card]["art"])
 	cardBorder(rarity)
 
@@ -34,7 +41,7 @@ func cardart(art):
 func random(upperBound):
 	return randi() % upperBound
 
-func rarity():
+func genRarity():
 	var number = randi() % 100
 	if number < 50:
 		return 0
@@ -51,3 +58,8 @@ func cardBorder(rarity):
 func text(text): 
 	print("text run")
 	label.text = text
+func isDupe():
+	var card1dupe = (card == $"/root/Control/HBoxContainer/Container1/Control".card and not name == "Control")
+	var card2dupe = (card == $"/root/Control/HBoxContainer/Container2/Control2".card and not name == "Control2") 
+	var card3dupe = (card == $"/root/Control/HBoxContainer/Container3/Control3".card and not name == "Control3")
+	return card1dupe or card2dupe or card3dupe 

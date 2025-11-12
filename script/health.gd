@@ -1,8 +1,8 @@
 extends Node
 class_name Health
 
-var die_sound = load("res://aduio/lose_aduio.mp3")
-var win_sound = load("res://aduio/win_aduio.mp3")
+var die_sound = load("res://aduio/lose.wav")
+var win_sound = load("res://aduio/win.wav")
 
 var sound= die_sound
 @onready var sound_node = get_parent().get_parent().get_node("AudioStreamPlayer")

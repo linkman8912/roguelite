@@ -5,7 +5,7 @@ var die_sound = load("res://aduio/lose.wav")
 var win_sound = load("res://aduio/win.wav")
 
 var sound= die_sound
-@onready var sound_node = get_parent().get_parent().get_node("AudioStreamPlayer")
+@onready var sound_node = $"/root/Main/AudioStreamPlayer"
 @export var max_health = 10
 var health = 0.0
 # Called when the node enters the scene tree for the first time.

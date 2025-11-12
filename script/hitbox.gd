@@ -18,7 +18,7 @@ func damage(attack,speed):
 		if sprite:
 			var mat = sprite.material
 			mat.set_shader_parameter("show_white", true)  # switch to white
-			await get_tree().create_timer(0.1*speed).timeout
+			await get_tree().create_timer(0.05*speed).timeout
 			print("lk: ",speed)
 			mat.set_shader_parameter("show_white", false) # back to normal
 

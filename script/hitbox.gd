@@ -5,9 +5,9 @@ extends Area2D
 @onready var enemy = main.get_node_or_null("Enemy")
 @onready var parent = self.get_parent()
 @onready var sword = get_parent().get_parent()
-@onready var sound = $AudioStreamPlayer
+@onready var sound_node = $AudioStreamPlayer
 var pitch = 1
-var hit_sound = load("res://aduio/hit4.mp3")
+var hit_sound = load("res://aduio/hit4.wav")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func damage(attack,speed):
 	var sprite = get_parent().get_node_or_null("E")
@@ -29,8 +29,11 @@ func slow():
 	await get_tree().create_timer(hit_stop*0.05).timeout
 	get_tree().paused = false
 
-func randi_sound(r):
-	return "res://aduio/hit"+ str(r) + ".wav"
+func randi_sound(r,p):
+	if p:
+		return "res://aduio/parry"+ str(r) + ".wav"
+	else:
+		return "res://aduio/hit"+ str(r) + ".wav"
 
 func _on_area_entered(area: Area2D) -> void:
 	var collider = area.get_parent() # often the main node that owns the area
@@ -41,11 +44,18 @@ func _on_area_entered(area: Area2D) -> void:
 		print("sams ")
 		var rng = RandomNumberGenerator.new()
 		rng.randomize()
-		sound.pitch_scale = rng.randf_range(0.1,2)
-		var s_num = rng.randf_range(1,4)
-		sound.stream = load(randi_sound(3))
-		sound.play()
+		sound_node.pitch_scale = rng.randf_range(0.1,2)
+		var s_num = int(rng.randf_range(1,5))
+		if self.name == "sword":
+			hit_sound = load(randi_sound(s_num,true))
+			
+		else:
+			hit_sound = load(randi_sound(s_num,false))
+		sound_node.stream = hit_sound
+		sound_node.play()
 		await get_tree().create_timer(0.5).timeout
+
+
 	if attack_node and (not( collider.name == "Player"  or  collider.name == "Enemy")):
 		print(collider," :attacked")
 		var attack = attack_node.attack_points()

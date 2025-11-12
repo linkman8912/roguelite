@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1f50jv5y114i"]
+[gd_scene load_steps=5 format=3 uid="uid://b1f50jv5y114i"]
 
 [ext_resource type="Script" uid="uid://c1y81ttrmfsba" path="res://script/main.gd" id="1_h75n3"]
 [ext_resource type="PackedScene" uid="uid://dxbt5oc2fhxg4" path="res://scene/control.tscn" id="2_ued4e"]
 [ext_resource type="PackedScene" uid="uid://b4vjo13i8lh2k" path="res://scene/arena.tscn" id="3_h75n3"]
-[ext_resource type="PackedScene" path="res://HP_bars.tscn" id="4_ued4e"]
-[ext_resource type="Texture2D" uid="uid://3vhsvt6sk43u" path="res://assets/its_so_jover.jpg" id="5_roxkl"]
+[ext_resource type="PackedScene" uid="uid://ctivpghcqi37j" path="res://HP_bars.tscn" id="4_ued4e"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_h75n3")
@@ -18,7 +17,6 @@ offset_bottom = -324.0
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="game" type="Node2D" parent="."]
-visible = false
 
 [node name="arena" parent="game" instance=ExtResource("3_h75n3")]
 
@@ -32,8 +30,3 @@ position = Vector2(-95, 0)
 scale = Vector2(0.4, 0.4)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("5_roxkl")

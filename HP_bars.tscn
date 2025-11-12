@@ -16,7 +16,7 @@ grow_vertical = 2
 script = ExtResource("1_hhm35")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-custom_minimum_size = Vector2(947.63, 0)
+custom_minimum_size = Vector2(1152, 0)
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5

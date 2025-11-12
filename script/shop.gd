@@ -35,3 +35,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func card_chosen(card):
+	$"/root/Node2D".apply_card(card.rarity, card.card)
+	queue_free()

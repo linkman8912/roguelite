@@ -11,13 +11,12 @@ config_version=5
 [application]
 
 config/name="test"
-run/main_scene="uid://b1f50jv5y114i"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Console="*res://data/addons/console/console.gd"
+Console="*res://addons/console/console.gd"
 GameStats="*res://script/game_stats.gd"
 
 [display]

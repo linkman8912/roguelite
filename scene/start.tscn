@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://cuyumrkeitaoe"]
+
+[ext_resource type="Texture2D" uid="uid://bx446swxm3mr2" path="res://Sprite sheet for Basic Pack.png" id="1_bnuxd"]
+[ext_resource type="Script" uid="uid://cpb5bp6x0h42w" path="res://script/data_holder.gd" id="2_srnb1"]
+[ext_resource type="Script" path="res://script/playbutton.gd" id="5_pb375"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qtu10"]
+texture = ExtResource("1_bnuxd")
+region_rect = Rect2(162.97, 209.964, 90.0812, 27.0643)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GeneralMenu" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StatsMenu" type="MarginContainer" parent="GeneralMenu"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="GeneralMenu/StatsMenu"]
+layout_mode = 2
+texture = ExtResource("1_bnuxd")
+region_rect = Rect2(59, 107, 26, 26)
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="Holder" type="MarginContainer" parent="GeneralMenu/StatsMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GeneralMenu/StatsMenu/Holder"]
+layout_mode = 2
+theme_override_constants/separation = 135
+alignment = 1
+script = ExtResource("2_srnb1")
+
+[node name="MenuButtonHolder" type="VBoxContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Play" type="MarginContainer" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/MenuButtonHolder"]
+custom_minimum_size = Vector2(250, 90)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="GeneralMenu/StatsMenu/Holder/HBoxContainer/MenuButtonHolder/Play"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_qtu10")
+script = ExtResource("5_pb375")

@@ -17,6 +17,7 @@ offset_bottom = -324.0
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="game" type="Node2D" parent="."]
+visible = false
 
 [node name="arena" parent="game" instance=ExtResource("3_h75n3")]
 

@@ -7,7 +7,7 @@ extends Area2D
 @onready var sword = get_parent().get_parent()
 @onready var sound_node = $AudioStreamPlayer
 var pitch = 1
-var hit_sound = load("res://aduio/hit4.wav")
+var hit_sound = load("res://aduio/hit3.wav")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func damage(attack,speed):
 	var sprite = get_parent().get_node_or_null("E")
@@ -45,7 +45,7 @@ func _on_area_entered(area: Area2D) -> void:
 		var rng = RandomNumberGenerator.new()
 		rng.randomize()
 		sound_node.pitch_scale = rng.randf_range(0.1,2)
-		var s_num = int(rng.randf_range(1,5))
+		var s_num = int(rng.randf_range(1,4))
 		if self.name == "sword":
 			hit_sound = load(randi_sound(s_num,true))
 			

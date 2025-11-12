@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://ctivpghcqi37j"]
 
-[ext_resource type="Script" path="res://hp_bars.gd" id="1_hhm35"]
+[ext_resource type="Script" uid="uid://njhshyy61je8" path="res://hp_bars.gd" id="1_hhm35"]
 [ext_resource type="Texture2D" uid="uid://8acmvwsm6j2m" path="res://assets/PlayerHealthBackground.png" id="1_roobr"]
 [ext_resource type="Texture2D" uid="uid://d12brsrbumruk" path="res://assets/HealthBarOutline.png" id="2_hhm35"]
 [ext_resource type="Texture2D" uid="uid://vxlda3fajrwu" path="res://assets/ProgressBarGrey-export.png" id="2_roobr"]
@@ -16,7 +16,7 @@ grow_vertical = 2
 script = ExtResource("1_hhm35")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-custom_minimum_size = Vector2(947.63, 0)
+custom_minimum_size = Vector2(1152, 0)
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5

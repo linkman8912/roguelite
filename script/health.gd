@@ -1,11 +1,8 @@
 extends Node
 class_name Health
 
-var die_sound = load("res://aduio/lose.wav")
-var win_sound = load("res://aduio/win.wav")
-
-var sound= die_sound
-@onready var sound_node = get_parent().get_parent().get_node("AudioStreamPlayer")
+var sound = null
+@onready var sound_node = get_parent().get_parent().get_node("aduio_node")
 @export var max_health = 10
 var health = 0.0
 # Called when the node enters the scene tree for the first time.
@@ -20,13 +17,12 @@ func _process(delta: float) -> void:
 	print("health:",health,get_parent())
 func damage(attack):
 	if get_parent().name == "Player":
-		sound = die_sound
+		sound = "win"
 	else:
-		sound = win_sound
+		sound = "lose"
 	health -= attack
 	if health <=0:
-		sound_node.stream = sound
-		sound_node.play()
+		sound_node.play_sound(sound)
 		get_tree().paused = false
 		#await get_tree().create_timer(10).timeout
 		if get_parent().name == "Player":

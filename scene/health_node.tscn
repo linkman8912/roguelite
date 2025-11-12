@@ -1,6 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://cj2hs2mmf1jin"]
 
-[ext_resource type="Script" uid="uid://c8livjby3t4b2" path="res://script/health.gd" id="1_y6ow7"]
+[ext_resource type="Script" path="res://script/health.gd" id="1_y6ow7"]
 
 [node name="health_node" type="Node"]
 script = ExtResource("1_y6ow7")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

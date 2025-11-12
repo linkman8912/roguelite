@@ -47,7 +47,8 @@ func _ready() -> void:
 				"name": "increase of " + stats[j],
 				"text": "Increases " + stats[j] + " by " + str(1 * rarityMultipliers[i]),
 				"rarity": rarities[i],
-				"stats": "{\"" + stats[j] + "\": " + str(1 * rarityMultipliers[i]) + "}"
+				"stats": "{\"" + stats[j] + "\": " + str(1 * rarityMultipliers[i]) + "}",
+				"art": "res://assets/" + stats[j] + ".png"
 			})
 			currentid += 1
 			if stats[j] != "luck":
@@ -56,8 +57,10 @@ func _ready() -> void:
 					"name": "cost of " + stats[j],
 					"text": "Increases " + stats[j] + " by " + str(2 * rarityMultipliers[i]) + ", decreases " + oppositeStats[j] + " by " + str(1 * rarityMultipliers[i]),
 					"rarity": rarities[i],
-					"stats": "{\\\"" + stats[j] + "\\\": " + str(2 * rarityMultipliers[i]) + ", \\\"" + oppositeStats[j] + "\\\": " + str(-1 * rarityMultipliers[i]) + "}"
-		  		})
+					"stats": "{\\\"" + stats[j] + "\\\": " + str(2 * rarityMultipliers[i]) + ", \\\"" + oppositeStats[j] + "\\\": " + str(-1 * rarityMultipliers[i]) + "}",
+					"art": "res://assets/" + stats[j] + ".png"
+
+				})
 				currentid += 1
 	var jsonString = JSON.stringify(jsonList)
 	save_to_file(jsonString, "res://data/cards.json")

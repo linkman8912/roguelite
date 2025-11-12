@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://cd4olxf7mvuyj"]
+
+[ext_resource type="Script" uid="uid://bkb001vixyifo" path="res://button_test.gd" id="1_wmmup"]
+[ext_resource type="Texture2D" uid="uid://c3k2cvxb1ibr4" path="res://assets/card_common.png" id="2_tkc71"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e484p"]
+
+[node name="Button" type="Button"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -553.0
+offset_top = -151.0
+offset_right = -377.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_styles/pressed = SubResource("StyleBoxTexture_e484p")
+script = ExtResource("1_wmmup")
+
+[node name="CardArt" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(155, 125)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.426
+anchor_right = 0.5
+anchor_bottom = 0.426
+offset_left = -77.0
+offset_top = -93.222
+offset_right = 79.0
+offset_bottom = 34.778
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CardOutLine" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = -7.0
+offset_top = -4.0
+offset_right = 185.0
+offset_bottom = 252.0
+texture = ExtResource("2_tkc71")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 152.0
+offset_right = 157.0
+offset_bottom = 253.0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+autowrap_mode = 2

@@ -87,3 +87,6 @@ func apply_stats():
 	set_speed(stats["playerSpeed"])
 	set_control(stats["playerControl"])
 	set_weapon_length(stats["weaponLength"])
+
+func apply_card(rarity, card):
+	pass

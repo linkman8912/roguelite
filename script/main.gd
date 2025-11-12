@@ -1,6 +1,7 @@
 extends Node2D
 var Enemy_scene = load("res://scene/oldenemy.tscn")
 var Player_scene = load("res://scene/oldcharacter.tscn")
+var shop_scene = load("res://scene/shop.tscn")
 var player_n = "Player"
 var enemy_n = "Enemy"
 @onready var Enemy_node = get_node(enemy_n)
@@ -10,9 +11,11 @@ var stats = {}
 var ui_cam_zoom = 1
 var play_cam_zoom = 2.4
 func _ready() -> void:
+	
 	Engine.max_fps = 60
 	Console.add_command("reset",reset,0)
 	Console.add_command("who_is_in_paris",paris,0)
+
 
 
 func paris():
@@ -52,6 +55,17 @@ func set_stats(new_stats: Dictionary):
 	stats = new_stats
 	#print("set+stats",new_stats)
 
+func get_stats():
+	return stats
+
 func apply_stats():
 	if stat_manager:
 		stat_manager.set_stats(stats)
+func game_over():
+	pass
+func shop():
+	var shop_instance = shop_scene.instantiate()
+	add_child(shop_instance)
+	
+func apply_card(rarity, card):
+	stat_manager.apply_card(rarity, card)

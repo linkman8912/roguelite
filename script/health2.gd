@@ -39,4 +39,5 @@ func get_health():
 
 func set_max_health(s):
 	max_health = float(s)
+	set_health(max_health)
 	print(max_health,"max_health")

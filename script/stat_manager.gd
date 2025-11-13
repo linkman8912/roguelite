@@ -78,7 +78,8 @@ func set_speed(s):
 func set_stats(new_stats: Dictionary):
 	stats = new_stats
 func set_control(c):
-	parent_node.set_control(c)
+	if(parent_node.name == "Player"):
+		parent_node.set_control(c)
 
 func apply_stats():
 	set_damage(stats["damage"])

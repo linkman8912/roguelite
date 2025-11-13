@@ -15,8 +15,8 @@ var card
 func _ready() -> void:
 	rarity = main.generate_rarity()
 	card = main.generate_card()
-	while (isDupe()):
-		card = main.generate_card
+	#while (isDupe()):
+	#	card = main.generate_card
 	set_card(rarity, card)
 
 
@@ -38,7 +38,11 @@ func isDupe():
 	var card1 = $"../../Container1/Control"
 	var card2 = $"../../Container2/Control2"
 	var card3 = $"../../Container3/Control3"
-	var dupe1 = (rarity == card1.rarity && !(name == "control"))
-	var dupe2 = (rarity == card2.rarity && !(name == "control2"))
-	var dupe3 = (rarity == card3.rarity && !(name == "control3"))
+	var dupe1 = (rarity == card1.rarity && !(name == "Control"))
+	var dupe2 = (rarity == card2.rarity && !(name == "Control2"))
+	var dupe3 = (rarity == card3.rarity && !(name == "Control3"))
 	return dupe1 || dupe2 || dupe3
+
+
+func _on_button_pressed() -> void:
+	pass # Replace with function body.

@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://i5bdfrtqj1jw"]
+[gd_scene load_steps=7 format=3 uid="uid://kvfh6yt77gbn"]
 
-[ext_resource type="PhysicsMaterial" uid="uid://p5garr5kkysn" path="res://bounce.tres" id="1_cy7ge"]
+[ext_resource type="PhysicsMaterial" path="res://bounce.tres" id="1_cy7ge"]
 [ext_resource type="Shader" uid="uid://kkjf1i0mmbbp" path="res://godotman.gdshader" id="3_vlore"]
 [ext_resource type="Script" uid="uid://r37s6i7psgc6" path="res://script/physics.gd" id="3_yfni7"]
 [ext_resource type="Texture2D" uid="uid://ddxmxgyyfy8mn" path="res://icon.svg" id="4_ieuuq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jrft1"]
+render_priority = 0
 shader = ExtResource("3_vlore")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5i1lo"]

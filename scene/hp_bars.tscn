@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cq6kbqdaqxeo6"]
+[gd_scene load_steps=6 format=3 uid="uid://dwggdav7fqwm4"]
 
-[ext_resource type="Script" uid="uid://njhshyy61je8" path="res://hp_bars.gd" id="1_hhm35"]
-[ext_resource type="Texture2D" uid="uid://8acmvwsm6j2m" path="res://assets/PlayerHealthBackground.png" id="1_roobr"]
-[ext_resource type="Texture2D" uid="uid://d12brsrbumruk" path="res://assets/HealthBarOutline.png" id="2_hhm35"]
-[ext_resource type="Texture2D" uid="uid://vxlda3fajrwu" path="res://assets/ProgressBarGrey-export.png" id="2_roobr"]
-[ext_resource type="Texture2D" uid="uid://g7h3u10afnwp" path="res://assets/Sprite-0002.png" id="3_8smbc"]
+[ext_resource type="Script" uid="uid://dvgf8h6idm05v" path="res://script/new_bars.gd" id="1_s2f66"]
+[ext_resource type="Texture2D" uid="uid://vxlda3fajrwu" path="res://assets/ProgressBarGrey-export.png" id="2_ams5s"]
+[ext_resource type="Texture2D" uid="uid://d12brsrbumruk" path="res://assets/HealthBarOutline.png" id="3_26v7u"]
+[ext_resource type="Texture2D" uid="uid://8acmvwsm6j2m" path="res://assets/PlayerHealthBackground.png" id="4_0hab1"]
+[ext_resource type="Texture2D" uid="uid://g7h3u10afnwp" path="res://assets/Sprite-0002.png" id="5_fmha3"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -13,10 +13,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_hhm35")
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_s2f66")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-custom_minimum_size = Vector2(1152, 0)
+custom_minimum_size = Vector2(947.63, 0)
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -40,9 +41,9 @@ layout_mode = 2
 value = 11.0
 fill_mode = 3
 nine_patch_stretch = true
-texture_under = ExtResource("2_roobr")
-texture_over = ExtResource("2_hhm35")
-texture_progress = ExtResource("1_roobr")
+texture_under = ExtResource("2_ams5s")
+texture_over = ExtResource("3_26v7u")
+texture_progress = ExtResource("4_0hab1")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer"]
 custom_minimum_size = Vector2(60, 0)
@@ -57,6 +58,6 @@ value = 10.0
 exp_edit = true
 fill_mode = 3
 nine_patch_stretch = true
-texture_under = ExtResource("2_roobr")
-texture_over = ExtResource("2_hhm35")
-texture_progress = ExtResource("3_8smbc")
+texture_under = ExtResource("2_ams5s")
+texture_over = ExtResource("3_26v7u")
+texture_progress = ExtResource("5_fmha3")

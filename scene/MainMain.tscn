@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c1y81ttrmfsba" path="res://script/main.gd" id="1_h75n3"]
 [ext_resource type="PackedScene" uid="uid://dxbt5oc2fhxg4" path="res://scene/control.tscn" id="2_ued4e"]
 [ext_resource type="PackedScene" uid="uid://b4vjo13i8lh2k" path="res://scene/arena.tscn" id="3_h75n3"]
-[ext_resource type="PackedScene" uid="uid://ctivpghcqi37j" path="res://HP_bars.tscn" id="4_ued4e"]
+[ext_resource type="PackedScene" path="res://HP_bars.tscn" id="4_ued4e"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_h75n3")

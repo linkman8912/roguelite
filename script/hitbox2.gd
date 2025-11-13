@@ -1,12 +1,21 @@
 extends Area2D
 #print("Collided with: ", collider.name)
-@onready var main = get_parent().get_parent()
-@onready var player = main.get_node_or_null("Player")
-@onready var enemy = main.get_node_or_null("Enemy")
-@onready var parent = self.get_parent()
-@onready var sword = get_parent().get_parent()
-@onready var sound_node = get_node("audio_node")
+var battle
+var player
+var enemy
+var parent
+var sword
+var sound_node
 var pitch = 1
+
+func _ready():
+	battle = get_parent().get_parent()
+	player = battle.get_node_or_null("Player")
+	enemy = battle.get_node_or_null("Enemy")
+	parent = self.get_parent()
+	sword = get_parent().get_parent()
+	sound_node = $"/root/Main/AudioStreamPlayer"
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func damage(attack,speed):
 	var sprite = get_parent().get_node_or_null("E")
@@ -34,7 +43,7 @@ func _on_area_entered(area: Area2D) -> void:
 	var collider = area.get_parent() # often the main node that owns the area
 	var attack_node = collider.get_node_or_null("attack_node")
 	#print("sword2: ",sword.name)=
-	if sword.name == "sword" and collider == "Sword":
+	if sword.name == "sword":
 		sword.switch()
 		print("sams ")
 		var rng = RandomNumberGenerator.new()
@@ -55,7 +64,3 @@ func _on_area_entered(area: Area2D) -> void:
 		var speed = attack_node.attack_speed()
 		damage(attack,speed)
 		hit_stop = attack_node.attack_points()
-		
-		
-		# Example assuming your sprite has this shader material
-	

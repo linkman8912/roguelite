@@ -6,17 +6,36 @@ var physics_node = null
 var parent_node= null
 var parent_name = ""
 var sword_spawner = null
-var stats = {
-	"health": 1,
-	"damage": 1,
-	"playerSpeed": 5,
+var front_stats = {
+	"health": 10,
+	"damage": 10,
+	"playerSpeed": 10,
 	"playerControl": 10,
-	"weaponSpeed": 5,
+	"weaponSpeed": 10,
 	"weaponLength": 10,
 	"luck": 10,
 }
-
-
+var stats = {
+	"health": 10,
+	"damage": 10,
+	"playerSpeed": 10,
+	"playerControl": 10,
+	"weaponSpeed": 10,
+	"weaponLength": 10,
+	"luck": 10,
+}
+var stats_multiplier = {
+	"health": 3,
+	"damage": 1,
+	"playerSpeed": 1,
+	"playerControl": 1,
+	"weaponSpeed": 1,
+	"weaponLength": 1,
+	"luck": 1,
+}
+func set_back_end_stats():
+	for key in stats_multiplier.keys():
+		print(key)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	attack_node = get_parent().get_node_or_null("attack_node")

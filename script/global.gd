@@ -15,6 +15,7 @@ var stats = {
 @onready var battle_scene = load("res://scene/battle.tscn")
 @onready var start_scene = load("res://scene/start.tscn")
 
+
 func shop():
 	pass
 	

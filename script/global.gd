@@ -36,8 +36,8 @@ func _ready() -> void:
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+#func _process(delta: float) -> void:
+#	pass
 
 func reset():
 	for child in get_children():
@@ -53,3 +53,7 @@ func change_stat(stat, change):
 
 func get_stats():
 	return stats
+
+func game_over():
+	for child in get_children():
+		child.queue_free()

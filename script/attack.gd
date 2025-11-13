@@ -10,8 +10,6 @@ func set_damage(d):
 	print("dammage set")
 	dammage = float(d)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func attack_points():
 	return dammage
 

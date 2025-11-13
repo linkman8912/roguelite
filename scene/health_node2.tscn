@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://xgns2q0d0ict"]
+
+[ext_resource type="Script" uid="uid://bsimh7o5778c" path="res://script/health2.gd" id="1_iv6aa"]
+[ext_resource type="PackedScene" uid="uid://cg1mv0igi3n3g" path="res://scene/audio_node.tscn" id="2_ywbcg"]
+
+[node name="health_node" type="Node"]
+script = ExtResource("1_iv6aa")
+
+[node name="audio_node" parent="." instance=ExtResource("2_ywbcg")]

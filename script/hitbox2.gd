@@ -9,6 +9,9 @@ var sound_node
 var pitch = 1
 
 func _ready():
+	var sprite = get_parent().get_node_or_null("E")
+	var mat = sprite.material
+	mat.set_shader_parameter("show_white", false)
 	battle = get_parent().get_parent()
 	player = battle.get_node_or_null("Player")
 	enemy = battle.get_node_or_null("Enemy")
@@ -16,10 +19,13 @@ func _ready():
 	sword = get_parent().get_parent()
 	sound_node = $"/root/Main/AudioStreamPlayer"
 
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func damage(attack,speed):
 	var sprite = get_parent().get_node_or_null("E")
 	var health_node = get_parent().get_node_or_null("health_node")
+	print("file")
 	slow()
 	if health_node:
 		health_node.damage(attack)

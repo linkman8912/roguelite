@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctivpghcqi37j"]
+[gd_scene load_steps=6 format=3 uid="uid://cq6kbqdaqxeo6"]
 
 [ext_resource type="Script" uid="uid://njhshyy61je8" path="res://hp_bars.gd" id="1_hhm35"]
 [ext_resource type="Texture2D" uid="uid://8acmvwsm6j2m" path="res://assets/PlayerHealthBackground.png" id="1_roobr"]
@@ -37,8 +37,7 @@ size_flags_vertical = 8
 texture_repeat = 2
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
-max_value = 30.0
-value = 30.0
+value = 11.0
 fill_mode = 3
 nine_patch_stretch = true
 texture_under = ExtResource("2_roobr")
@@ -53,7 +52,9 @@ size_flags_horizontal = 8
 [node name="TextureProgressBar" type="TextureProgressBar" parent="MarginContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
-value = 70.0
+max_value = 10.0
+value = 10.0
+exp_edit = true
 fill_mode = 3
 nine_patch_stretch = true
 texture_under = ExtResource("2_roobr")

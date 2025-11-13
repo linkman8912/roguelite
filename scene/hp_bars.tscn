@@ -40,11 +40,11 @@ custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 max_value = 30.0
 value = 30.0
-fill_mode = 2
+fill_mode = 3
 nine_patch_stretch = true
-texture_under = ExtResource("4_0hab1")
+texture_under = ExtResource("2_ams5s")
 texture_over = ExtResource("3_26v7u")
-texture_progress = ExtResource("2_ams5s")
+texture_progress = ExtResource("4_0hab1")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer"]
 custom_minimum_size = Vector2(60, 0)
@@ -56,8 +56,8 @@ custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 max_value = 30.0
 value = 30.0
-fill_mode = 2
+fill_mode = 3
 nine_patch_stretch = true
-texture_under = ExtResource("5_fmha3")
+texture_under = ExtResource("2_ams5s")
 texture_over = ExtResource("3_26v7u")
-texture_progress = ExtResource("2_ams5s")
+texture_progress = ExtResource("5_fmha3")

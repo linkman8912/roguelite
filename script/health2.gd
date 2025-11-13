@@ -35,6 +35,8 @@ func set_health(s):
 	print("keys_h:",health)
 
 func get_max_health():
+	return max_health
+func get_heath():
 	return health
 
 func set_max_health(s):

@@ -43,6 +43,5 @@ func isDupe():
 	var dupe3 = (rarity == card3.rarity && !(name == "Control3"))
 	return dupe1 || dupe2 || dupe3
 
-
 func _on_button_pressed() -> void:
-	var deez = main.battle() 
+	var deez = main.battle()

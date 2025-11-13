@@ -24,13 +24,13 @@ func _process(delta: float) -> void:
 		stats = main.get_stats()
 		if p_h_node:
 			var max_p_health = p_h_node.get_max_health()
-			var health = stats["health"]
+			var health = p_h_node.get_heath()
 			p_set_health(0,max_p_health,health)
 		else:
 			p_set_health(0,0,0)
 		if e_h_node:
 			var max_e_health = e_h_node.get_max_health()
-			var health = stats["health"]
+			var health = e_h_node.get_heath()
 			e_set_health(0,max_e_health,health)
 			print(max_e_health,":health")
 		else:

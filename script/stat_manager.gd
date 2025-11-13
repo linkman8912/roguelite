@@ -57,6 +57,8 @@ func _ready() -> void:
 
 	apply_stats()
 
+func _process(delta: float) -> void:
+	pass
 
 func _kill():
 	print("is it nuvu pink")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1tphwqq5d71n"
-path="res://.godot/imported/Arena.png-40d691318f1e72d71cf05e25e86a9db5.ctex"
+uid="uid://dlgicnj8taylf"
+path="res://.godot/imported/ArenaBackgroundHitbox-export.png-f68add1de966df434742aee424bba492.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Arena.png"
-dest_files=["res://.godot/imported/Arena.png-40d691318f1e72d71cf05e25e86a9db5.ctex"]
+source_file="res://assets/ArenaBackgroundHitbox-export.png"
+dest_files=["res://.godot/imported/ArenaBackgroundHitbox-export.png-f68add1de966df434742aee424bba492.ctex"]
 
 [params]
 

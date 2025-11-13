@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://hutubia0ar66"]
 
 [ext_resource type="Script" uid="uid://qbokeu5vcvht" path="res://script/cardgen.gd" id="1_8yohi"]
-[ext_resource type="Texture2D" uid="uid://dfrj0o0p8wlgx" path="res://assets/health.png" id="3_0aomv"]
+[ext_resource type="Texture2D" uid="uid://cr6i8flvy2jsy" path="res://assets/health.png" id="3_0aomv"]
 [ext_resource type="Texture2D" uid="uid://c3k2cvxb1ibr4" path="res://assets/card_common.png" id="3_uh4tu"]
 
 [node name="Control" type="Node2D"]

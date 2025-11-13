@@ -15,16 +15,18 @@ var stats = {
 @onready var battle_scene = load("res://scene/battle.tscn")
 @onready var start_scene = load("res://scene/start.tscn")
 
+var data = load_data()
 
 func shop():
-	pass
+	reset()
+	var instance = shop_scene.instantiate()
+	add_child(instance)
 	
 func battle():
 	reset()
 	var instance = battle_scene.instantiate()
 	add_child(instance)
-	pass
-
+	
 func start():
 	full_reset()
 	var instance = start_scene.instantiate()
@@ -33,7 +35,8 @@ func start():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	start()
+	#start()
+	shop()
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -58,3 +61,22 @@ func get_stats():
 func game_over():
 	for child in get_children():
 		child.queue_free()
+
+func generate_rarity():
+	var number = randi() % 100
+	if number < 50:
+		return 0
+	elif number < 80:
+		return 1
+	elif number < 95:
+		return 2
+	else:
+		return 3
+	
+func generate_card():
+	return randi() % len(data[0])
+
+func load_data():
+	var file = FileAccess.open("res://data/cards.json", FileAccess.READ)
+	var content = file.get_as_text()
+	return JSON.parse_string(content)

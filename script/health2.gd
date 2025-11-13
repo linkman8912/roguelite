@@ -5,6 +5,7 @@ var sound = null
 @onready var sound_node = get_node("audio_node")
 @export var max_health = 10
 var health = 0.0
+var healthReset = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	health=max_health 
@@ -14,6 +15,9 @@ func slow():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if !healthReset:
+		set_health(max_health)
+		healthReset = true
 	print("health:",health,get_parent())
 func damage(attack):
 	if get_parent().name == "Player":

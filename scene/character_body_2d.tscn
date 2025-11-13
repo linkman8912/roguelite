@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://buqu4u5q10vbs"]
+[gd_scene load_steps=9 format=3 uid="uid://bk2xhh226wuv0"]
 
 [ext_resource type="Script" uid="uid://dtenvj5mdyabd" path="res://script/character.gd" id="1_b8c3x"]
 [ext_resource type="Script" uid="uid://oe11vv58qi6s" path="res://script/bounce.gd" id="2_ogaei"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dgfiexw08noni" path="res://scene/attack_node.tscn" id="6_1hjxj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wfnr8"]
+render_priority = 0
 shader = ExtResource("3_mjxbh")
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_px5sl"]

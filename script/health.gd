@@ -9,6 +9,9 @@ var health = 0.0
 func _ready() -> void:
 	health=max_health 
 
+func get_max_health():
+	return max_health
+
 func slow():
 	get_parent()
 
@@ -34,8 +37,7 @@ func damage(attack):
 func set_health(s):
 	health = float(s)
 
-func get_health():
-	return health
+
 
 func set_max_health(s):
 	max_health = float(s)

@@ -38,12 +38,13 @@ size_flags_vertical = 8
 texture_repeat = 2
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
-value = 11.0
-fill_mode = 3
+max_value = 30.0
+value = 30.0
+fill_mode = 2
 nine_patch_stretch = true
-texture_under = ExtResource("2_ams5s")
+texture_under = ExtResource("4_0hab1")
 texture_over = ExtResource("3_26v7u")
-texture_progress = ExtResource("4_0hab1")
+texture_progress = ExtResource("2_ams5s")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer"]
 custom_minimum_size = Vector2(60, 0)
@@ -53,10 +54,9 @@ size_flags_horizontal = 8
 [node name="TextureProgressBar" type="TextureProgressBar" parent="MarginContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
-max_value = 10.0
-value = 10.0
-exp_edit = true
-fill_mode = 3
+max_value = 30.0
+value = 30.0
+fill_mode = 2
 nine_patch_stretch = true
 texture_under = ExtResource("2_ams5s")
 texture_over = ExtResource("3_26v7u")

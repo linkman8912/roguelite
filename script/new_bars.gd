@@ -18,20 +18,20 @@ func _process(delta: float) -> void:
 	#var parent = get_parent().get_parent()
 	var parent = get_parent()
 
-	if main and parent:
+	if parent:
 		var e_h_node = parent.get_node_or_null("Player/health_node")
 		var p_h_node = parent.get_node_or_null("Enemy/health_node")
 		stats = main.get_stats()
 		if p_h_node:
-			var p_health = p_h_node.get_health()
+			var max_p_health = p_h_node.get_max_health()
 			var health = stats["health"]
-			p_set_health(0,health,p_health)
+			p_set_health(0,max_p_health,health)
 		else:
 			p_set_health(0,0,0)
 		if e_h_node:
-			var e_health = e_h_node.get_health()
+			var max_e_health = e_h_node.get_max_health()
 			var health = stats["health"]
-			e_set_health(0,health,e_health)
-			print(e_health,":health")
+			e_set_health(0,max_e_health,health)
+			print(max_e_health,":health")
 		else:
 			e_set_health(0,10,0)

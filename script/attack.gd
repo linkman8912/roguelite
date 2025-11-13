@@ -7,15 +7,15 @@ var d_speed = 10
 # Called when the node enters the scene tree for the first time.
 
 func set_damage(d):
-	print("dammage set")
 	dammage = float(d)
+	
 
 func attack_points():
 	return dammage
 
 func set_d_speed(a):
 	d_speed = float(a)
-	print("chud set:",d_speed)
+
 
 
 func attack_speed():

@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 Console="*res://addons/console/console.gd"
-GameStats="*res://script/game_stats.gd"
 
 [display]
 

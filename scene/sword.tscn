@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bv0bpj3oi4u42"]
 
-[ext_resource type="Script" path="res://script/sword.gd" id="1_rlqbj"]
+[ext_resource type="Script" uid="uid://dxapno8usfjaq" path="res://script/sword.gd" id="1_rlqbj"]
 [ext_resource type="PackedScene" uid="uid://dgfiexw08noni" path="res://scene/attack_node.tscn" id="3_so1pe"]
 [ext_resource type="PackedScene" uid="uid://8p23oyycnp4v" path="res://scene/swored.tscn" id="4_rlqbj"]
 [ext_resource type="PackedScene" uid="uid://baxs661mw2wpk" path="res://scene/hit_box.tscn" id="4_so1pe"]

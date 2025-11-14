@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://c75eyov73gs61"]
+
+[ext_resource type="Script" uid="uid://b0bm8cevrxpyg" path="res://script/hitbox.gd" id="1_h6gob"]
+[ext_resource type="Texture2D" uid="uid://djckrpefwmxgs" path="res://assets/Arena2Visuals.png" id="2_xjagb"]
+[ext_resource type="Texture2D" uid="uid://dtdx0fhpkvbmr" path="res://assets/Arena2Spikes.png" id="3_h6gob"]
+
+[node name="arena" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_h6gob")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-0.025898457, -4.5776374e-05)
+scale = Vector2(0.94819397, 1.0000005)
+build_mode = 1
+polygon = PackedVector2Array(131, 109, 131, 109, 131, 108, -132, 108, -132, 112, 131, 112, 131, 111)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D"]
+build_mode = 1
+polygon = PackedVector2Array(-196, -108, 196, -108, 196, -112, -196, -112)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Area2D"]
+build_mode = 1
+polygon = PackedVector2Array(-196, -108, -196, 107, -201, 107, -200, -108)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Area2D"]
+build_mode = 1
+polygon = PackedVector2Array(196, 112, 196, -107, 196, -108, 200, -108, 200, 112)
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("2_xjagb")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-0.025898457, -4.5776374e-05)
+scale = Vector2(0.94819397, 1.0000005)
+build_mode = 1
+polygon = PackedVector2Array(131, 109, 131, 109, 131, 108, -132, 108, -132, 112, 131, 112, 131, 111)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+build_mode = 1
+polygon = PackedVector2Array(-196, -108, 196, -108, 196, -112, -196, -112)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
+build_mode = 1
+polygon = PackedVector2Array(100, 93, 100, -94, 105, -94, 104, 93)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-206, 0)
+build_mode = 1
+polygon = PackedVector2Array(100, 93, 100, -94, 105, -94, 104, 93)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("3_h6gob")
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
+scale = Vector2(1.3, 1.3)
+polygon = PackedVector2Array(79, -81, -79, -81, -79, -79.3, -81, -78.2, -81, -73.6, -76, -71.7, -76, -70.3, -5, -57.3, -5, -55.6, 69.399994, -70, 74.7, -70, 78.7, -73, 80.2, -73, 81, -74.6, 81, -75.6, 79, -78.7)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D"]
+scale = Vector2(1.3, 1.3)
+polygon = PackedVector2Array(76, 70.3, -5, 55.600006, -5, 57.300003, -69.4, 70, -74.7, 70, -78.7, 73, -80.2, 73, -81, 74.5, -81, 75.5, -79, 78.600006, -79, 81, 78, 79, 80.399994, 79, 81, 77.3, 81, 75.899994, 76, 72)
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]

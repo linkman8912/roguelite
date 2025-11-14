@@ -10,14 +10,15 @@ var pitch = 1
 
 func _ready():
 	var sprite = get_parent().get_node_or_null("E")
-	var mat = sprite.material
-	mat.set_shader_parameter("show_white", false)
+	if sprite:
+		var mat = sprite.material
+		mat.set_shader_parameter("show_white", false)
 	battle = get_parent().get_parent()
 	player = battle.get_node_or_null("Player")
 	enemy = battle.get_node_or_null("Enemy")
 	parent = self.get_parent()
 	sword = get_parent().get_parent()
-	sound_node = $"/root/Main/AudioStreamPlayer"
+	sound_node = $audio_node
 
 
 
@@ -35,6 +36,7 @@ func damage(attack,speed):
 			await get_tree().create_timer(0.05*speed).timeout
 			print("lk: ",speed)
 			mat.set_shader_parameter("show_white", false) # back to normal
+			
 
 var hit_stop = 1.0
 func slow():
@@ -49,6 +51,7 @@ func _on_area_entered(area: Area2D) -> void:
 	var collider = area.get_parent() # often the main node that owns the area
 	var attack_node = collider.get_node_or_null("attack_node")
 	#print("sword2: ",sword.name)=
+	print("nike",sword.name)
 	if sword.name == "sword":
 		sword.switch()
 		print("sams ")
@@ -62,6 +65,8 @@ func _on_area_entered(area: Area2D) -> void:
 			print("swrodhitsword:",parent.name)
 			sound_node.play_sound("parry")
 		await get_tree().create_timer(0.5).timeout
+	if collider.name == "game":
+		print("cub")
 
 
 	if attack_node and (not( collider.name == "Player"  or  collider.name == "Enemy")):

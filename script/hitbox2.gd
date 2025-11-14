@@ -50,26 +50,24 @@ func slow():
 func _on_area_entered(area: Area2D) -> void:
 	var collider = area.get_parent() # often the main node that owns the area
 	var attack_node = collider.get_node_or_null("attack_node")
-	#print("sword2: ",sword.name)=
-	print("nike",collider.name)
-	if sword.name == "sword":
+	if get_parent().name == "arena" and ( collider.name == "Player"  or  collider.name == "Enemy"):
+		print("nike",collider)
+	if sword.name == "sword" and (not collider.name == "arena"):
 		sword.switch()
 		print("sams ")
 		var rng = RandomNumberGenerator.new()
 		rng.randomize()
-		sound_node.pitch_scale = rng.randf_range(0,2)
+		sound_node.pitch_scale = rng.randf_range(0.5,2)
 		var s_num = int(rng.randf_range(1,5))
 		if not collider.name == "Sword":
 			sound_node.play_sound("hit"+str(s_num))
 		else:
-			print("swrodhitsword:",parent.name)
 			sound_node.play_sound("parry")
-		await get_tree().create_timer(0.5).timeout
-	if collider.name == "game":
-		print("cub")
+		await get_tree().create_timer(0.01).timeout
 
 
-	if attack_node and (not( collider.name == "Player"  or  collider.name == "Enemy")):
+
+	if attack_node and collider.name == "sword":
 		print(collider," :attacked")
 		var attack = attack_node.attack_points()
 		var speed = attack_node.attack_speed()

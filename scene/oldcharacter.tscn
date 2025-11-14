@@ -1,7 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://b601km7ojh1bo"]
+[gd_scene load_steps=14 format=3 uid="uid://b601km7ojh1bo"]
 
 [ext_resource type="Script" uid="uid://dtenvj5mdyabd" path="res://script/character.gd" id="1_p0hp8"]
-[ext_resource type="Shader" path="res://scene/hit.gdshader" id="1_ua3vd"]
+[ext_resource type="Shader" uid="uid://dg6r78ahf2duq" path="res://scene/hit.gdshader" id="1_ua3vd"]
 [ext_resource type="PhysicsMaterial" uid="uid://p5garr5kkysn" path="res://bounce.tres" id="1_y6i60"]
 [ext_resource type="Texture2D" uid="uid://0isidaqkrqpn" path="res://assets/pixil-frame-0 (10).png" id="4_p0hp8"]
 [ext_resource type="PackedScene" uid="uid://baxs661mw2wpk" path="res://scene/hit_box.tscn" id="5_px5sl"]
@@ -19,11 +19,8 @@ shader_parameter/show_white = false
 shader = ExtResource("1_ua3vd")
 shader_parameter/show_white = false
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3beg3"]
-radius = 4.70679
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_p0hp8"]
-radius = 4.40073
+radius = 4.033613
 
 [node name="Player" type="RigidBody2D"]
 material = SubResource("ShaderMaterial_itbht")
@@ -41,17 +38,11 @@ texture_filter = 1
 material = SubResource("ShaderMaterial_p0hp8")
 texture = ExtResource("4_p0hp8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0.3)
-scale = Vector2(3.25, 3.25)
-shape = SubResource("CircleShape2D_3beg3")
-
 [node name="hit_box_node" parent="." instance=ExtResource("5_px5sl")]
 scale = Vector2(1.19, 1.19)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_box_node"]
-position = Vector2(0.5, 0.3)
-scale = Vector2(3.75, 3.75)
+scale = Vector2(3.795, 3.795)
 shape = SubResource("CircleShape2D_p0hp8")
 
 [node name="sword_spawner" parent="." instance=ExtResource("7_pe3nu")]
@@ -66,3 +57,7 @@ rigidBody = NodePath("..")
 metadata/_custom_type_script = "uid://r37s6i7psgc6"
 
 [node name="health_node" parent="." instance=ExtResource("11_y6i60")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3.75, 3.75)
+shape = SubResource("CircleShape2D_p0hp8")

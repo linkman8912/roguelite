@@ -38,11 +38,11 @@ func damage(attack,speed):
 			mat.set_shader_parameter("show_white", false) # back to normal
 			
 
-var hit_stop = 1.0
+var hit_stop = 1
 func slow():
 	
 	get_tree().paused = true
-	await get_tree().create_timer(hit_stop*0.02).timeout
+	await get_tree().create_timer(hit_stop*0.2).timeout
 	get_tree().paused = false
 
 
@@ -67,7 +67,7 @@ func _on_area_entered(area: Area2D) -> void:
 
 
 
-	if attack_node and collider.name == "sword":
+	if collider.name == "Sword" and (parent.name == "Player" or parent.name == "Enemy") :
 		print(collider," :attacked")
 		var attack = attack_node.attack_points()
 		var speed = attack_node.attack_speed()

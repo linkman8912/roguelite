@@ -20,7 +20,9 @@ var data = load_data()
 func shop():
 	reset()
 	var instance = shop_scene.instantiate()
+	print("instantiate")
 	add_child(instance)
+	print("add child")
 	
 func battle():
 	reset()
@@ -38,6 +40,7 @@ func _ready() -> void:
 	#start()
 	shop()
 	
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
@@ -45,7 +48,8 @@ func _ready() -> void:
 
 func reset():
 	for child in get_children():
-		child.queue_free()
+		if child.name != "AudioStreamPlayer":
+			child.queue_free()
 
 func full_reset():
 	reset()

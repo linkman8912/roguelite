@@ -25,12 +25,12 @@ var stats = {
 	"luck": 10,
 }
 var stats_multiplier = {
-	"health": 300,
+	"health": 3,
 	"damage": 1,
 	"playerSpeed": 1,
 	"playerControl": 1,
 	"weaponSpeed": 1,
-	"weaponLength": 1,
+	"weaponLength": 5,
 	"luck": 1,
 }
 func set_back_end_stats():

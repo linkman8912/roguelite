@@ -1,53 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4vjo13i8lh2k"]
+[gd_scene load_steps=3 format=3 uid="uid://b4vjo13i8lh2k"]
 
-[ext_resource type="Script" uid="uid://b0bm8cevrxpyg" path="res://script/hitbox.gd" id="2_5ovl6"]
+[ext_resource type="PackedScene" uid="uid://baxs661mw2wpk" path="res://scene/hit_box.tscn" id="2_5ovl6"]
 [ext_resource type="Texture2D" uid="uid://dlgicnj8taylf" path="res://assets/ArenaBackgroundHitbox-export.png" id="3_jw0wr"]
-[ext_resource type="Texture2D" uid="uid://c2yyna5d8x145" path="res://assets/ArenaBackgroundHitbox.png" id="3_nye2f"]
 
 [node name="arena" type="Node2D"]
-
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 0
-script = ExtResource("2_5ovl6")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-position = Vector2(-0.025898457, -4.5776374e-05)
-scale = Vector2(0.94819397, 1.0000005)
-build_mode = 1
-polygon = PackedVector2Array(131, 109, 131, 109, 131, 108, -132, 108, -132, 112, 131, 112, 131, 111)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D"]
-build_mode = 1
-polygon = PackedVector2Array(-196, -108, 196, -108, 196, -112, -196, -112)
-
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Area2D"]
-build_mode = 1
-polygon = PackedVector2Array(-196, -108, -196, 107, -201, 107, -200, -108)
-
-[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Area2D"]
-build_mode = 1
-polygon = PackedVector2Array(196, 112, 196, -107, 196, -108, 200, -108, 200, 112)
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-scale = Vector2(1.3, 1.3)
-texture = ExtResource("3_nye2f")
-
-[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Area2D"]
-scale = Vector2(1.3, 1.3)
-polygon = PackedVector2Array(-142, -81, -142, -30.7, -139.5, -29.599998, -95.2, -74, -93.7, -74, -92.6, -76.5, -95, -78.9, -95, -81)
-
-[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Area2D"]
-scale = Vector2(1.3, 1.3)
-polygon = PackedVector2Array(144, -78.9, 97.2, -81, 95, -81, 95, -79.3, 93, -78.2, 93, -75.2, 137, -32.2, 137, -30.7, 139.5, -29.599998, 141.79999, -32, 144, -32)
-
-[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Area2D"]
-scale = Vector2(1.3, 1.3)
-polygon = PackedVector2Array(-139.5, 29.599998, -142, 30.699997, -142, 31.699997, -144, 32.800003, -144, 79, -93.7, 79, -92.6, 76.5)
-
-[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Area2D"]
-scale = Vector2(1.3, 1.3)
-polygon = PackedVector2Array(139.1, 29.699997, 137, 30.800003, 137, 32.199997, 95.2, 74, 93.8, 74, 92.7, 76.100006, 95.899994, 81, 140.79999, 81, 144, 77.8, 144, 32.9)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 15
@@ -72,7 +28,6 @@ build_mode = 1
 polygon = PackedVector2Array(196, 112, 196, -107, 196, -108, 200, -108, 200, 112)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-visible = false
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("3_jw0wr")
 
@@ -92,4 +47,43 @@ polygon = PackedVector2Array(-139.5, 29.599998, -142, 30.699997, -142, 31.699997
 scale = Vector2(1.3, 1.3)
 polygon = PackedVector2Array(139.1, 29.699997, 137, 30.800003, 137, 32.199997, 95.2, 74, 93.8, 74, 92.7, 76.100006, 95.899994, 81, 140.79999, 81, 144, 77.8, 144, 32.9)
 
-[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
+[node name="hit_box_node" parent="." instance=ExtResource("2_5ovl6")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hit_box_node"]
+position = Vector2(-0.025898457, -4.5776374e-05)
+scale = Vector2(0.94819397, 1.0000005)
+build_mode = 1
+polygon = PackedVector2Array(131, 109, 131, 109, 131, 108, -132, 108, -132, 112, 131, 112, 131, 111)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="hit_box_node"]
+build_mode = 1
+polygon = PackedVector2Array(-196, -108, 196, -108, 196, -112, -196, -112)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="hit_box_node"]
+build_mode = 1
+polygon = PackedVector2Array(-196, -108, -196, 107, -201, 107, -200, -108)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="hit_box_node"]
+build_mode = 1
+polygon = PackedVector2Array(196, 112, 196, -107, 196, -108, 200, -108, 200, 112)
+
+[node name="Sprite2D" type="Sprite2D" parent="hit_box_node"]
+visible = false
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("3_jw0wr")
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="hit_box_node"]
+scale = Vector2(1.3, 1.3)
+polygon = PackedVector2Array(-142, -81, -142, -30.7, -139.5, -29.599998, -95.2, -74, -93.7, -74, -92.6, -76.5, -95, -78.9, -95, -81)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="hit_box_node"]
+scale = Vector2(1.3, 1.3)
+polygon = PackedVector2Array(144, -78.9, 97.2, -81, 95, -81, 95, -79.3, 93, -78.2, 93, -75.2, 137, -32.2, 137, -30.7, 139.5, -29.599998, 141.79999, -32, 144, -32)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="hit_box_node"]
+scale = Vector2(1.3, 1.3)
+polygon = PackedVector2Array(-139.5, 29.599998, -142, 30.699997, -142, 31.699997, -144, 32.800003, -144, 79, -93.7, 79, -92.6, 76.5)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="hit_box_node"]
+scale = Vector2(1.3, 1.3)
+polygon = PackedVector2Array(139.1, 29.699997, 137, 30.800003, 137, 32.199997, 95.2, 74, 93.8, 74, 92.7, 76.100006, 95.899994, 81, 140.79999, 81, 144, 77.8, 144, 32.9)

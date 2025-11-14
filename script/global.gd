@@ -84,3 +84,10 @@ func load_data():
 	var file = FileAccess.open("res://data/cards.json", FileAccess.READ)
 	var content = file.get_as_text()
 	return JSON.parse_string(content)
+
+func apply_card(rarity, card):
+	# reference: print(JSON.parse_string(json[0][0]["stats"])["speed"])
+	var stat_changes = JSON.parse_string(data[rarity][card]["stats"])
+	for stat in stat_changes:
+		change_stat(stat, stat_changes[stat])
+	print("stats changed with: " + data[rarity][card]["name"] + ", " + data[rarity][card]["rarity"])

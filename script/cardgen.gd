@@ -44,6 +44,6 @@ func isDupe():
 	return dupe1 || dupe2 || dupe3
 
 func _on_button_pressed() -> void:
-#	main.apply_card(rarity, card)
+	main.apply_card(rarity, card)
 	main.battle()
 	#var deez = main.battle()

@@ -9,8 +9,9 @@ func _ready() -> void:
 	json = JSON.parse_string(json_text)
 	#print(JSON.parse_string(json[1]))
 	#JSON.parse_string(json[3]["stats"])
-	print(JSON.parse_string(json[0][0]["stats"])["speed"])
-	print(json)
+	#print(JSON.parse_string(json[1][9]["stats"]))
+	print(JSON.parse_string(json[0][1]["stats"]))
+	#print(json)
 	
 	#print(JSON.parse_string(json[1]["stats"])["speed"])
 	#for i in (json[1]["stats"]):

@@ -8,10 +8,18 @@ var sword
 var sound_node
 var pitch = 1
 var hit_stop = 1
-var hit_stop_duration = 0.1  # Base hitstop duration in seconds
+var hit_stop_duration = 0.03  # Base hitstop duration in seconds
 var is_in_hitstop = false    # Prevent multiple hitstops from overlapping
 
+# Static variable to track global hitstop state
+static var global_hitstop_active = false
+
 func _ready():
+	# Reset time scale and hitstop state when scene loads
+	Engine.time_scale = 1.0
+	global_hitstop_active = false
+	is_in_hitstop = false
+	
 	var sprite = get_parent().get_node_or_null("E")
 	if sprite:
 		var mat = sprite.material
@@ -23,29 +31,43 @@ func _ready():
 	sword = get_parent().get_parent()
 	sound_node = $audio_node
 
-func slow():
-	# Prevent overlapping hitstops
+func _exit_tree():
+	# Clean up when node is removed from scene
 	if is_in_hitstop:
+		Engine.time_scale = 1.0
+		is_in_hitstop = false
+		global_hitstop_active = false
+
+func slow():
+	# Check if ANY hitstop is already active globally
+	if global_hitstop_active or is_in_hitstop:
 		return
 	
 	is_in_hitstop = true
+	global_hitstop_active = true
 	
-	# Store original time scales
+	# Store original time scale
 	var original_time_scale = Engine.time_scale
-	var original_physics_scale = Engine.physics_ticks_per_second
 	
-	# Apply time dilation instead of pausing (feels smoother)
+	# Apply time dilation
 	Engine.time_scale = 0.05  # 5% speed feels punchy
 	
 	# Duration scales with attack power for more impactful hits
 	var scaled_duration = hit_stop_duration * clamp(hit_stop, 0.5, 2.0)
 	
-	# Use process-based timer instead of tree timer (more reliable during pause)
-	await get_tree().create_timer(scaled_duration, true, false, true).timeout
+	# IMPORTANT: Use REAL time for the timer so it's not affected by time_scale
+	# The 'process_always' parameter (4th argument) makes timer ignore time_scale
+	await get_tree().create_timer(scaled_duration, false, true).timeout
 	
-	# Restore time scale
-	Engine.time_scale = original_time_scale
-	is_in_hitstop = false
+	# Check if node still exists before restoring (in case scene changed)
+	if is_inside_tree():
+		Engine.time_scale = original_time_scale
+		is_in_hitstop = false
+		global_hitstop_active = false
+	else:
+		# Force cleanup if node was removed
+		Engine.time_scale = 1.0
+		global_hitstop_active = false
 
 func damage(attack, speed):
 	var sprite = get_parent().get_node_or_null("E")
@@ -64,6 +86,7 @@ func damage(attack, speed):
 		if sprite:
 			var mat = sprite.material
 			mat.set_shader_parameter("show_white", true)
+			# This timer should be affected by time scale for the visual effect
 			await get_tree().create_timer(0.05 * speed).timeout
 			print("lk: ", speed)
 			mat.set_shader_parameter("show_white", false)
@@ -99,6 +122,6 @@ func _on_area_entered(area: Area2D) -> void:
 		var speed = attack_node.attack_speed()
 		
 		# Calculate hit_stop based on attack power
-		hit_stop = clamp(attack * 0.1, 0.05, 0.3)  # Min 0.05s, max 0.3s
+		hit_stop = clamp(attack * 0.1, 0.02, 0.03)  # Min 0.05s, max 0.3s
 		
 		damage(attack, speed)

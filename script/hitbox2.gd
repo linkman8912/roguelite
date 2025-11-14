@@ -51,7 +51,7 @@ func _on_area_entered(area: Area2D) -> void:
 	var collider = area.get_parent() # often the main node that owns the area
 	var attack_node = collider.get_node_or_null("attack_node")
 	#print("sword2: ",sword.name)=
-	print("nike",sword.name)
+	print("nike",collider.name)
 	if sword.name == "sword":
 		sword.switch()
 		print("sams ")

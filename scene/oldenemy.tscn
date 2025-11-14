@@ -1,10 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://cqe41rylpau02"]
+[gd_scene load_steps=13 format=3 uid="uid://cqe41rylpau02"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://p5garr5kkysn" path="res://bounce.tres" id="1_v3qwr"]
 [ext_resource type="Texture2D" uid="uid://4xxit83kmo0t" path="res://assets/red.png" id="3_uinsm"]
 [ext_resource type="Shader" path="res://scene/hit.gdshader" id="3_v3qwr"]
 [ext_resource type="PackedScene" uid="uid://baxs661mw2wpk" path="res://scene/hit_box.tscn" id="5_bquj1"]
-[ext_resource type="Script" uid="uid://cjsm5g8vrvp53" path="res://script/hitbox2.gd" id="6_btygv"]
 [ext_resource type="PackedScene" uid="uid://xgns2q0d0ict" path="res://scene/health_node2.tscn" id="7_btygv"]
 [ext_resource type="PackedScene" uid="uid://ctab8b8i86avd" path="res://scene/sword_spawner.tscn" id="7_ycwaw"]
 [ext_resource type="PackedScene" uid="uid://cxafltdm0ogom" path="res://scene/stat_manager.tscn" id="8_6yv18"]
@@ -39,11 +38,10 @@ scale = Vector2(3.05, 3.05)
 shape = SubResource("CircleShape2D_6yv18")
 
 [node name="hit_box_node" parent="." instance=ExtResource("5_bquj1")]
-script = ExtResource("6_btygv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_box_node"]
 position = Vector2(0.4, 0.3)
-scale = Vector2(3.1, 3.1)
+scale = Vector2(3.465, 3.465)
 shape = SubResource("CircleShape2D_uinsm")
 
 [node name="health_node" parent="." instance=ExtResource("7_btygv")]

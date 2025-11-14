@@ -46,18 +46,26 @@ func slow():
 	get_tree().paused = false
 
 
+func randi_pitch():
+		var rng = RandomNumberGenerator.new()
+		rng.randomize()
+		sound_node.pitch_scale = rng.randf_range(0.5,2)
 
 func _on_area_entered(area: Area2D) -> void:
 	var collider = area.get_parent() # often the main node that owns the area
 	var attack_node = collider.get_node_or_null("attack_node")
 	if get_parent().name == "arena" and ( collider.name == "Player"  or  collider.name == "Enemy"):
 		print("nike",collider)
+		#randi_pitch()
+
+		sound_node.play_sound("femur")
+
 	if sword.name == "sword" and (not collider.name == "arena"):
 		sword.switch()
 		print("sams ")
+		randi_pitch()
 		var rng = RandomNumberGenerator.new()
 		rng.randomize()
-		sound_node.pitch_scale = rng.randf_range(0.5,2)
 		var s_num = int(rng.randf_range(1,5))
 		if not collider.name == "Sword":
 			sound_node.play_sound("hit"+str(s_num))

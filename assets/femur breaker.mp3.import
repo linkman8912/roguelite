@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ddp5e1r5hvcsx"
+path="res://.godot/imported/femur breaker.mp3-cc4f885a5614fdd2a961c14f34659050.mp3str"
+
+[deps]
+
+source_file="res://assets/femur breaker.mp3"
+dest_files=["res://.godot/imported/femur breaker.mp3-cc4f885a5614fdd2a961c14f34659050.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

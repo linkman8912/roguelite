@@ -42,7 +42,7 @@ var hit_stop = 1.0
 func slow():
 	
 	get_tree().paused = true
-	await get_tree().create_timer(hit_stop*0.05).timeout
+	await get_tree().create_timer(hit_stop*0.02).timeout
 	get_tree().paused = false
 
 

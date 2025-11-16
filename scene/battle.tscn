@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://8u4ww5d8hohq"]
 
 [ext_resource type="PackedScene" uid="uid://b4vjo13i8lh2k" path="res://scene/arena.tscn" id="1_ffp3s"]
-[ext_resource type="Script" path="res://script/battle.gd" id="1_soyo5"]
+[ext_resource type="Script" uid="uid://cfwgfojdx26n2" path="res://script/battle.gd" id="1_soyo5"]
 [ext_resource type="PackedScene" uid="uid://dwggdav7fqwm4" path="res://scene/hp_bars.tscn" id="3_soyo5"]
 
 [node name="game" type="Node2D"]

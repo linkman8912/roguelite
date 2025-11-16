@@ -116,6 +116,7 @@ func _on_area_entered(area: Area2D) -> void:
 			sound_node.play_sound("hit" + str(s_num))
 		else:
 			sound_node.play_sound("parry")
+			print("parry")
 			# Add hitstop for parries too (usually shorter)
 			hit_stop = 0.5  # Lighter hitstop for parries
 			slow()

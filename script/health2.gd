@@ -3,12 +3,16 @@ class_name Health2
 var sound = null
 @onready var sound_node = get_node("audio_node")
 @export var max_health = 10
+#@onready var main = get_node("/root/Main")
 var health = 0.0
 var is_dead = false  # Prevent multiple death triggers
 
+#func _ready():
+	#set_max_health(main.stats["health"])
 # Called when the node enters the scene tree for the first time.
 func slow():
 	get_parent()
+	#set_max_health(main.stats["health"])
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

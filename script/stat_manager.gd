@@ -25,7 +25,7 @@ var stats = {
 	"luck": 10,
 }
 var stats_multiplier = {
-	"health": 10,
+	"health": 3,
 	"damage": 1,
 	"playerSpeed": 1,
 	"playerControl": 1,

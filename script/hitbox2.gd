@@ -90,7 +90,7 @@ func damage(attack, speed):
 func randi_pitch():
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
-	sound_node.pitch_scale = rng.randf_range(0.5, 2)
+	sound_node.pitch_scale = rng.randf_range(0.9, 1.0)
 
 func _on_area_entered(area: Area2D) -> void:
 	var collider = area.get_parent() # often the main node that owns the area

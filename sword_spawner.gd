@@ -7,9 +7,10 @@ var attack = 0
 var attack_speed = 10
 var sword_length = 50
 var sword_offset = 50
+var default_spawn_offset = 200  # Store the default offset for respawning
 
 func _ready() -> void:
-	spawn_sword(200)
+	spawn_sword(default_spawn_offset)
 	s()
 	set_sword()
 	
@@ -24,7 +25,8 @@ func s():
 func set_sword():
 	s()
 	await get_tree().create_timer(0.2).timeout
-	sword_node.set_sword(sword_length,attack_speed,sword_offset,attack)
+	if sword_node:  # Check if sword still exists
+		sword_node.set_sword(sword_length,attack_speed,sword_offset,attack)
 
 #func _process(delta: float) -> void:
 	#if sword_node:
@@ -39,7 +41,22 @@ func spawn_sword(offset):
 	sword_node.name = sword_id
 	#print("sword spawn")
 
-# New function to properly disable the sword
+# Delete the sword completely from the scene
+func delete_sword():
+	if sword_node:
+		sword_node.queue_free()
+		sword_node = null
+
+# Respawn the sword (useful if you need to reset without reloading the scene)
+func respawn_sword():
+	# First make sure any existing sword is deleted
+	delete_sword()
+	# Wait a frame to ensure the old sword is gone
+	await get_tree().process_frame
+	# Spawn a new sword
+	spawn_sword(default_spawn_offset)
+
+# New function to properly disable the sword (kept for backward compatibility)
 func disable_sword():
 	if sword_node:
 		sword_node.visible = false

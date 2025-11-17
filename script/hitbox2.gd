@@ -11,12 +11,19 @@ var hit_stop_duration = 0.03  # Base hitstop duration in seconds
 var is_in_hitstop = false    # Prevent multiple hitstops from overlapping
 # Static variable to track global hitstop state
 static var global_hitstop_active = false
+# Parry cooldown variables
+var parry_cooldown_duration = 0.3  # Cooldown duration in seconds
+var can_parry = true              # Whether parrying is currently allowed
+static var global_parry_cooldown = false  # Track parry cooldown globally
 
 func _ready():
 	# Reset time scale and hitstop state when scene loads
 	Engine.time_scale = 1.0
 	global_hitstop_active = false
 	is_in_hitstop = false
+	# Reset parry cooldown state
+	can_parry = true
+	global_parry_cooldown = false
 	
 	var sprite = get_parent().get_node_or_null("E")
 	if sprite:
@@ -35,6 +42,10 @@ func _exit_tree():
 		Engine.time_scale = 1.0
 		is_in_hitstop = false
 		global_hitstop_active = false
+	# Reset parry cooldown on exit
+	if not can_parry:
+		can_parry = true
+		global_parry_cooldown = false
 
 func slow():
 	# Check if ANY hitstop is already active globally
@@ -65,6 +76,22 @@ func slow():
 		# Force cleanup if node was removed
 		Engine.time_scale = 1.0
 		global_hitstop_active = false
+
+func start_parry_cooldown():
+	# Check if parry cooldown is already active globally
+	if global_parry_cooldown:
+		return
+	
+	can_parry = false
+	global_parry_cooldown = true
+	
+	# Wait for cooldown duration using real time
+	await get_tree().create_timer(parry_cooldown_duration, false, true).timeout
+	
+	# Check if node still exists before resetting
+	if is_inside_tree():
+		can_parry = true
+		global_parry_cooldown = false
 
 func damage(attack, speed):
 	var sprite = get_parent().get_node_or_null("E")
@@ -115,11 +142,19 @@ func _on_area_entered(area: Area2D) -> void:
 		if not collider.name == "Sword":
 			sound_node.play_sound("hit" + str(s_num))
 		else:
-			sound_node.play_sound("parry")
-			print("parry")
-			# Add hitstop for parries too (usually shorter)
-			hit_stop = 0.5  # Lighter hitstop for parries
-			slow()
+			# Check if parrying is allowed (not in cooldown)
+			if can_parry and not global_parry_cooldown:
+				sound_node.play_sound("parry")
+				print("parry")
+				# Add hitstop for parries too (usually shorter)
+				hit_stop = 0.5  # Lighter hitstop for parries
+				slow()
+				# Start the parry cooldown
+				start_parry_cooldown()
+			else:
+				# During cooldown, treat it as a regular hit instead of parry
+				sound_node.play_sound("hit" + str(s_num))
+				print("parry on cooldown - regular hit")
 		
 		await get_tree().create_timer(0.01).timeout
 	

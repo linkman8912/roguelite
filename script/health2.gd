@@ -38,17 +38,11 @@ func damage(attack):
 		if physics_node:
 			physics_node.stop_movement()
 		
-		# Hide the sword to stop dealing damage
+		# Delete the sword completely to stop dealing damage
 		var sword_spawner = get_node("../sword_spawner")
 		if sword_spawner and sword_spawner.sword_node:
-			sword_spawner.sword_node.visible = false
-			# Optionally disable collision on the sword as well
-			if sword_spawner.sword_node.has_method("set_physics_process"):
-				sword_spawner.sword_node.set_physics_process(false)
-			# If the sword has a CollisionShape2D, disable it
-			var collision_shape = sword_spawner.sword_node.get_node_or_null("CollisionShape2D")
-			if collision_shape:
-				collision_shape.disabled = true
+			sword_spawner.sword_node.queue_free()
+			sword_spawner.sword_node = null  # Clear the reference
 		
 		# Stop processing for the parent
 		get_parent().set_physics_process(false)

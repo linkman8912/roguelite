@@ -30,7 +30,7 @@ var stats_multiplier = {
 	"playerSpeed": 1,
 	"playerControl": 1,
 	"weaponSpeed": 1,
-	"weaponLength": 5,
+	"weaponLength": 10,
 	"luck": 1,
 }
 func set_back_end_stats():

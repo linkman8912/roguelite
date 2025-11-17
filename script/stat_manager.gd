@@ -36,7 +36,7 @@ var stats_multiplier = {
 func set_back_end_stats():
 	for key in stats_multiplier.keys():
 		stats[key] = stats_multiplier[key]*front_stats[key]
-	print("keys:" + str(stats))
+	#print("keys:" + str(stats))
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	attack_node = get_parent().get_node_or_null("attack_node")
@@ -57,11 +57,23 @@ func _ready() -> void:
 
 	apply_stats()
 
+func slow():
+	attack_node = get_parent().get_node_or_null("attack_node")
+	health_node = get_parent().get_node_or_null("health_node")
+	physics_node = get_parent().get_node_or_null("physics")
+	parent_node = get_parent()
+	sword_spawner = parent_node.get_node_or_null("sword_spawner")
+	
+	if parent_node:
+		parent_name = parent_node.name +"_"
+	apply_stats()
+
 func _process(delta: float) -> void:
-	pass
+	set_back_end_stats()
 
 func _kill():
-	print("is it nuvu pink")
+	pass
+	#print("is it nuvu pink")
 
 func set_sword():
 	sword_spawner.set_sword()
@@ -71,14 +83,14 @@ func get_attack_speed():
 		return attack_node.attack_speed()
 		set_sword()
 func set_damage(d):
-	print("attack set tryed")
+	#print("attack set tryed")
 	if attack_node:
-		print("attack set",get_parent(), d)
+		#print("attack set",get_parent(), d)
 		attack_node.set_damage(d)
 		set_sword()
 func set_weapon_speed(s):
 	if attack_node:
-		print("attack speed set: ",s)
+		#print("attack speed set: ",s)
 		attack_node.set_d_speed(s)
 		set_sword()
 
@@ -91,17 +103,30 @@ func set_health(s):
 		health_node.set_health(s)
 func set_max_health(s):
 	if health_node:
-		print("health set",s)
+		#print("health set",s)
 		health_node.set_max_health(s)
+
 func set_speed(s):
 	if physics_node:
-		print("physics bitch",s)
+		#print("physics bitch",s)
 		physics_node.set_speed(s)
-func set_stats(new_stats: Dictionary):
-	stats = new_stats
 func set_control(c):
 	if(parent_node.name == "Player"):
 		parent_node.set_control(c)
+		
+func set_stats(new_stats: Dictionary):
+	if stats != new_stats:
+		stats = new_stats
+		apply_stats()
+func set_front_stats(new_stats: Dictionary):
+	if front_stats != new_stats:
+		front_stats = new_stats
+		apply_stats()
+
+func get_stats():
+	return stats
+func get_front_stats():
+	return front_stats
 
 func apply_stats():
 	set_back_end_stats()

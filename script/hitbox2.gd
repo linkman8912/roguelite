@@ -119,6 +119,8 @@ func randi_pitch():
 	rng.randomize()
 	sound_node.pitch_scale = rng.randf_range(0.9, 1.0)
 
+
+
 func _on_area_entered(area: Area2D) -> void:
 	var collider = area.get_parent() # often the main node that owns the area
 	var attack_node = collider.get_node_or_null("attack_node")
@@ -133,6 +135,7 @@ func _on_area_entered(area: Area2D) -> void:
 	
 	if sword.name == "sword" and (not collider.name == "arena"):
 		sword.switch()
+		sword.slow()
 		print("sams ")
 		randi_pitch()
 		var rng = RandomNumberGenerator.new()
@@ -149,9 +152,11 @@ func _on_area_entered(area: Area2D) -> void:
 				# Add hitstop for parries too (usually shorter)
 				hit_stop = 0.5  # Lighter hitstop for parries
 				slow()
+				
 				# Start the parry cooldown
 				start_parry_cooldown()
 			else:
+				sword.slow()
 				# During cooldown, treat it as a regular hit instead of parry
 				sound_node.play_sound("hit" + str(s_num))
 				print("parry on cooldown - regular hit")

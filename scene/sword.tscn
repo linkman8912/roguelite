@@ -27,5 +27,5 @@ scale = Vector2(2.5, 2.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sword/hit_box_node"]
 position = Vector2(-0.0749999, -86.974)
-scale = Vector2(0.285, 1.855)
+scale = Vector2(0.645, 2.135)
 shape = SubResource("RectangleShape2D_d5tdf")

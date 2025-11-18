@@ -19,6 +19,8 @@ var stat_manager
 
 var data = load_data()
 
+var battles_won = 0
+
 func shop():
 	reset()
 	var instance = shop_scene.instantiate()

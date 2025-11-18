@@ -26,7 +26,7 @@ func set_sword():
 	s()
 	await get_tree().create_timer(0.2).timeout
 	if sword_node:  # Check if sword still exists
-		sword_node.set_sword(sword_length,attack_speed,sword_offset,attack)
+		sword_node.set_sword(sword_length,attack_speed,sword_offset,attack,"hammer")
 
 #func _process(delta: float) -> void:
 	#if sword_node:
@@ -37,7 +37,7 @@ func spawn_sword(offset):
 	sword_node = sword_scene.instantiate()
 	add_child(sword_node)
 	set_sword()
-	sword_node.set_sword(sword_length,attack_speed,offset,attack)
+	sword_node.set_sword(sword_length,attack_speed,offset,attack,"hammer")
 	sword_node.name = sword_id
 	#print("sword spawn")
 

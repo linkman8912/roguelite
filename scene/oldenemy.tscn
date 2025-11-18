@@ -2,7 +2,7 @@
 
 [ext_resource type="PhysicsMaterial" uid="uid://p5garr5kkysn" path="res://bounce.tres" id="1_v3qwr"]
 [ext_resource type="Texture2D" uid="uid://4xxit83kmo0t" path="res://assets/red.png" id="3_uinsm"]
-[ext_resource type="Shader" path="res://scene/hit.gdshader" id="3_v3qwr"]
+[ext_resource type="Shader" uid="uid://dg6r78ahf2duq" path="res://scene/hit.gdshader" id="3_v3qwr"]
 [ext_resource type="PackedScene" uid="uid://baxs661mw2wpk" path="res://scene/hit_box.tscn" id="5_bquj1"]
 [ext_resource type="PackedScene" uid="uid://xgns2q0d0ict" path="res://scene/health_node2.tscn" id="7_btygv"]
 [ext_resource type="PackedScene" uid="uid://ctab8b8i86avd" path="res://scene/sword_spawner.tscn" id="7_ycwaw"]
@@ -18,11 +18,9 @@ shader_parameter/show_white = false
 radius = 5.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uinsm"]
-radius = 5.35571
+radius = 18.228775
 
 [node name="Enemy" type="RigidBody2D"]
-collision_layer = 2
-collision_mask = 10
 physics_material_override = ExtResource("1_v3qwr")
 gravity_scale = 0.0
 lock_rotation = true
@@ -41,7 +39,7 @@ shape = SubResource("CircleShape2D_6yv18")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_box_node"]
 position = Vector2(0.4, 0.3)
-scale = Vector2(3.465, 3.465)
+scale = Vector2(0.97, 0.97)
 shape = SubResource("CircleShape2D_uinsm")
 
 [node name="health_node" parent="." instance=ExtResource("7_btygv")]

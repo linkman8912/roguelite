@@ -17,6 +17,7 @@ func _ready() -> void:
 	add_mid_container()
 	set_sword()
 
+
 func add_mid_container():
 	mid_container = mid_container_load.instantiate()
 	add_child(mid_container)

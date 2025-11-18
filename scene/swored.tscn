@@ -11,5 +11,5 @@ script = ExtResource("1_yys60")
 texture = ExtResource("1_rjghh")
 
 [node name="tip" type="Sprite2D" parent="."]
+position = Vector2(0, -32)
 texture = ExtResource("3_rjghh")
-offset = Vector2(0, -32)

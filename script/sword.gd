@@ -19,4 +19,6 @@ func switch():
 	dir *= -1
 
 func _process(delta: float) -> void:
-	rotate( float(rot_speed*dir) * delta)
+	var old_position = position
+	rotate(float(rot_speed*dir) * delta)
+	get_node("Sword/hit_box_node/ShapeCast2D").target_position = old_position

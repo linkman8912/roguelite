@@ -7,7 +7,7 @@ var stats = {
 	"playerSpeed": 10,
 	"playerControl": 10,
 	"weaponSpeed": 10,
-	"weaponLength": 10,
+	"weaponLength": 50,
 	"luck": 10
 }
 

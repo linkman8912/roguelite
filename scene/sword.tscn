@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bv0bpj3oi4u42"]
+[gd_scene load_steps=7 format=3 uid="uid://bv0bpj3oi4u42"]
 
 [ext_resource type="Script" uid="uid://dxapno8usfjaq" path="res://script/sword.gd" id="1_rlqbj"]
 [ext_resource type="PackedScene" uid="uid://dgfiexw08noni" path="res://scene/attack_node.tscn" id="3_so1pe"]
@@ -7,6 +7,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d5tdf"]
 size = Vector2(19.9174, 5.70909)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rlqbj"]
+size = Vector2(6, 10)
 
 [node name="Sword" type="Node2D"]
 script = ExtResource("1_rlqbj")
@@ -29,3 +32,10 @@ scale = Vector2(2.5, 2.5)
 position = Vector2(-0.0749999, -86.974)
 scale = Vector2(0.285, 1.855)
 shape = SubResource("RectangleShape2D_d5tdf")
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="Sword/hit_box_node"]
+position = Vector2(0, -86.999794)
+shape = SubResource("RectangleShape2D_rlqbj")
+target_position = Vector2(-21, 0)
+collide_with_areas = true
+collide_with_bodies = false

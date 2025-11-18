@@ -47,6 +47,7 @@ shape = SubResource("CircleShape2D_uinsm")
 [node name="health_node" parent="." instance=ExtResource("7_btygv")]
 
 [node name="sword_spawner" parent="." instance=ExtResource("7_ycwaw")]
+rotation = 3.1415927
 
 [node name="stat_manager" parent="." instance=ExtResource("8_6yv18")]
 

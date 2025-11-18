@@ -20,8 +20,8 @@ func _ready() -> void:
 func add_mid_container():
 	mid_container = mid_container_load.instantiate()
 	add_child(mid_container)
-	
-	
+
+
 
 func set_sword():
 	#🤳🤳🤳🤳
@@ -41,6 +41,23 @@ func set_sword():
 			# Place the hilt at the start
 			hilt.position = Vector2.ZERO
 			tip.position=Vector2(next_segment_x,next_segment_y)
+		var shape_cast = get_parent().get_node("hit_box_node").get_node("ShapeCast2D")
+		var collision_shape = get_parent().get_node("hit_box_node").get_node("CollisionShape2D")
+		
+		var new_position = ((hilt.position - hilt.texture.get_size()) + (tip.position + tip.texture.get_size()))*2
+		#shape_cast.position = ((hilt.position - hilt.texture.get_size()) + (tip.position + tip.texture.get_size()))/2
+		#shape_cast.position = ((hilt.position) + (tip.position - Vector2(0, tip.texture.get_size().y)))/2
+		#collision_shape.position = ((hilt.position) + (tip.position - Vector2(0, tip.texture.get_size().y)))/2
+		shape_cast.position = new_position
+		collision_shape.position = new_position
+
+
+		var rectangle = RectangleShape2D.new()
+		#print("tip: " + str((tip.position - hilt.position).length()))
+		rectangle.size = Vector2(6, (tip.position - hilt.position).length()/2)
+
+		shape_cast.set_shape(rectangle)
+		collision_shape.set_shape(rectangle)
 	# Spawn mid segments with offsets
 	#var y_offset = 0.0
 	#for i in range(segment_count):

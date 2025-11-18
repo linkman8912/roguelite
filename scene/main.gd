@@ -7,7 +7,6 @@ var enemy_n = "Enemy"
 @onready var Player_node = get_node(player_n)
 
 func _ready() -> void:
-	Engine.max_fps = 500
 	reset()
 	Console.add_command("reset",reset,0)
 	Console.add_command("who_is_in_paris",paris,0)

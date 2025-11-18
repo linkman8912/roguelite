@@ -54,12 +54,10 @@ func shake():
 		x = randf_range(-move, move)
 		y = randf_range(-move, move)
 		var target = initial + Vector2(x, y)
-
 		# Move toward the target 30 steps
 		for i in range(30):
 			parent.position = parent.position.move_toward(target, 1.0)
 			await get_tree().create_timer(0.01).timeout
-
 		# Pause, then snap back to initial
 		await get_tree().create_timer(0.01).timeout
 		parent.position = initial
@@ -67,13 +65,20 @@ func shake():
 
 	
 func damage(attack):
+	var player_d = false
+	var enemy_d = false
 	# Don't process damage if already dead
 	if is_dead:
 		return
 		
 	health -= attack
 	
-	if health <= 0 and not is_dead:
+	if health <= 0 and not is_dead and ((get_parent().name == "Player" and not enemy_d) or (get_parent().name == "Enemy" and not player_d)) :
+		if get_parent().name == "Player":
+			player_d = true
+		if get_parent().name == "Enemy":
+			enemy_d = true
+		
 		get_parent().get_node("hit_box_node").kill()
 		shake()
 		is_dead = true

@@ -1,20 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://bfjcoy4q6r63r"]
+[gd_scene load_steps=2 format=3 uid="uid://crqoqxj5thdm1"]
 
 [sub_resource type="Curve" id="Curve_g624l"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.9941861, 0.23595512), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.50561804), 0.0, 0.0, 0, 0, Vector2(0.66860473, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [node name="Node2D" type="Node2D"]
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-amount = 30
-lifetime = 0.75
+emitting = false
+amount = 10
+lifetime = 0.5
 one_shot = true
 explosiveness = 1.0
 spread = 180.0
 gravity = Vector2(0, 0)
-initial_velocity_min = 50.0
-initial_velocity_max = 100.0
+initial_velocity_min = 20.0
+initial_velocity_max = 30.0
 scale_amount_min = 2.0
 scale_amount_max = 4.0
 scale_amount_curve = SubResource("Curve_g624l")

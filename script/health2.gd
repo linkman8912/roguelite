@@ -8,6 +8,7 @@ var health = 0.0
 var is_dead = false  # Prevent multiple death triggers
 
 func _ready():
+	
 	# Hide the death particle on spawn
 	var death_particle = get_node_or_null("../death_particle")
 	if death_particle:
@@ -29,14 +30,57 @@ func slow():
 func _process(delta: float) -> void:
 	print("health:",health,get_parent())
 	
+func shake():
+	print("shake shake your booty")
+	var y_r = RandomNumberGenerator.new()
+	var x_r = RandomNumberGenerator.new()
+
+
+	var parent = get_parent()
+	var initial = parent.position 
+	var move = 10
+	var m = 0.1
+	var x_m = m
+	var y_m = m
+	var x = int(x_r.randf_range(move*-1, move))
+	var y = int(y_r.randf_range(move*-1, move))
+	var goal_pos = initial + Vector2(x,y)
+	if goal_pos.x < 0:
+		x_m = -1
+	if goal_pos.y < 0:
+		y_m = -1
+	while true:
+		# Pick random offset
+		x = randf_range(-move, move)
+		y = randf_range(-move, move)
+		var target = initial + Vector2(x, y)
+		# Move toward the target 30 steps
+		for i in range(30):
+			parent.position = parent.position.move_toward(target, 1.0)
+			await get_tree().create_timer(0.01).timeout
+		# Pause, then snap back to initial
+		await get_tree().create_timer(0.01).timeout
+		parent.position = initial
+
+
+	
 func damage(attack):
+	var player_d = false
+	var enemy_d = false
 	# Don't process damage if already dead
 	if is_dead:
 		return
 		
 	health -= attack
 	
-	if health <= 0 and not is_dead:
+	if health <= 0 and not is_dead and ((get_parent().name == "Player" and not enemy_d) or (get_parent().name == "Enemy" and not player_d)) :
+		if get_parent().name == "Player":
+			player_d = true
+		if get_parent().name == "Enemy":
+			enemy_d = true
+		
+		get_parent().get_node("hit_box_node").kill()
+		shake()
 		is_dead = true
 		
 		# Determine sound based on who died
@@ -121,6 +165,7 @@ func damage(attack):
 			# Play death particle for enemy (only once)
 			var death_particle = get_node_or_null("../death_particle")
 			if death_particle:
+				
 				death_particle.visible = true
 				# Check particle type and emit
 				if death_particle is GPUParticles2D:

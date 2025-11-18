@@ -41,7 +41,8 @@ func _ready():
 	parent = self.get_parent()
 	sword = get_parent().get_parent()
 	sound_node = $audio_node
-
+func kill():
+	get_node("CollisionShape2D").queue_free()
 func _exit_tree():
 	if is_in_hitstop:
 		Engine.time_scale = 1.0

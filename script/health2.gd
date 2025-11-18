@@ -61,8 +61,6 @@ func damage(attack):
 			get_parent().set_physics_process(false)
 			get_parent().set_process(false)
 			
-			# Visual feedback - make character darker to show they died
-			get_parent().modulate = Color(0.3, 0.3, 0.3, 1.0)
 			
 			# Wait before particle effect
 			await get_tree().create_timer(2.25).timeout
@@ -115,8 +113,6 @@ func damage(attack):
 			get_parent().set_physics_process(false)
 			get_parent().set_process(false)
 			
-			# Visual feedback - make character darker to show they died
-			get_parent().modulate = Color(0.3, 0.3, 0.3, 1.0)
 			
 			# Wait before particle effect
 			await get_tree().create_timer(2.25).timeout

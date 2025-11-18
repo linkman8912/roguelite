@@ -9,7 +9,6 @@ point_count = 2
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 amount = 30
 lifetime = 0.75
-one_shot = true
 explosiveness = 1.0
 spread = 180.0
 gravity = Vector2(0, 0)

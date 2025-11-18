@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://4rwt4tds16gy"]
+[gd_scene load_steps=2 format=3 uid="uid://codk53qqerery"]
 
 [sub_resource type="Curve" id="Curve_c1bqo"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.43820232), 0.0, 0.0, 0, 0]
@@ -18,4 +18,4 @@ gravity = Vector2(0, 0)
 initial_velocity_min = 20.0
 initial_velocity_max = 20.0
 scale_amount_curve = SubResource("Curve_c1bqo")
-color = Color(0.6745098, 0.19607843, 0.19607843, 1)
+color = Color(0.35686275, 0.43137255, 0.88235295, 1)

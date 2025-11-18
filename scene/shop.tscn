@@ -20,11 +20,12 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -536.0
-offset_top = -296.0
-offset_right = 194.0
-offset_bottom = -40.0
+offset_top = -428.0
+offset_right = 124.66669
+offset_bottom = -170.0
 grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(1.5, 1.5)
 theme_override_constants/separation = 40
 
 [node name="Container1" type="Container" parent="HBoxContainer"]

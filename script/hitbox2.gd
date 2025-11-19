@@ -151,7 +151,7 @@ func _on_area_entered(area: Area2D) -> void:
 				sword.switch()
 				
 				# Add hitstop for parries
-				hit_stop = 0.7
+				hit_stop = 0.4
 				slow()
 				
 				# Start the parry cooldown

@@ -12,7 +12,7 @@ var front_stats = {
 	"playerSpeed": 10,
 	"playerControl": 10,
 	"weaponSpeed": 10,
-	"weaponLength": 10,
+	"weaponLength": 50,
 	"luck": 10,
 }
 var stats = {
@@ -30,7 +30,7 @@ var stats_multiplier = {
 	"playerSpeed": 0.5,
 	"playerControl": 1,
 	"weaponSpeed": 1,
-	"weaponLength": 5,
+	"weaponLength": 1,
 	"luck": 1,
 }
 func set_back_end_stats():

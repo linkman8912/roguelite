@@ -5,7 +5,7 @@
 [ext_resource type="PhysicsMaterial" uid="uid://p5garr5kkysn" path="res://bounce.tres" id="1_y6i60"]
 [ext_resource type="Texture2D" uid="uid://0isidaqkrqpn" path="res://assets/pixil-frame-0 (10).png" id="4_p0hp8"]
 [ext_resource type="PackedScene" uid="uid://baxs661mw2wpk" path="res://scene/hit_box.tscn" id="5_px5sl"]
-[ext_resource type="PackedScene" uid="uid://bfjcoy4q6r63r" path="res://scene/playerdeath.tscn" id="5_y6i60"]
+[ext_resource type="PackedScene" path="res://scene/playerdeath.tscn" id="5_y6i60"]
 [ext_resource type="PackedScene" uid="uid://crqoqxj5thdm1" path="res://scene/bounce_particle.tscn" id="6_ua3vd"]
 [ext_resource type="PackedScene" uid="uid://dgfiexw08noni" path="res://scene/attack_node.tscn" id="6_yxww1"]
 [ext_resource type="PackedScene" uid="uid://8gxlf8xfymyp" path="res://scene/hitparticle.tscn" id="7_itbht"]

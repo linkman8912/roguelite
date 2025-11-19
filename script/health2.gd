@@ -138,7 +138,7 @@ func damage(attack):
 			
 			
 			# Wait before particle effect
-			await get_tree().create_timer(2.25).timeout
+			await get_tree().create_timer(1.5).timeout
 			sound_node.play_sound("explode")
 			
 			# Play death particle for player (only once)
@@ -233,6 +233,8 @@ func get_heath():
 	
 func set_max_health(s):
 	max_health = float(s)
-	health = max_health 
+	reset_health()
 	is_dead = false
 	print(max_health,"max_health")
+func reset_health():
+	set_health(get_max_health())

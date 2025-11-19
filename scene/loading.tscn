@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://brdtyw6n42bv5"]
+
+[ext_resource type="Texture2D" uid="uid://cii7pipm8a22g" path="res://assets/loading.tres" id="1_qb5h4"]
+
+[node name="loading" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(76.227, 49)
+texture = ExtResource("1_qb5h4")
+region_enabled = true
+region_rect = Rect2(65, 114.5, 15, 13)

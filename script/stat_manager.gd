@@ -12,7 +12,7 @@ var front_stats = {
 	"playerSpeed": 10,
 	"playerControl": 10,
 	"weaponSpeed": 10,
-	"weaponLength": 50,
+	"weaponLength": 10,
 	"luck": 10,
 }
 var stats = {
@@ -30,7 +30,7 @@ var stats_multiplier = {
 	"playerSpeed": 1,
 	"playerControl": 1,
 	"weaponSpeed": 1,
-	"weaponLength": 1,
+	"weaponLength": 5,
 	"luck": 1,
 }
 func set_back_end_stats():
@@ -38,6 +38,8 @@ func set_back_end_stats():
 		stats[key] = stats_multiplier[key]*front_stats[key]
 	#print("keys:" + str(stats))
 # Called when the node enters the scene tree for the first time.
+func get_front_stats():
+	return front_stats
 func _ready() -> void:
 	attack_node = get_parent().get_node_or_null("attack_node")
 	health_node = get_parent().get_node_or_null("health_node")
@@ -125,8 +127,7 @@ func set_front_stats(new_stats: Dictionary):
 
 func get_stats():
 	return stats
-func get_front_stats():
-	return front_stats
+
 
 func apply_stats():
 	set_back_end_stats()

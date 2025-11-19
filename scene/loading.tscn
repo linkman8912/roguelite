@@ -1,15 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://brdtyw6n42bv5"]
 
-[ext_resource type="Texture2D" uid="uid://bx446swxm3mr2" path="res://Sprite sheet for Basic Pack.png" id="1_qb5h4"]
+[ext_resource type="Texture2D" uid="uid://cii7pipm8a22g" path="res://assets/loading.tres" id="1_qb5h4"]
 
-[node name="Node2D" type="Node2D"]
+[node name="loading" type="Node2D"]
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
-offset_right = 1152.0
-offset_bottom = 648.0
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(76.227, 49)
 texture = ExtResource("1_qb5h4")
-region_rect = Rect2(59, 107, 26, 26)
-patch_margin_left = 20
-patch_margin_top = 20
-patch_margin_right = 20
-patch_margin_bottom = 20
+region_enabled = true
+region_rect = Rect2(65, 114.5, 15, 13)

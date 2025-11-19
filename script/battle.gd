@@ -13,7 +13,7 @@ func _ready() -> void:
 	Console.add_command("reset",reset,0)
 
 func spawn_arena():
-	var randi = int(randf_range(1, 4))
+	var randi = int(randf_range(1, 3))
 	print(randi,"rand")
 	var arena_scene = load("res://scene/arena"+str(randi) +".tscn")
 	var arena = arena_scene.instantiate()

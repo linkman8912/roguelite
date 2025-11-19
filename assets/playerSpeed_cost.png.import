@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw37qt3lkxitk"
-path="res://.godot/imported/palceholder.png-c4a867235b483b0915c287f801a6e295.ctex"
+uid="uid://dfgkn2vqy5ial"
+path="res://.godot/imported/playerSpeed_cost.png-7e67ac69b8b560f391f8f9662d212615.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/palceholder.png"
-dest_files=["res://.godot/imported/palceholder.png-c4a867235b483b0915c287f801a6e295.ctex"]
+source_file="res://assets/playerSpeed_cost.png"
+dest_files=["res://.godot/imported/playerSpeed_cost.png-7e67ac69b8b560f391f8f9662d212615.ctex"]
 
 [params]
 

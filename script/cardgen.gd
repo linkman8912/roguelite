@@ -54,7 +54,7 @@ func randi_pitch():
 func _on_button_pressed() -> void:
 	sound_node.play_sound("buycard")
 	main.apply_card(rarity, card)
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.5).timeout
 	main.battle()
 	#var deez = main.battle()
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5qoq88uaprmp"]
+[gd_scene load_steps=4 format=3 uid="uid://b5qoq88uaprmp"]
 
 [ext_resource type="Script" uid="uid://dwee7b16126mn" path="res://script/shop.gd" id="1_iuafe"]
 [ext_resource type="PackedScene" uid="uid://hutubia0ar66" path="res://scene/cardv2.tscn" id="2_4p3p6"]
+[ext_resource type="Texture2D" uid="uid://mxvcr8druxh1" path="res://assets/shopback.png" id="2_phbgv"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -12,6 +13,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iuafe")
 
+[node name="Container" type="Container" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Shopback" type="Sprite2D" parent="Container"]
+position = Vector2(576, 324)
+texture = ExtResource("2_phbgv")
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 7
@@ -19,14 +29,14 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -536.0
-offset_top = -428.0
-offset_right = 124.66669
-offset_bottom = -170.0
+offset_left = -534.0
+offset_top = -601.0
+offset_right = 85.19995
+offset_bottom = -343.99997
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(1.5, 1.5)
-theme_override_constants/separation = 40
+scale = Vector2(1.25, 1.25)
+theme_override_constants/separation = 20
 
 [node name="Container1" type="Container" parent="HBoxContainer"]
 custom_minimum_size = Vector2(192, 0)
@@ -34,6 +44,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="Control" parent="HBoxContainer/Container1" instance=ExtResource("2_4p3p6")]
+position = Vector2(2, 2)
 scale = Vector2(2, 2)
 
 [node name="Container2" type="Container" parent="HBoxContainer"]

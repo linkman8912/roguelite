@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://brdtyw6n42bv5"]
+
+[ext_resource type="Texture2D" uid="uid://bx446swxm3mr2" path="res://Sprite sheet for Basic Pack.png" id="1_qb5h4"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_qb5h4")
+region_rect = Rect2(59, 107, 26, 26)
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20

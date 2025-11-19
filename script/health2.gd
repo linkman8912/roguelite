@@ -20,6 +20,16 @@ func _ready():
 		elif death_particle is CPUParticles2D:
 			death_particle.emitting = false
 			death_particle.one_shot = true  # Make it play only once
+	
+	# Hide the hit particle on spawn
+	var hit_particle = get_node_or_null("../hit_particle")
+	if hit_particle:
+		hit_particle.visible = false
+		# Get the CPUParticles2D child
+		for child in hit_particle.get_children():
+			if child is CPUParticles2D:
+				child.emitting = false
+				child.one_shot = true
 
 # Called when the node enters the scene tree for the first time.
 func slow():
@@ -65,6 +75,20 @@ func shake():
 	
 	parent.position = initial
 
+func play_hit_particle():
+	# Play the hit particle effect
+	var hit_particle = get_node_or_null("../hit_particle")
+	if hit_particle:
+		hit_particle.visible = true
+		# Find and emit the CPUParticles2D child
+		for child in hit_particle.get_children():
+			if child is CPUParticles2D:
+				child.one_shot = true
+				child.emitting = true
+				# Auto-hide after particle lifetime
+				await get_tree().create_timer(child.lifetime).timeout
+				hit_particle.visible = false
+				break
 
 	
 func damage(attack):
@@ -75,6 +99,10 @@ func damage(attack):
 		return
 		
 	health -= attack
+	
+	# Play hit particle on any damage (before death check)
+	if health > 0:
+		play_hit_particle()
 	
 	if health <= 0 and not is_dead and ((get_parent().name == "Player" and not enemy_d) or (get_parent().name == "Enemy" and not player_d)) :
 		if get_parent().name == "Player":

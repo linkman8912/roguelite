@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bv0bpj3oi4u42"]
+[gd_scene load_steps=9 format=3 uid="uid://bv0bpj3oi4u42"]
 
 [ext_resource type="Script" uid="uid://dxapno8usfjaq" path="res://script/sword.gd" id="1_rlqbj"]
 [ext_resource type="PackedScene" uid="uid://dgfiexw08noni" path="res://scene/attack_node.tscn" id="3_so1pe"]
+[ext_resource type="PackedScene" uid="uid://8gxlf8xfymyp" path="res://scene/hitparticle.tscn" id="4_d5tdf"]
 [ext_resource type="PackedScene" uid="uid://8p23oyycnp4v" path="res://scene/swored.tscn" id="4_rlqbj"]
 [ext_resource type="PackedScene" uid="uid://baxs661mw2wpk" path="res://scene/hit_box.tscn" id="4_so1pe"]
 [ext_resource type="PackedScene" uid="uid://d1cb3v65h3yft" path="res://scene/sparks.tscn" id="5_so1pe"]
@@ -24,6 +25,8 @@ dammage = 1
 
 [node name="sword_extender" parent="Sword" instance=ExtResource("4_rlqbj")]
 position = Vector2(0, 66.355)
+
+[node name="hit_particle" parent="Sword" instance=ExtResource("4_d5tdf")]
 
 [node name="hit_box_node" parent="Sword" instance=ExtResource("4_so1pe")]
 position = Vector2(0, 255.887)

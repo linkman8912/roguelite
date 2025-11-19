@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cqe41rylpau02"]
+[gd_scene load_steps=16 format=3 uid="uid://cqe41rylpau02"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://p5garr5kkysn" path="res://bounce.tres" id="1_v3qwr"]
 [ext_resource type="Texture2D" uid="uid://4xxit83kmo0t" path="res://assets/red.png" id="3_uinsm"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://jxp0psa8lwk2" path="res://scene/enemydeath.tscn" id="4_v3qwr"]
 [ext_resource type="PackedScene" uid="uid://baxs661mw2wpk" path="res://scene/hit_box.tscn" id="5_bquj1"]
 [ext_resource type="PackedScene" uid="uid://crqoqxj5thdm1" path="res://scene/bounce_particle.tscn" id="5_btygv"]
+[ext_resource type="PackedScene" uid="uid://8gxlf8xfymyp" path="res://scene/hitparticle.tscn" id="6_si5wb"]
 [ext_resource type="PackedScene" uid="uid://xgns2q0d0ict" path="res://scene/health_node2.tscn" id="7_btygv"]
 [ext_resource type="PackedScene" uid="uid://ctab8b8i86avd" path="res://scene/sword_spawner.tscn" id="7_ycwaw"]
 [ext_resource type="PackedScene" uid="uid://cxafltdm0ogom" path="res://scene/stat_manager.tscn" id="8_6yv18"]
@@ -38,6 +39,8 @@ texture = ExtResource("3_uinsm")
 visible = false
 
 [node name="bounce_particle" parent="." instance=ExtResource("5_btygv")]
+
+[node name="hit_particle" parent="." instance=ExtResource("6_si5wb")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.4, 0.3)

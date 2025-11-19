@@ -122,6 +122,10 @@ func _on_area_entered(area: Area2D) -> void:
 		rng.randomize()
 		sound_node.pitch_scale = rng.randf_range(0.8, 1.0)
 		sound_node.play_sound("bounce")
+		
+		# Get collision point and spawn bounce particles
+		var collision_point = get_bounce_collision_point(area)
+		spawn_bounce_particles(collision_point, collider)
 		return
 	
 	# Handle sword collisions
@@ -202,8 +206,13 @@ func get_collision_point(area: Area2D) -> Vector2:
 	
 	return collision_point
 
+func get_bounce_collision_point(area: Area2D) -> Vector2:
+	"""Get the collision point for arena bounces (between Player/Enemy and arena)"""
+	# Use the Player/Enemy's hitbox position directly - this is where the bounce occurs
+	return area.global_position
+
 func spawn_parry_sparks(collision_pos: Vector2):
-	#Spawn particle effect at the parry collision point"""
+	"""Spawn particle effect at the parry collision point"""
 	var sparks = get_parent().get_node_or_null("sparks")
 	if sparks:
 		sparks.global_position = collision_pos
@@ -215,6 +224,21 @@ func spawn_parry_sparks(collision_pos: Vector2):
 				break
 	else:
 		print("Sparks node not found!")
+
+func spawn_bounce_particles(collision_pos: Vector2, collider):
+	"""Spawn particle effect at the bounce collision point"""
+	# Look for bounce_particle on the colliding entity (Player/Enemy), not the arena
+	var bounce_particle = collider.get_node_or_null("bounce_particle")
+	if bounce_particle:
+		bounce_particle.global_position = collision_pos
+		# Access the CPUParticles2D child of the Node2D
+		for child in bounce_particle.get_children():
+			if child is CPUParticles2D:
+				child.emitting = true
+				print("Spawned bounce particles at: ", collision_pos)
+				break
+	else:
+		print("Bounce particle node not found on: ", collider.name)
 
 # REMOVED: _process with ShapeCast2D - use Area2D signals only for consistency
 # If you need ShapeCast2D for raycasting, keep it separate from collision detection

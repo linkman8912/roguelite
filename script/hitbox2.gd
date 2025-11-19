@@ -54,25 +54,26 @@ func _exit_tree():
 		global_parry_cooldown = false
 
 func slow():
-	if global_hitstop_active or is_in_hitstop:
-		return
-	
-	is_in_hitstop = true
-	global_hitstop_active = true
-	
-	var original_time_scale = Engine.time_scale
-	Engine.time_scale = 0.05
-	
-	var scaled_duration = hit_stop_duration * clamp(hit_stop, 0.5, 2.0)
-	await get_tree().create_timer(scaled_duration, false, true).timeout
-	
-	if is_inside_tree():
-		Engine.time_scale = original_time_scale
-		is_in_hitstop = false
-		global_hitstop_active = false
-	else:
-		Engine.time_scale = 1.0
-		global_hitstop_active = false
+	if get_node("/root/Main").playing:
+		if global_hitstop_active or is_in_hitstop:
+			return
+		
+		is_in_hitstop = true
+		global_hitstop_active = true
+		
+		var original_time_scale = Engine.time_scale
+		Engine.time_scale = 0.05
+		
+		var scaled_duration = hit_stop_duration * clamp(hit_stop, 0.5, 2.0)
+		await get_tree().create_timer(scaled_duration, false, true).timeout
+		
+		if is_inside_tree():
+			Engine.time_scale = original_time_scale
+			is_in_hitstop = false
+			global_hitstop_active = false
+		else:
+			Engine.time_scale = 1.0
+			global_hitstop_active = false
 
 func start_parry_cooldown():
 	if global_parry_cooldown:

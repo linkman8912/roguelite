@@ -66,7 +66,7 @@ func _process(delta: float) -> void:
 
 func reset():
 	for child in get_children():
-		if child.name != "AudioStreamPlayer":
+		if child.name != "audio_node":
 			child.queue_free()
 
 func full_reset():

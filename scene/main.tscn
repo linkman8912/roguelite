@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1myslqo75pvt"]
+[gd_scene load_steps=3 format=3 uid="uid://c1myslqo75pvt"]
 
 [ext_resource type="Script" uid="uid://ciev0bxfq4qt2" path="res://script/global.gd" id="1_itxqv"]
+[ext_resource type="PackedScene" uid="uid://cg1mv0igi3n3g" path="res://scene/audio_node.tscn" id="2_v0l8b"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_itxqv")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="audio_node" parent="." instance=ExtResource("2_v0l8b")]

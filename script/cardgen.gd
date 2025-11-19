@@ -6,7 +6,7 @@ var rarities = [
 	"rare",
 	"legendary"
 ]
-
+var sound_node
 @onready var main = $"/root/Main"
 var rarity: int
 var card: int
@@ -18,6 +18,7 @@ func _ready() -> void:
 	while (isDupe()):
 		card = main.generate_card()
 	set_card(rarity, card)
+	sound_node = $"/root/Main/audio_node"
 
 
 func cardart(art):
@@ -45,8 +46,20 @@ func isDupe():
 	var dupe2 = (card == card2.card && !(name == "Control2"))
 	var dupe3 = (card == card3.card && !(name == "Control3"))
 	return dupe1 || dupe2 || dupe3
-
+	
+func randi_pitch():
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
+	sound_node.pitch_scale = rng.randf_range(0.9, 1.0)
 func _on_button_pressed() -> void:
+	sound_node.play_sound("buycard")
 	main.apply_card(rarity, card)
 	main.battle()
 	#var deez = main.battle()
+
+
+func _on_button_mouse_entered() -> void:
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
+	sound_node.pitch_scale = rng.randf_range(0.8, 1.1)
+	sound_node.play_sound("hovercard")

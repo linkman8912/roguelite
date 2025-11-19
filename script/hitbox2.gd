@@ -6,7 +6,7 @@ var parent
 var sword
 var sound_node
 var pitch = 1
-var hit_stop = 1
+var hit_stop = 0.8
 var hit_stop_duration = 0.03
 var is_in_hitstop = false
 static var global_hitstop_active = false
@@ -147,7 +147,7 @@ func _on_area_entered(area: Area2D) -> void:
 				sword.switch()
 				
 				# Add hitstop for parries
-				hit_stop = 0.9
+				hit_stop = 0.7
 				slow()
 				
 				# Start the parry cooldown

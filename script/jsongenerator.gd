@@ -58,7 +58,7 @@ func _ready() -> void:
 					"text": "Increases " + stats[j] + " by " + str(2 * rarityMultipliers[i]) + ", decreases " + oppositeStats[j] + " by " + str(1 * rarityMultipliers[i]),
 					"rarity": rarities[i],
 					"stats": "{\"" + stats[j] + "\": " + str(2 * rarityMultipliers[i]) + ", \"" + oppositeStats[j] + "\": " + str(-1 * rarityMultipliers[i]) + "}",
-					"art": "res://assets/" + stats[j] + ".png"
+					"art": "res://assets/" + stats[j] + "_cost.png"
 
 				})
 				currentid += 1

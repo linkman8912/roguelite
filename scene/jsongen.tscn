@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://dn6ydtr3k8wwi"]
+[gd_scene load_steps=2 format=3 uid="uid://bdeiy5go1g5g5"]
 
 [ext_resource type="Script" uid="uid://bli46y8b7n4cf" path="res://script/jsongenerator.gd" id="1_eb3gr"]
 

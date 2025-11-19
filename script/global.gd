@@ -7,7 +7,7 @@ var stats = {
 	"playerSpeed": 10,
 	"playerControl": 10,
 	"weaponSpeed": 10,
-	"weaponLength": 20,
+	"weaponLength": 100,
 	"luck": 10
 }
 
@@ -22,6 +22,8 @@ var data = load_data()
 
 var battles_won = 0
 
+var playing = false
+
 func shop():
 	reset()
 	var instance = shop_scene.instantiate()
@@ -33,6 +35,7 @@ func battle():
 	var instance = battle_scene.instantiate()
 	add_child(instance)
 	loading()
+	playing = false
 
 func loading():
 	var instance = loading_scene.instantiate()
@@ -40,6 +43,7 @@ func loading():
 
 func start_battle():
 	$"loading".queue_free()
+	playing = true
 
 
 func start():

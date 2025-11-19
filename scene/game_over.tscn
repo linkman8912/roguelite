@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfvcndrbt10gu"]
+
+[ext_resource type="Texture2D" uid="uid://bx446swxm3mr2" path="res://Sprite sheet for Basic Pack.png" id="1_mxr41"]
+[ext_resource type="Script" uid="uid://c0qblcdwvgmxk" path="res://script/playbutton.gd" id="2_bc2bx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qtu10"]
+texture = ExtResource("1_mxr41")
+region_rect = Rect2(162.97, 209.964, 90.0812, 27.0643)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_mxr41")
+region_rect = Rect2(59, 107, 26, 26)
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="MenuButtonHolder" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 451.0
+offset_top = 279.0
+offset_right = 701.0
+offset_bottom = 369.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Play" type="MarginContainer" parent="MenuButtonHolder"]
+custom_minimum_size = Vector2(250, 90)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MenuButtonHolder/Play"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_qtu10")
+script = ExtResource("2_bc2bx")

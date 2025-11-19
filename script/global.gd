@@ -17,6 +17,7 @@ var stat_manager
 @onready var battle_scene = load("res://scene/battle.tscn")
 @onready var start_scene = load("res://scene/start.tscn")
 @onready var loading_scene = load("res://scene/loading.tscn")
+@onready var game_over_scene = load("res://scene/game_over.tscn")
 
 var data = load_data()
 
@@ -81,8 +82,9 @@ func get_stats():
 	return stats
 
 func game_over():
-	for child in get_children():
-		child.queue_free()
+	reset()
+	var instance = game_over_scene.instantiate()
+	add_child(instance)
 
 func generate_rarity():
 	var number = randi() % 100

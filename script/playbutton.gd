@@ -5,5 +5,6 @@ func _ready() -> void:
 
 	
 func _on_button_pressed():
-	get_node("/root/Main").battle()
+	get_node("/root/Main").full_reset()
+	get_node("/root/Main").shop()
 	return

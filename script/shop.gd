@@ -13,7 +13,7 @@ func _ready() -> void:
 	var stats = get_parent().get_stats()
 	print("tried to spawn cards")
 	for key in stats.keys():
-		var label = get_node_or_null(str(key))
+		var label = get_node_or_null("stats"+str(key))
 		if label:
 			label.text = str(key) + ":" + str(stats[key])
 	#var card1pos = $Marker2D.global_position

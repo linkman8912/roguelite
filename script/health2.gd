@@ -138,7 +138,7 @@ func damage(attack):
 			
 			
 			# Wait before particle effect
-			await get_tree().create_timer(2.25).timeout
+			await get_tree().create_timer(1.5).timeout
 			sound_node.play_sound("explode")
 			
 			# Play death particle for player (only once)

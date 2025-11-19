@@ -73,13 +73,20 @@ func set_sword():
 		#var hitbox_height = abs(tip.position.y - hilt.position.y) / 2
 		#var new_position = Vector2(0, (tip.position.y + hilt.position.y) / 2 - hitbox_height + (hilt.texture.get_size().y/2))
 		#CLAUDE
-		var hitbox_height = abs(tip.position.y - hilt.position.y)
-		var new_position = Vector2(0, (tip.position.y + hilt.position.y) / 2 - hitbox_height * 0.45)
+		#var hitbox_height = abs(tip.position.y - hilt.position.y)
+		#var new_position = Vector2(0, (tip.position.y + hilt.position.y) / 2 - hitbox_height * 0.45)
+		
+		#NEW
+		#var new_position = Vector2(0, (tip.position.y + hilt.position.y) / 2 - segment_count * 0.45)
+
+		
 		# NEW
 		#var hitbox_height = abs(tip.position.y - hilt.position.y) / 2
 		#var new_position = Vector2(0, (tip.position.y + hilt.position.y) / 2)
 		
+		# NEW
 		#var new_position = Vector2(0, (tip.position.y + hilt.position.y) / 2 + get_offset(segment_count))
+		var new_position = Vector2(0, (tip.position.y + hilt.position.y) / 2)
 		
 		#var new_position = Vector2((hilt_bottom + tip_top).x, (hilt.position + tip_top).y)
 		#var new_position = (hilt_bottom + tip_top)/2

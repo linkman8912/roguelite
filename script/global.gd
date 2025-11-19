@@ -7,7 +7,7 @@ var stats = {
 	"playerSpeed": 10,
 	"playerControl": 10,
 	"weaponSpeed": 10,
-	"weaponLength": 10,
+	"weaponLength": 20,
 	"luck": 10
 }
 
@@ -16,6 +16,7 @@ var stat_manager
 @onready var shop_scene = load("res://scene/shop.tscn")
 @onready var battle_scene = load("res://scene/battle.tscn")
 @onready var start_scene = load("res://scene/start.tscn")
+@onready var loading_scene = load("res://scene/loading.tscn")
 
 var data = load_data()
 
@@ -31,6 +32,14 @@ func battle():
 	reset()
 	var instance = battle_scene.instantiate()
 	add_child(instance)
+	loading()
+
+func loading():
+	var instance = loading_scene.instantiate()
+	add_child(instance)
+
+func start_battle():
+	$"loading".queue_free()
 
 
 func start():

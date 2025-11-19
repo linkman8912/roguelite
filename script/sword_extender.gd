@@ -9,6 +9,10 @@ extends Node2D
 @export var segment_width: float = 1.0
 @export var x_offset_per_segment: float = -1.0
 @export var y_offset_per_segment: float = -1.0
+var length_threshold = 70
+var offset_multiplier = 0.5
+
+@onready var ball = get_node("../../../..")
 
 func  set_segment(s):
 	segment_count = int(s)
@@ -58,7 +62,7 @@ func set_sword():
 
 		#var hilt_bottom = hilt.position + (hilt.texture.get_size()/2)
 		var hilt_bottom = hilt.position # CLAUDE
-		
+
 
 		#var new_position = (hilt_bottom + tip_top)/2
 		##CLAUDE
@@ -69,8 +73,13 @@ func set_sword():
 		#var hitbox_height = abs(tip.position.y - hilt.position.y) / 2
 		#var new_position = Vector2(0, (tip.position.y + hilt.position.y) / 2 - hitbox_height + (hilt.texture.get_size().y/2))
 		#CLAUDE
-		var hitbox_height = abs(tip.position.y - hilt.position.y) / 2
-		var new_position = Vector2(0, (tip.position.y + hilt.position.y) / 2 - hitbox_height * 0.8)
+		var hitbox_height = abs(tip.position.y - hilt.position.y)
+		var new_position = Vector2(0, (tip.position.y + hilt.position.y) / 2 - hitbox_height * 0.45)
+		# NEW
+		#var hitbox_height = abs(tip.position.y - hilt.position.y) / 2
+		#var new_position = Vector2(0, (tip.position.y + hilt.position.y) / 2)
+		
+		#var new_position = Vector2(0, (tip.position.y + hilt.position.y) / 2 + get_offset(segment_count))
 		
 		#var new_position = Vector2((hilt_bottom + tip_top).x, (hilt.position + tip_top).y)
 		#var new_position = (hilt_bottom + tip_top)/2
@@ -111,3 +120,6 @@ func set_sword():
 
 	# Place the tip at the end
 	#tip.position = Vector2(x_offset, y_offset)
+
+func get_offset(length):
+	return (length - length_threshold) * offset_multiplier

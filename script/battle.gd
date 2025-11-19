@@ -44,6 +44,7 @@ func spawn_player():
 func start_battle():
 	$"Player/physics".start()
 	$"Enemy/physics".start()
+	$"/root/Main".start_battle()
 
 func _on_timer_timeout() -> void:
 	start_battle()

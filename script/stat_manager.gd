@@ -38,6 +38,8 @@ func set_back_end_stats():
 		stats[key] = stats_multiplier[key]*front_stats[key]
 	#print("keys:" + str(stats))
 # Called when the node enters the scene tree for the first time.
+func get_front_stats():
+	return front_stats
 func _ready() -> void:
 	attack_node = get_parent().get_node_or_null("attack_node")
 	health_node = get_parent().get_node_or_null("health_node")
@@ -125,8 +127,7 @@ func set_front_stats(new_stats: Dictionary):
 
 func get_stats():
 	return stats
-func get_front_stats():
-	return front_stats
+
 
 func apply_stats():
 	set_back_end_stats()

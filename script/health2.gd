@@ -31,36 +31,39 @@ func _process(delta: float) -> void:
 	print("health:",health,get_parent())
 	
 func shake():
-	print("shake shake your booty")
-	var y_r = RandomNumberGenerator.new()
-	var x_r = RandomNumberGenerator.new()
-
-
+	print("shake")
 	var parent = get_parent()
 	var initial = parent.position 
-	var move = 10
-	var m = 0.1
-	var x_m = m
-	var y_m = m
-	var x = int(x_r.randf_range(move*-1, move))
-	var y = int(y_r.randf_range(move*-1, move))
-	var goal_pos = initial + Vector2(x,y)
-	if goal_pos.x < 0:
-		x_m = -1
-	if goal_pos.y < 0:
-		y_m = -1
-	while true:
-		# Pick random offset
-		x = randf_range(-move, move)
-		y = randf_range(-move, move)
-		var target = initial + Vector2(x, y)
-		# Move toward the target 30 steps
-		for i in range(30):
-			parent.position = parent.position.move_toward(target, 1.0)
-			await get_tree().create_timer(0.01).timeout
-		# Pause, then snap back to initial
-		await get_tree().create_timer(0.01).timeout
-		parent.position = initial
+	var duration = 2.25  # Total shake duration in seconds
+	var elapsed = 0.0
+	var shake_frequency = 45.0  # How fast it shakes (higher = faster)
+	var max_intensity = 15.0  # Maximum shake distance
+	
+	# Use a smoother time step
+	var time_step = 0.016  # Approximately 60 FPS
+	
+	while elapsed < duration:
+		# Calculate intensity that grows over time (0 to 1)
+		var progress = elapsed / duration
+		var intensity = max_intensity * progress
+		
+		# Use sine waves for smooth oscillation
+		var x_offset = sin(elapsed * shake_frequency) * intensity
+		var y_offset = cos(elapsed * shake_frequency * 1.3) * intensity  # Different frequency for more organic feel
+		
+		# Apply shake offset
+		parent.position = initial + Vector2(x_offset, y_offset)
+		
+		await get_tree().create_timer(time_step).timeout
+		elapsed += time_step
+	
+	# Return to initial position smoothly
+	var return_speed = 20.0
+	while parent.position.distance_to(initial) > 0.1:
+		parent.position = parent.position.move_toward(initial, return_speed)
+		await get_tree().create_timer(time_step).timeout
+	
+	parent.position = initial
 
 
 	

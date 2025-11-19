@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1cb3v65h3yft"]
+[gd_scene load_steps=5 format=3 uid="uid://8gxlf8xfymyp"]
 
-[ext_resource type="Texture2D" uid="uid://deglhq3j5qrfs" path="res://assets/spark.png" id="1_qpyo7"]
+[ext_resource type="Texture2D" uid="uid://deglhq3j5qrfs" path="res://assets/spark.png" id="1_aniam"]
 
 [sub_resource type="Curve" id="Curve_25k5i"]
 _limits = [-200.0, 200.0, 0.0, 1.0]
@@ -11,17 +11,17 @@ point_count = 2
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.9941861, 0.23595512), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="Gradient" id="Gradient_qpyo7"]
-offsets = PackedFloat32Array(0.25342464, 1)
-colors = PackedColorArray(0.9843137, 0.9490196, 0.21176471, 1, 0.8745098, 0.44313726, 0.14901961, 1)
+[sub_resource type="Gradient" id="Gradient_aniam"]
+offsets = PackedFloat32Array(0, 0.9931507, 1)
+colors = PackedColorArray(0.34901962, 0.3372549, 0.32156864, 0.5803922, 0.34901962, 0.3372549, 0.32156864, 0.27450982, 0.34901962, 0.3372549, 0.32156864, 0.44705883)
 
-[node name="Node2D" type="Node2D"]
+[node name="hit_particle" type="Node2D"]
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 emitting = false
 amount = 10
-texture = ExtResource("1_qpyo7")
-lifetime = 0.35000000000000003
+texture = ExtResource("1_aniam")
+lifetime = 0.25
 one_shot = true
 explosiveness = 1.0
 particle_flag_align_y = true
@@ -31,8 +31,7 @@ gravity = Vector2(0, 0)
 initial_velocity_min = 200.0
 initial_velocity_max = 300.0
 linear_accel_curve = SubResource("Curve_25k5i")
-scale_amount_min = 2.0
-scale_amount_max = 4.0
+scale_amount_max = 2.0
 scale_amount_curve = SubResource("Curve_g624l")
-color = Color(0.9843137, 0.9490196, 0.21176471, 1)
-color_ramp = SubResource("Gradient_qpyo7")
+color = Color(0.34901962, 0.3372549, 0.32156864, 1)
+color_ramp = SubResource("Gradient_aniam")

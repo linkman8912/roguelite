@@ -6,7 +6,7 @@ class_name physics
 const speedModifier = 20.0 # Set movement speed
 var speed = 10 # speed stat
 const slow = 10
-var is_stopped = false # Flag to check if movement should be stopped
+var is_stopped = true # Flag to check if movement should be stopped
 
 func _ready():
 	if rigidBody:
@@ -16,10 +16,11 @@ func _ready():
 		#rigidBody.apply_impulse(Vector2(200, 200).normalized() * speed)
 		rigidBody.linear_damp_mode = RigidBody2D.DAMP_MODE_REPLACE
 		rigidBody.angular_damp_mode = RigidBody2D.DAMP_MODE_REPLACE
-		
+
 		#rigidBody.linear_velocity = Vector2(speed*speedModifier, speed*speedModifier)
 		#rigidBody.velocity = Vector2(-200,-200).normalized() * speed
 		#rigidBody.apply_impulse(Vector2(200, 200).normalized() * speed)
+	stop_movement()
 
 func _physics_process(delta: float) -> void:
 	# Don't process physics if movement is stopped
@@ -74,3 +75,6 @@ func set_speed(s):
 
 func get_speed():
 	return speed
+
+func start():
+	resume_movement()

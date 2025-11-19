@@ -40,11 +40,42 @@ func set_sword():
 			next_segment_y += y_offset_per_segment
 			# Place the hilt at the start
 			hilt.position = Vector2.ZERO
-			tip.position=Vector2(next_segment_x,next_segment_y)
+			tip.position=Vector2(next_segment_x,next_segment_y - (tip.texture.get_size().y))
+		print("sword hilt: " + str(hilt.position))
+		print("sword tip: " + str(tip.position))
 		var shape_cast = get_parent().get_node("hit_box_node").get_node("ShapeCast2D")
 		var collision_shape = get_parent().get_node("hit_box_node").get_node("CollisionShape2D")
 		
-		var new_position = ((hilt.position - hilt.texture.get_size()) + (tip.position + tip.texture.get_size()))*2
+		#CLAUDE
+		shape_cast.position = Vector2.ZERO
+		collision_shape.position = Vector2.ZERO
+
+		#var tip_top = (tip.position - tip.texture.get_size()/2)
+		#var hilt_bottom = (hilt.position + hilt.texture.get_size()/2)
+		#var tip_top = tip.position - (tip.texture.get_size()/2)
+		#var tip_top = Vector2((tip.position - (tip.texture.get_size()/2)).x, tip.position.y)
+		var tip_top = tip.position # CLAUDE
+
+		#var hilt_bottom = hilt.position + (hilt.texture.get_size()/2)
+		var hilt_bottom = hilt.position # CLAUDE
+		
+
+		#var new_position = (hilt_bottom + tip_top)/2
+		##CLAUDE
+		##var hitbox_height = abs(tip.position.y - hilt.position.y)
+		##var new_position = Vector2(0, (tip.position.y + hilt.position.y) / 2 - hitbox_height/2)
+		
+		#CLAUDE
+		#var hitbox_height = abs(tip.position.y - hilt.position.y) / 2
+		#var new_position = Vector2(0, (tip.position.y + hilt.position.y) / 2 - hitbox_height + (hilt.texture.get_size().y/2))
+		#CLAUDE
+		var hitbox_height = abs(tip.position.y - hilt.position.y) / 2
+		var new_position = Vector2(0, (tip.position.y + hilt.position.y) / 2 - hitbox_height * 0.8)
+		
+		#var new_position = Vector2((hilt_bottom + tip_top).x, (hilt.position + tip_top).y)
+		#var new_position = (hilt_bottom + tip_top)/2
+
+
 		#shape_cast.position = ((hilt.position - hilt.texture.get_size()) + (tip.position + tip.texture.get_size()))/2
 		#shape_cast.position = ((hilt.position) + (tip.position - Vector2(0, tip.texture.get_size().y)))/2
 		#collision_shape.position = ((hilt.position) + (tip.position - Vector2(0, tip.texture.get_size().y)))/2
@@ -54,10 +85,21 @@ func set_sword():
 
 		var rectangle = RectangleShape2D.new()
 		#print("tip: " + str((tip.position - hilt.position).length()))
-		rectangle.size = Vector2(6, (tip.position - hilt.position).length()/2)
+		#rectangle.size = Vector2(6, (tip.position - hilt.position).length())
+		#rectangle.size = Vector2(6, (tip.position - hilt.position).length()/2)
+		rectangle.size = Vector2(6, (tip_top - hilt_bottom).length()/2)
+
 
 		shape_cast.set_shape(rectangle)
 		collision_shape.set_shape(rectangle)
+		
+		print("segment_count: " + str(segment_count))
+		print("segment_width: " + str(segment_width))
+		print("y_offset_per_segment: " + str(y_offset_per_segment))
+		print("total segments length: " + str(segment_count * y_offset_per_segment))
+		print("tip texture height: " + str(tip.texture.get_size().y))
+		print("hilt texture height: " + str(hilt.texture.get_size().y))
+
 	# Spawn mid segments with offsets
 	#var y_offset = 0.0
 	#for i in range(segment_count):

@@ -7,7 +7,7 @@ point_count = 2
 [node name="Node2D" type="Node2D"]
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-amount = 200
+amount = 250
 lifetime = 0.75
 explosiveness = 1.0
 emission_shape = 1

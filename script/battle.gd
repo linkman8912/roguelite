@@ -13,7 +13,7 @@ func _ready() -> void:
 	Console.add_command("reset",reset,0)
 
 func spawn_arena():
-	var randi = int(randf_range(1, 4))
+	var randi = int(randf_range(1, 3))
 	print(randi,"rand")
 	var arena_scene = load("res://scene/arena"+str(randi) +".tscn")
 	var arena = arena_scene.instantiate()
@@ -40,3 +40,10 @@ func spawn_player():
 	add_child(Player_node)
 	Player_node.name = player_n
 	Player_node.global_position = $P_start.global_position
+
+func start_battle():
+	$"Player.physics".start()
+	$"Enemy.physics".start()
+
+func _on_timer_timeout() -> void:
+	start_battle()

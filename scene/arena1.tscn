@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4vjo13i8lh2k"]
+[gd_scene load_steps=5 format=3 uid="uid://b4vjo13i8lh2k"]
 
 [ext_resource type="PackedScene" uid="uid://baxs661mw2wpk" path="res://scene/hit_box.tscn" id="2_5ovl6"]
+[ext_resource type="PackedScene" uid="uid://crqoqxj5thdm1" path="res://scene/bounce_particle.tscn" id="2_nkp7d"]
 [ext_resource type="Texture2D" uid="uid://dlgicnj8taylf" path="res://assets/ArenaBackgroundHitbox-export.png" id="3_jw0wr"]
 [ext_resource type="Texture2D" uid="uid://c2yyna5d8x145" path="res://assets/ArenaBackgroundHitbox.png" id="3_nye2f"]
 
@@ -47,6 +48,8 @@ polygon = PackedVector2Array(-139.5, 29.599998, -142, 30.699997, -142, 31.699997
 [node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="StaticBody2D"]
 scale = Vector2(1.3, 1.3)
 polygon = PackedVector2Array(139.1, 29.699997, 137, 30.800003, 137, 32.199997, 95.2, 74, 93.8, 74, 92.7, 76.100006, 95.899994, 81, 140.79999, 81, 144, 77.8, 144, 32.9)
+
+[node name="bounce_particle" parent="." instance=ExtResource("2_nkp7d")]
 
 [node name="hit_box_node" parent="." instance=ExtResource("2_5ovl6")]
 

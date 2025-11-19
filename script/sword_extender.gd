@@ -86,7 +86,7 @@ func set_sword():
 		
 		# NEW
 		#var new_position = Vector2(0, (tip.position.y + hilt.position.y) / 2 + get_offset(segment_count))
-		var new_position = Vector2(0, (tip.position.y + hilt.position.y) / 2)
+		var new_position = Vector2(0, (tip.position.y + hilt.position.y))
 		
 		#var new_position = Vector2((hilt_bottom + tip_top).x, (hilt.position + tip_top).y)
 		#var new_position = (hilt_bottom + tip_top)/2

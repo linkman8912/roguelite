@@ -64,3 +64,4 @@ func _on_button_mouse_entered() -> void:
 	rng.randomize()
 	sound_node.pitch_scale = rng.randf_range(0.8, 1.1)
 	sound_node.play_sound("hovercard")
+	sound_node.pitch_scale = 1.0

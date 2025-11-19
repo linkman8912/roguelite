@@ -78,3 +78,6 @@ func get_speed():
 
 func start():
 	resume_movement()
+	get_parent().get_node("health_node").reset_health()
+	var sword = get_parent().get_node("sword_spawner/sword")
+	sword.start()

@@ -233,6 +233,8 @@ func get_heath():
 	
 func set_max_health(s):
 	max_health = float(s)
-	health = max_health 
+	reset_health()
 	is_dead = false
 	print(max_health,"max_health")
+func reset_health():
+	set_health(get_max_health())

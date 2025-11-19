@@ -42,8 +42,8 @@ func spawn_player():
 	Player_node.global_position = $P_start.global_position
 
 func start_battle():
-	$"Player.physics".start()
-	$"Enemy.physics".start()
+	$"Player/physics".start()
+	$"Enemy/physics".start()
 
 func _on_timer_timeout() -> void:
 	start_battle()

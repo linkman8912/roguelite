@@ -114,6 +114,7 @@ func damage(attack):
 			print("deade")
 		if (get_parent().name == "Enemy" and not player_d):
 			print("dead play")
+		get_parent().get_node("sword_spawner").queue_free()
 		get_parent().get_node("hit_box_node").kill()
 		shake()
 		is_dead = true

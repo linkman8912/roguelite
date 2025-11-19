@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3vhsvt6sk43u"
-path="res://.godot/imported/its_so_jover.jpg-16addc2b30ac2b11c9b7d32a925a0984.ctex"
+uid="uid://0iw8g1xe6b7"
+path="res://.godot/imported/damage_cost.png-6991be32fde5b401279d4f33514dd299.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/its_so_jover.jpg"
-dest_files=["res://.godot/imported/its_so_jover.jpg-16addc2b30ac2b11c9b7d32a925a0984.ctex"]
+source_file="res://assets/damage_cost.png"
+dest_files=["res://.godot/imported/damage_cost.png-6991be32fde5b401279d4f33514dd299.ctex"]
 
 [params]
 

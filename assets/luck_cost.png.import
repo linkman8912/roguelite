@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byspxvwyb7lo"
-path="res://.godot/imported/weaponSpeed.png-4617143e4e48c0c0c1de019ce32c5d85.ctex"
+uid="uid://ps3l2xhbkdul"
+path="res://.godot/imported/luck_cost.png-62d3dbee6e14aa6d7f3481f3b8baaa7b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/weaponSpeed.png"
-dest_files=["res://.godot/imported/weaponSpeed.png-4617143e4e48c0c0c1de019ce32c5d85.ctex"]
+source_file="res://assets/luck_cost.png"
+dest_files=["res://.godot/imported/luck_cost.png-62d3dbee6e14aa6d7f3481f3b8baaa7b.ctex"]
 
 [params]
 

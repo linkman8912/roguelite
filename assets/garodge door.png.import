@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7rhcdccof6vi"
-path="res://.godot/imported/roids.png-d8d7f79781e442bb9351f351f985f16a.ctex"
+uid="uid://c2h2fndqux04"
+path="res://.godot/imported/garodge door.png-f8dd58139d017187e032ace247c15af1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/roids.png"
-dest_files=["res://.godot/imported/roids.png-d8d7f79781e442bb9351f351f985f16a.ctex"]
+source_file="res://assets/garodge door.png"
+dest_files=["res://.godot/imported/garodge door.png-f8dd58139d017187e032ace247c15af1.ctex"]
 
 [params]
 

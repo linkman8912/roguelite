@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcoeqruwe55vp"
-path="res://.godot/imported/weaponLengthV2.png-5ec7b0ffc3deee874bcb1ba6c925792d.ctex"
+uid="uid://bt61p806pwukc"
+path="res://.godot/imported/playerControl_cost.png-280bd864ba05204ce5504a6d0e873b89.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/weaponLengthV2.png"
-dest_files=["res://.godot/imported/weaponLengthV2.png-5ec7b0ffc3deee874bcb1ba6c925792d.ctex"]
+source_file="res://assets/playerControl_cost.png"
+dest_files=["res://.godot/imported/playerControl_cost.png-280bd864ba05204ce5504a6d0e873b89.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byspxvwyb7lo"
-path="res://.godot/imported/rpm_bace.png-c46e3526762fe6780f9d6a19d80100cf.ctex"
+uid="uid://deglhq3j5qrfs"
+path="res://.godot/imported/spark.png-9e72e59a074ba69d56ac05a618c55831.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/rpm_bace.png"
-dest_files=["res://.godot/imported/rpm_bace.png-c46e3526762fe6780f9d6a19d80100cf.ctex"]
+source_file="res://assets/spark.png"
+dest_files=["res://.godot/imported/spark.png-9e72e59a074ba69d56ac05a618c55831.ctex"]
 
 [params]
 

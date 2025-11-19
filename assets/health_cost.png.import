@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byspxvwyb7lo"
-path="res://.godot/imported/weaponSpeed.png-4617143e4e48c0c0c1de019ce32c5d85.ctex"
+uid="uid://dvr38dt8h0dno"
+path="res://.godot/imported/health_cost.png-5c67f8e7cbdc11d473386d919d3352a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/weaponSpeed.png"
-dest_files=["res://.godot/imported/weaponSpeed.png-4617143e4e48c0c0c1de019ce32c5d85.ctex"]
+source_file="res://assets/health_cost.png"
+dest_files=["res://.godot/imported/health_cost.png-5c67f8e7cbdc11d473386d919d3352a6.ctex"]
 
 [params]
 

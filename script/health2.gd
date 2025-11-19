@@ -105,11 +105,15 @@ func damage(attack):
 		play_hit_particle()
 	
 	if health <= 0 and not is_dead and ((get_parent().name == "Player" and not enemy_d) or (get_parent().name == "Enemy" and not player_d)) :
+
 		if get_parent().name == "Player":
 			player_d = true
+			print("deadp")
 		if get_parent().name == "Enemy":
 			enemy_d = true
-		
+			print("deade")
+		if (get_parent().name == "Enemy" and not player_d):
+			print("dead play")
 		get_parent().get_node("hit_box_node").kill()
 		shake()
 		is_dead = true

@@ -10,7 +10,7 @@ extends Node2D
 @export var x_offset_per_segment: float = -1.0
 @export var y_offset_per_segment: float = -1.0
 var length_threshold = 65
-var offset_multiplier = 0.5
+var offset_multiplier = 0.7
 
 @onready var ball = get_node("../../../..")
 
@@ -85,8 +85,14 @@ func set_sword():
 		#var new_position = Vector2(0, (tip.position.y + hilt.position.y) / 2)
 		
 		# NEW
-		var new_position = Vector2(0, ((tip.position.y + hilt.position.y) / 2) + get_offset(segment_count))
-		#var new_position = Vector2(0, (tip.position.y + hilt.position.y))
+		#var new_position = Vector2(0, ((tip.position.y + hilt.position.y) / 2) + get_offset(segment_count))
+		##var new_position = Vector2(0, (tip.position.y + hilt.position.y))
+		
+		#NEW NEW
+		#var new_position = Vector2(0, tip_top.y + (tip_top - hilt_bottom).length())
+		var new_position = Vector2(0, hilt_bottom.y - (tip_top - hilt_bottom).length() + get_offset(segment_count) + 10)
+		print("tip: " + str((tip_top - hilt_bottom).length()))
+
 		
 		#var new_position = Vector2((hilt_bottom + tip_top).x, (hilt.position + tip_top).y)
 		#var new_position = (hilt_bottom + tip_top)/2
@@ -130,4 +136,9 @@ func set_sword():
 
 func get_offset(length):
 	print("offset: " + str((length - length_threshold) * offset_multiplier))
-	return -(length - length_threshold) * offset_multiplier
+	var length_diff = (length - length_threshold)*2
+	if length_diff < 0:
+		return length_diff * offset_multiplier
+	else:
+		return length_diff * offset_multiplier / 3
+	return (length - length_threshold) * offset_multiplier

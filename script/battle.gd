@@ -18,15 +18,22 @@ func reset():
 	await get_tree().create_timer(0.1).timeout
 	spawn_player()
 	spawn_enemy()
-	
+
 func spawn_enemy():
 	Enemy_node = Enemy_scene.instantiate()
 	add_child(Enemy_node)
 	Enemy_node.name = enemy_n
 	Enemy_node.global_position = $E_start.global_position
-	
+
 func spawn_player():
 	Player_node = Player_scene.instantiate()
 	add_child(Player_node)
 	Player_node.name = player_n
 	Player_node.global_position = $P_start.global_position
+
+func start_battle():
+	$"Player.physics".start()
+	$"Enemy.physics".start()
+
+func _on_timer_timeout() -> void:
+	start_battle()

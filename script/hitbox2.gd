@@ -108,15 +108,15 @@ func randi_pitch():
 	sound_node.pitch_scale = rng.randf_range(0.9, 1.0)
 
 func _on_area_entered(area: Area2D) -> void:
-	print("area entered: " + get_parent().name)
-	print("area entered, collider: " + str(area.get_parent().name))
+	#print("area entered: " + get_parent().name)
+	#print("area entered, collider: " + str(area.get_parent().name))
 
 	var collider = area.get_parent()
 	var attack_node = collider.get_node_or_null("attack_node")
 	
 	# Handle arena bounce
 	if get_parent().name == "arena" and (collider.name == "Player" or collider.name == "Enemy"):
-		print("bounce: ", collider)
+		#print("bounce: ", collider)
 		var rng = RandomNumberGenerator.new()
 		rng.randomize()
 		sound_node.pitch_scale = rng.randf_range(0.8, 1.0)
@@ -125,7 +125,7 @@ func _on_area_entered(area: Area2D) -> void:
 	
 	# Handle sword collisions
 	if sword.name == "sword" and collider.name != "arena":
-		print("sword collision detected")
+		#print("sword collision detected")
 		randi_pitch()
 		var rng = RandomNumberGenerator.new()
 		rng.randomize()

@@ -7,7 +7,7 @@ var stats = {
 	"playerSpeed": 10,
 	"playerControl": 10,
 	"weaponSpeed": 10,
-	"weaponLength": 50,
+	"weaponLength": 100,
 	"luck": 10
 }
 
@@ -25,22 +25,25 @@ func shop():
 	reset()
 	var instance = shop_scene.instantiate()
 	add_child(instance)
+	battles_won += 1
 
 func battle():
 	reset()
 	var instance = battle_scene.instantiate()
 	add_child(instance)
-	
+
+
 func start():
 	full_reset()
 	var instance = start_scene.instantiate()
 	add_child(instance)
-	
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#start()
 	shop()
+	battles_won = 0
 
 
 

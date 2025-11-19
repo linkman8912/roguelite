@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c75eyov73gs61"]
+[gd_scene load_steps=4 format=3 uid="uid://bv28maadu1kxb"]
 
 [ext_resource type="Script" uid="uid://b0bm8cevrxpyg" path="res://script/hitbox.gd" id="1_h6gob"]
 [ext_resource type="Texture2D" uid="uid://djckrpefwmxgs" path="res://assets/Arena2Visuals.png" id="2_xjagb"]

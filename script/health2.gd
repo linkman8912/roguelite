@@ -44,7 +44,7 @@ func shake():
 	print("shake")
 	var parent = get_parent()
 	var initial = parent.position 
-	var duration = 2.25  # Total shake duration in seconds
+	var duration = 1.5  # Total shake duration in seconds
 	var elapsed = 0.0
 	var shake_frequency = 45.0  # How fast it shakes (higher = faster)
 	var max_intensity = 15.0  # Maximum shake distance
@@ -142,7 +142,7 @@ func damage(attack):
 			
 			
 			# Wait before particle effect
-			await get_tree().create_timer(1.5).timeout
+			await get_tree().create_timer(1.3).timeout
 			sound_node.play_sound("explode")
 			
 			# Play death particle for player (only once)
@@ -194,7 +194,7 @@ func damage(attack):
 			
 			
 			# Wait before particle effect
-			await get_tree().create_timer(2.25).timeout
+			await get_tree().create_timer(1.3).timeout
 			sound_node.play_sound("explode")
 			
 			# Play death particle for enemy (only once)

@@ -62,7 +62,7 @@ layout_mode = 2
 scale = Vector2(2, 2)
 
 [node name="stats" type="Node2D" parent="."]
-position = Vector2(23, 393)
+position = Vector2(899, 60)
 
 [node name="damage" type="Label" parent="stats"]
 offset_left = 18.0

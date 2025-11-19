@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mik6seft0tsh"
-path="res://.godot/imported/rpm_no_tag.png-d7877e39b728e011d18b55e92e7e2ba8.ctex"
+uid="uid://byspxvwyb7lo"
+path="res://.godot/imported/weaponSpeed_cost.png-57484988304ce881621fa479049bf7c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/rpm_no_tag.png"
-dest_files=["res://.godot/imported/rpm_no_tag.png-d7877e39b728e011d18b55e92e7e2ba8.ctex"]
+source_file="res://assets/weaponSpeed_cost.png"
+dest_files=["res://.godot/imported/weaponSpeed_cost.png-57484988304ce881621fa479049bf7c4.ctex"]
 
 [params]
 

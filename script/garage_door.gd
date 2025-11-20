@@ -2,21 +2,24 @@ extends Node2D
 
 @onready var door_sprite = $"door_sprite"  # Adjust to your sprite's name
 @onready var main = $"/root/Main"
+@onready var audio_node = $"/root/Main/audio_node"
 
 @export var height = 648
 
-var slide_time: int = 2.5 # seconds
+var slide_time: int = 1.707 # seconds
 var sliding: bool = false
 
-func _process(delta: float):
-  pass
+#func _process(delta: float):
+  #pass
 
 
 func close():
   slide(1)
+  audio_node.play_sound("garageclose")
 
 func open():
   slide(-1)
+  audio_node.play_sound("garageopen")
 
 func slide(direction):
   var tween = create_tween()

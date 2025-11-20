@@ -44,9 +44,9 @@ var enemy_stat_manager
 
 var data = load_data()
 
-var base_battles = 5
+var base_battles = 8
 var battle_number = 1
-var enemy_multiplier = 0.05
+var enemy_multiplier = 0.1
 
 var playing = false
 

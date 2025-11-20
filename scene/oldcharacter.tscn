@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b601km7ojh1bo"]
+[gd_scene load_steps=18 format=3 uid="uid://b601km7ojh1bo"]
 
 [ext_resource type="Script" uid="uid://dtenvj5mdyabd" path="res://script/character.gd" id="1_p0hp8"]
 [ext_resource type="Shader" path="res://scene/hit.gdshader" id="1_ua3vd"]
@@ -22,7 +22,10 @@ shader_parameter/show_white = false
 shader = ExtResource("1_ua3vd")
 shader_parameter/show_white = false
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_p0hp8"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_itbht"]
+radius = 15.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w14gh"]
 radius = 4.007805
 
 [node name="Player" type="RigidBody2D"]
@@ -56,7 +59,7 @@ scale = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_box_node"]
 scale = Vector2(2, 2)
-shape = SubResource("CircleShape2D_p0hp8")
+shape = SubResource("CircleShape2D_itbht")
 
 [node name="sword_spawner" parent="." instance=ExtResource("7_pe3nu")]
 scale = Vector2(2, 2)
@@ -74,4 +77,4 @@ metadata/_custom_type_script = "uid://r37s6i7psgc6"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(8, 8)
-shape = SubResource("CircleShape2D_p0hp8")
+shape = SubResource("CircleShape2D_w14gh")

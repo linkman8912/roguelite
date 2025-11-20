@@ -10,7 +10,7 @@ extends Node2D
 @export var x_offset_per_segment: float = -1.0
 @export var y_offset_per_segment: float = -1.0
 var length_threshold = 65
-var offset_multiplier = 0.7
+var offset_multiplier = 0.5
 
 @onready var ball = get_node("../../../..")
 

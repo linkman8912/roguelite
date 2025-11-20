@@ -15,7 +15,7 @@ var is_in_hitstop = false
 static var global_hitstop_active = false
 
 # Parry cooldown variables
-var parry_cooldown_duration = 0.3
+var parry_cooldown_duration = 0.15
 var can_parry = true
 static var global_parry_cooldown = false
 

@@ -2,7 +2,7 @@ extends AudioStreamPlayer
 
 var sound_path = "res://aduio/hit1.wav"
 var current_sound_priority = 0  # 0 = normal, 1 = important (like parry)
-var important_sounds = ["parry"]  # List of sounds that shouldn't be interrupted
+var important_sounds = ["parry", "buycard"]  # List of sounds that shouldn't be interrupted
 
 func play_sound(sound: String):
 	# Check if this is an important sound

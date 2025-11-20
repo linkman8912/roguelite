@@ -22,8 +22,8 @@ func _ready() -> void:
 func _on_button_pressed():
 	sound_node.play_sound("startgame")
 	await get_tree().create_timer(2.0).timeout
-	get_node("/root/Main").full_reset()
-	get_node("/root/Main").shop()
+	#get_node("/root/Main").full_reset()
+	get_node("/root/Main").title_transition()
 
 func _on_mouse_entered():
 	start_tween(self, "scale", Vector2.ONE * tween_intensity, tween_duration)

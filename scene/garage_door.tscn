@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsrbnse1ikgw8"]
+
+[ext_resource type="Texture2D" uid="uid://cab1c3ibj3rrj" path="res://assets/garodgebace.png" id="1_xkytv"]
+[ext_resource type="Script" uid="uid://dn3iep4jrq371" path="res://script/garage_door.gd" id="2_gnloa"]
+
+[node name="garage_door" type="Node2D"]
+script = ExtResource("2_gnloa")
+height = 324
+
+[node name="door_sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -324)
+scale = Vector2(2, 2)
+texture = ExtResource("1_xkytv")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)

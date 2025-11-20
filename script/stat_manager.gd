@@ -27,7 +27,7 @@ var stats = {
 var stats_multiplier = {
 	"health": 6,
 	"damage": 1,
-	"playerSpeed": 0.5,
+	"playerSpeed": 1,
 	"playerControl": 1,
 	"weaponSpeed": 1,
 	"weaponLength": 5,

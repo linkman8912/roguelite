@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://hutubia0ar66"]
 
 [ext_resource type="Script" uid="uid://qbokeu5vcvht" path="res://script/cardgen.gd" id="1_8yohi"]
-[ext_resource type="Script" uid="uid://cwaaggvcd2ko6" path="res://script/button_effects.gd" id="2_0sgol"]
 [ext_resource type="Texture2D" uid="uid://cr6i8flvy2jsy" path="res://assets/health.png" id="3_0aomv"]
 [ext_resource type="Texture2D" uid="uid://c3k2cvxb1ibr4" path="res://assets/card_common.png" id="3_uh4tu"]
 [ext_resource type="FontFile" uid="uid://dnnp4odw6akjh" path="res://pixelFont-7-8x14-sproutLands.ttf" id="4_0aomv"]
+[ext_resource type="PackedScene" uid="uid://cddqcfdhigolb" path="res://scene/money.tscn" id="5_0sgol"]
 
 [node name="Control" type="Node2D"]
 script = ExtResource("1_8yohi")
@@ -21,31 +21,37 @@ offset_right = 89.0
 offset_bottom = 122.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("2_0sgol")
+pivot_offset = Vector2(42, 64)
 
 [node name="CardArt" type="Sprite2D" parent="."]
-position = Vector2(10, 10)
+position = Vector2(50, 67)
 texture = ExtResource("3_0aomv")
 centered = false
+offset = Vector2(-40, -57)
 metadata/_edit_use_anchors_ = true
 
 [node name="CardOutLine" type="Sprite2D" parent="."]
+position = Vector2(48, 72)
 texture = ExtResource("3_uh4tu")
 centered = false
+offset = Vector2(-48, -72)
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
-offset_left = 11.999999
-offset_top = 85.0
-offset_right = 1471.9999
-offset_bottom = 744.9999
+offset_left = -751.00006
+offset_top = 91.0
+offset_right = 828.9998
+offset_bottom = 691.8812
 scale = Vector2(0.05, 0.05)
-size_flags_horizontal = 0
-size_flags_vertical = 8
-theme_override_constants/line_spacing = 25
+pivot_offset = Vector2(799.9999, -4.1500244)
+theme_override_constants/line_spacing = 50
 theme_override_fonts/font = ExtResource("4_0aomv")
 theme_override_font_sizes/font_size = 140
-text = "TEST"
-autowrap_mode = 2
+text = "TEST TEST TEST TEST TEST TEST TEST"
+autowrap_mode = 3
 
+[node name="Money" parent="." instance=ExtResource("5_0sgol")]
+position = Vector2(48, 64)
+
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

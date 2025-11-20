@@ -44,7 +44,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="Control" parent="HBoxContainer/Container1" instance=ExtResource("2_4p3p6")]
-position = Vector2(2, 2)
+position = Vector2(2, 1.205)
 scale = Vector2(2, 2)
 
 [node name="Container2" type="Container" parent="HBoxContainer"]
@@ -52,6 +52,7 @@ custom_minimum_size = Vector2(192, 0)
 layout_mode = 2
 
 [node name="Control2" parent="HBoxContainer/Container2" instance=ExtResource("2_4p3p6")]
+position = Vector2(2, 1.205)
 scale = Vector2(2, 2)
 
 [node name="Container3" type="Container" parent="HBoxContainer"]
@@ -59,10 +60,11 @@ custom_minimum_size = Vector2(192, 0)
 layout_mode = 2
 
 [node name="Control3" parent="HBoxContainer/Container3" instance=ExtResource("2_4p3p6")]
+position = Vector2(2, 1.205)
 scale = Vector2(2, 2)
 
 [node name="stats" type="Node2D" parent="."]
-position = Vector2(23, 393)
+position = Vector2(899, 60)
 
 [node name="damage" type="Label" parent="stats"]
 offset_left = 18.0

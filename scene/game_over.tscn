@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://dg25r6xsx4oux"]
+
+[ext_resource type="Texture2D" uid="uid://c2h2fndqux04" path="res://assets/garodge door.png" id="1_mxr41"]
+[ext_resource type="Script" uid="uid://c0qblcdwvgmxk" path="res://script/playbutton.gd" id="2_bc2bx"]
+[ext_resource type="FontFile" uid="uid://dnnp4odw6akjh" path="res://pixelFont-7-8x14-sproutLands.ttf" id="3_bc2bx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bc2bx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6pabp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ooyig"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mxr41")
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = 61.575012
+offset_right = 250.0
+offset_bottom = 161.57501
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bc2bx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6pabp")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ooyig")
+script = ExtResource("2_bc2bx")
+
+[node name="Label" type="Label" parent="Button"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -243.0
+offset_top = -37.0
+offset_right = 254.0
+offset_bottom = 63.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_bc2bx")
+theme_override_font_sizes/font_size = 86
+text = "Play Again?"

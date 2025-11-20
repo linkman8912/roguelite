@@ -1,4 +1,7 @@
 extends Area2D
+
+const universal_cooldown = true
+
 var battle
 var player
 var enemy
@@ -140,40 +143,32 @@ func _on_area_entered(area: Area2D) -> void:
 		# Check if this is a sword-on-sword collision (PARRY)
 		if collider.get_parent().name == "sword":
 			# Check if parrying is allowed (not in cooldown)
-			if can_parry and not global_parry_cooldown:
-				sound_node.play_sound("parry")
-				print("PARRY!")
-				
-				# Get collision point for particle spawn
-				var collision_point = get_collision_point(area)
-				if collision_point != Vector2.ZERO:
-					spawn_parry_sparks(collision_point)
-				
-				sword.switch()
-				
-				# Add hitstop for parries
-				hit_stop = 0.4
-				slow()
-				
-				# Start the parry cooldown
-				start_parry_cooldown()
-			else:
-				# During cooldown, treat it as a regular hit
-				sound_node.play_sound("hit" + str(s_num))
-				print("parry on cooldown - regular hit")
+			parry(area)
+			area.parry(self)
 		else:
 			# Regular hit sound for non-sword collisions
 			sound_node.play_sound("hit" + str(s_num))
 			print("regular hit")
+			#start_parry_cooldown()
+
 	
 	# Handle damage to Player/Enemy from Sword
 	if collider.name == "Sword" and (parent.name == "Player" or parent.name == "Enemy"):
-		print(collider, " attacked ", parent.name)
-		if attack_node:
-			var attack = attack_node.attack_points()
-			var speed = attack_node.attack_speed()
-			hit_stop = clamp(attack * 0.1, 0.05, 0.3)
-			damage(attack, speed)
+		if universal_cooldown:
+			if area.can_parry and not area.global_parry_cooldown:
+				if attack_node:
+					var attack = attack_node.attack_points()
+					var speed = attack_node.attack_speed()
+					hit_stop = clamp(attack * 0.1, 0.05, 0.3)
+					damage(attack, speed)
+					area.start_parry_cooldown()
+		else:
+			if attack_node:
+					var attack = attack_node.attack_points()
+					var speed = attack_node.attack_speed()
+					hit_stop = clamp(attack * 0.1, 0.05, 0.3)
+					damage(attack, speed)
+					area.start_parry_cooldown()
 
 func get_collision_point(area: Area2D) -> Vector2:
 	#Get the collision point between two Area2D nodes using ShapeCast2D
@@ -243,3 +238,30 @@ func spawn_bounce_particles(collision_pos: Vector2, collider):
 
 # REMOVED: _process with ShapeCast2D - use Area2D signals only for consistency
 # If you need ShapeCast2D for raycasting, keep it separate from collision detection
+
+func parry(area):
+	# Check if parrying is allowed (not in cooldown)
+	if can_parry and not global_parry_cooldown:
+		sound_node.play_sound("parry")
+		print("PARRY!")
+		
+		# Get collision point for particle spawn
+		var collision_point = get_collision_point(area)
+		if collision_point != Vector2.ZERO:
+			spawn_parry_sparks(collision_point)
+		
+		sword.switch()
+		
+		# Add hitstop for parries
+		hit_stop = 0.4
+		slow()
+		
+		# Start the parry cooldown
+		start_parry_cooldown()
+	else:
+		# During cooldown, treat it as a regular hit
+		var rng = RandomNumberGenerator.new()
+		var s_num = int(rng.randf_range(1, 4))
+
+		sound_node.play_sound("hit" + str(s_num))
+		print("parry on cooldown - regular hit")

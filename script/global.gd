@@ -11,7 +11,28 @@ var stats = {
 	"luck": 10
 }
 
+var enemy_stats = {
+	"health": 10,
+	"damage": 10,
+	"playerSpeed": 10,
+	"playerControl": 10,
+	"weaponSpeed": 10,
+	"weaponLength": 10,
+	"luck": 10
+}
+
+var base_stats = {
+	"health": 10,
+	"damage": 10,
+	"playerSpeed": 10,
+	"playerControl": 10,
+	"weaponSpeed": 10,
+	"weaponLength": 10,
+	"luck": 10
+}
+
 var stat_manager
+var enemy_stat_manager
 
 @onready var shop_scene = load("res://scene/shop.tscn")
 @onready var battle_scene = load("res://scene/battle.tscn")
@@ -21,7 +42,9 @@ var stat_manager
 
 var data = load_data()
 
-var battles_won = 0
+var base_battles = 5
+var battle_number = 1
+var enemy_multiplier = 0.05
 
 var playing = false
 
@@ -29,7 +52,7 @@ func shop():
 	reset()
 	var instance = shop_scene.instantiate()
 	add_child(instance)
-	battles_won += 1
+	battle_number += 1
 
 func battle():
 	reset()
@@ -55,9 +78,8 @@ func start():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#start()
-	shop()
-	battles_won = 0
+	start()
+	battle_number = 1
 
 
 
@@ -77,6 +99,8 @@ func full_reset():
 
 func change_stat(stat, change):
 	stats[stat] += change
+	if stats[stat] <= 0:
+		stats[stat] = 1
 
 func get_stats():
 	return stats
@@ -88,11 +112,11 @@ func game_over():
 
 func generate_rarity():
 	var number = randi() % 100
-	if number < 50 / (stats["luck"] / 10):
+	if number < 50 / ((stats["luck"]) / 10):
 		return 0
-	elif number < 80 / (stats["luck"] / 10):
+	elif number < 80 / ((stats["luck"]) / 10):
 		return 1
-	elif number < 95 / (stats["luck"] / 10):
+	elif number < 95 / ((stats["luck"]) / 10):
 		return 2
 	else:
 		return 3
@@ -112,10 +136,18 @@ func apply_card(rarity, card):
 	apply_stats()
 func apply_stats():
 	if not stat_manager:
-		#if get_node_or_null("game") && get_node_or_null("game/Player") && get_node_or_null("game/player/stat_manager"):
-			##stat_manager = get_node_or_null("game").get_node_or_null("Player").get_node_or_null("stat_manager")
-			#stat_manager = get_node("game").get_node("Player").get_node("stat_manager")
 		stat_manager = get_node_or_null("game/Player/stat_manager")
 	if stat_manager && stat_manager.get_front_stats() != stats:
 		stat_manager.set_front_stats(stats)
 		stat_manager.apply_stats()
+	set_enemy_stats()
+	if not enemy_stat_manager:
+		enemy_stat_manager = get_node_or_null("game/Enemy/stat_manager")
+	if enemy_stat_manager && enemy_stat_manager.get_front_stats() != enemy_stats:
+		enemy_stat_manager.set_front_stats(enemy_stats)
+		enemy_stat_manager.apply_stats()
+func set_enemy_stats():
+	for i in enemy_stats:
+		enemy_stats[i] = base_stats[i] * (battle_number + base_battles) * enemy_multiplier
+		if enemy_stats[i] <= 01:
+			enemy_stats[i] = 1

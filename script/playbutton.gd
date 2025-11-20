@@ -20,6 +20,8 @@ func _ready() -> void:
 	sound_node = $"/root/Main/audio_node"
 
 func _on_button_pressed():
+	sound_node.play_sound("startgame")
+	await get_tree().create_timer(2.0).timeout
 	get_node("/root/Main").full_reset()
 	get_node("/root/Main").shop()
 

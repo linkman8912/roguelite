@@ -44,7 +44,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="Control" parent="HBoxContainer/Container1" instance=ExtResource("2_4p3p6")]
-position = Vector2(2, 2)
 scale = Vector2(2, 2)
 
 [node name="Container2" type="Container" parent="HBoxContainer"]

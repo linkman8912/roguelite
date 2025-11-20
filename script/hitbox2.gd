@@ -1,4 +1,7 @@
 extends Area2D
+
+const universal_cooldown = true
+
 var battle
 var player
 var enemy
@@ -165,15 +168,26 @@ func _on_area_entered(area: Area2D) -> void:
 			# Regular hit sound for non-sword collisions
 			sound_node.play_sound("hit" + str(s_num))
 			print("regular hit")
+			#start_parry_cooldown()
+
 	
 	# Handle damage to Player/Enemy from Sword
 	if collider.name == "Sword" and (parent.name == "Player" or parent.name == "Enemy"):
-		print(collider, " attacked ", parent.name)
-		if attack_node:
-			var attack = attack_node.attack_points()
-			var speed = attack_node.attack_speed()
-			hit_stop = clamp(attack * 0.1, 0.05, 0.3)
-			damage(attack, speed)
+		if universal_cooldown:
+			if area.can_parry and not area.global_parry_cooldown:
+				if attack_node:
+					var attack = attack_node.attack_points()
+					var speed = attack_node.attack_speed()
+					hit_stop = clamp(attack * 0.1, 0.05, 0.3)
+					damage(attack, speed)
+					area.start_parry_cooldown()
+		else:
+			if attack_node:
+					var attack = attack_node.attack_points()
+					var speed = attack_node.attack_speed()
+					hit_stop = clamp(attack * 0.1, 0.05, 0.3)
+					damage(attack, speed)
+					area.start_parry_cooldown()
 
 func get_collision_point(area: Area2D) -> Vector2:
 	#Get the collision point between two Area2D nodes using ShapeCast2D

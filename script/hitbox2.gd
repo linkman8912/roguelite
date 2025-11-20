@@ -15,7 +15,7 @@ var is_in_hitstop = false
 static var global_hitstop_active = false
 
 # Parry cooldown variables
-var parry_cooldown_duration = 0.3
+var parry_cooldown_duration = 0.15
 var can_parry = true
 static var global_parry_cooldown = false
 
@@ -143,27 +143,8 @@ func _on_area_entered(area: Area2D) -> void:
 		# Check if this is a sword-on-sword collision (PARRY)
 		if collider.get_parent().name == "sword":
 			# Check if parrying is allowed (not in cooldown)
-			if can_parry and not global_parry_cooldown:
-				sound_node.play_sound("parry")
-				print("PARRY!")
-				
-				# Get collision point for particle spawn
-				var collision_point = get_collision_point(area)
-				if collision_point != Vector2.ZERO:
-					spawn_parry_sparks(collision_point)
-				
-				sword.switch()
-				
-				# Add hitstop for parries
-				hit_stop = 0.4
-				slow()
-				
-				# Start the parry cooldown
-				start_parry_cooldown()
-			else:
-				# During cooldown, treat it as a regular hit
-				sound_node.play_sound("hit" + str(s_num))
-				print("parry on cooldown - regular hit")
+			parry(area)
+			area.parry(self)
 		else:
 			# Regular hit sound for non-sword collisions
 			sound_node.play_sound("hit" + str(s_num))
@@ -257,3 +238,30 @@ func spawn_bounce_particles(collision_pos: Vector2, collider):
 
 # REMOVED: _process with ShapeCast2D - use Area2D signals only for consistency
 # If you need ShapeCast2D for raycasting, keep it separate from collision detection
+
+func parry(area):
+	# Check if parrying is allowed (not in cooldown)
+	if can_parry and not global_parry_cooldown:
+		sound_node.play_sound("parry")
+		print("PARRY!")
+		
+		# Get collision point for particle spawn
+		var collision_point = get_collision_point(area)
+		if collision_point != Vector2.ZERO:
+			spawn_parry_sparks(collision_point)
+		
+		sword.switch()
+		
+		# Add hitstop for parries
+		hit_stop = 0.4
+		slow()
+		
+		# Start the parry cooldown
+		start_parry_cooldown()
+	else:
+		# During cooldown, treat it as a regular hit
+		var rng = RandomNumberGenerator.new()
+		var s_num = int(rng.randf_range(1, 4))
+
+		sound_node.play_sound("hit" + str(s_num))
+		print("parry on cooldown - regular hit")

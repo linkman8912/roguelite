@@ -60,6 +60,12 @@ func randi_pitch():
 func _on_button_pressed() -> void:
 	sound_node.play_sound("buycard")
 	main.apply_card(rarity, card)
+	
+	# Spawn the money particle effect
+	var money_particles = $Money/CPUParticles2D
+	if money_particles:
+		money_particles.emitting = true
+	
 	await get_tree().create_timer(1.5).timeout
 	main.battle()
 

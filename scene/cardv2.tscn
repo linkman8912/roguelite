@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://hutubia0ar66"]
+[gd_scene load_steps=6 format=3 uid="uid://hutubia0ar66"]
 
 [ext_resource type="Script" uid="uid://qbokeu5vcvht" path="res://script/cardgen.gd" id="1_8yohi"]
 [ext_resource type="Texture2D" uid="uid://cr6i8flvy2jsy" path="res://assets/health.png" id="3_0aomv"]
 [ext_resource type="Texture2D" uid="uid://c3k2cvxb1ibr4" path="res://assets/card_common.png" id="3_uh4tu"]
 [ext_resource type="FontFile" uid="uid://dnnp4odw6akjh" path="res://pixelFont-7-8x14-sproutLands.ttf" id="4_0aomv"]
+[ext_resource type="PackedScene" uid="uid://cddqcfdhigolb" path="res://scene/money.tscn" id="5_0sgol"]
 
 [node name="Control" type="Node2D"]
 script = ExtResource("1_8yohi")
@@ -48,6 +49,9 @@ theme_override_fonts/font = ExtResource("4_0aomv")
 theme_override_font_sizes/font_size = 140
 text = "TEST TEST TEST TEST TEST TEST TEST"
 autowrap_mode = 3
+
+[node name="Money" parent="." instance=ExtResource("5_0sgol")]
+position = Vector2(48, 64)
 
 [connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

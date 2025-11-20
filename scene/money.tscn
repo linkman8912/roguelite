@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cddqcfdhigolb"]
+
+[ext_resource type="Texture2D" uid="uid://b3messubwsgy1" path="res://assets/Money.png" id="1_givlx"]
+
+[sub_resource type="Curve" id="Curve_g624l"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.9941861, 0.23595512), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 60
+texture = ExtResource("1_givlx")
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(48, 64)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 25.0
+initial_velocity_max = 50.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_g624l")
+color = Color(0.35686275, 0.43137255, 0.88235295, 1)

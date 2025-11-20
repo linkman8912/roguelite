@@ -9,7 +9,7 @@ var sound_node
 @onready var main = $"/root/Main"
 var rarity: int
 var card: int
-var tween_intensity = 1.1
+var tween_intensity = 1.12
 var tween_duration = 0.2
 
 # Store original scales

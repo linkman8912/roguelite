@@ -5,6 +5,7 @@ var current_sound_priority = 0  # 0 = normal, 1 = important (like parry)
 var important_sounds = ["parry", "buycard"]  # List of sounds that shouldn't be interrupted
 
 func play_sound(sound: String):
+	
 	# Check if this is an important sound
 	var is_important = sound in important_sounds
 	var new_priority = 1 if is_important else 0

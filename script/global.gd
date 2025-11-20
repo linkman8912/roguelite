@@ -54,6 +54,7 @@ var sliding = false
 var current_sliding_scene
 var scene_to_spawn
 var child_to_free
+var count = 0
 
 #func shop():
 	#reset()
@@ -68,12 +69,14 @@ func battle():
 	reset()
 	var instance = battle_scene.instantiate()
 	add_child(instance)
+	garage_move()
 	loading()
 	playing = false
 
 func loading():
 	var instance = loading_scene.instantiate()
 	add_child(instance)
+	garage_move()
 
 func start_battle():
 	$"loading".queue_free()
@@ -84,6 +87,7 @@ func start():
 	full_reset()
 	var instance = start_scene.instantiate()
 	add_child(instance)
+	garage_move()
 
 
 # Called when the node enters the scene tree for the first time.
@@ -94,10 +98,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if get_node("garage_door"):
-		move_child(get_node("garage_door"), -1)
-		print("child moved")
+	garage_move()
 	apply_stats()
+	count += 1
 
 func reset():
 	for child in get_children():
@@ -121,6 +124,7 @@ func game_over():
 	reset()
 	var instance = game_over_scene.instantiate()
 	add_child(instance)
+	garage_move()
 
 func generate_rarity():
 	var number = randi() % 100
@@ -168,6 +172,7 @@ func transition_start(door_scene): # TRANS
 	print("transition_start")
 	var instance = door_scene.instantiate()
 	add_child(instance)
+	garage_move()
 	var garage_door = get_node("garage_door")
 	move_child(garage_door, 0)
 	garage_door.close()
@@ -177,6 +182,7 @@ func transition_finish(spawn_scene = true):
 	if spawn_scene && scene_to_spawn:
 		var instance = scene_to_spawn.instantiate()
 		add_child(instance)
+		garage_move()
 		scene_to_spawn = null
 	if child_to_free:
 		child_to_free.queue_free()
@@ -197,12 +203,16 @@ func slide_done(direction, garage_door):
 func title_transition():
 	var instance = start_door_scene.instantiate()
 	add_child(instance)
+	garage_move()
 	scene_to_spawn = shop_scene
+	child_to_free = $"Control"
 	transition_finish()
-	$"Control".queue_free()
 	print("title transition")
 
 func shop_transition():
 	scene_to_spawn = shop_scene
 	child_to_free = $"game"
 	transition_start(base_garage_door_scene)
+func garage_move():
+	if get_node("garage_door"):
+		move_child(get_node("garage_door"), -1)

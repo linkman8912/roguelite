@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5qoq88uaprmp"]
+[gd_scene load_steps=6 format=3 uid="uid://b5qoq88uaprmp"]
 
 [ext_resource type="Script" uid="uid://dwee7b16126mn" path="res://script/shop.gd" id="1_iuafe"]
 [ext_resource type="PackedScene" uid="uid://hutubia0ar66" path="res://scene/cardv2.tscn" id="2_4p3p6"]
 [ext_resource type="Texture2D" uid="uid://mxvcr8druxh1" path="res://assets/shopback.png" id="2_phbgv"]
+[ext_resource type="Texture2D" uid="uid://cab1c3ibj3rrj" path="res://assets/garodgebace.png" id="4_0wha2"]
+[ext_resource type="Script" uid="uid://b64hssf0t1o51" path="res://scene/door_sprite.gd" id="5_brg4d"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -113,3 +115,9 @@ offset_left = 18.0
 offset_right = 198.0
 offset_bottom = 29.0
 text = "XDCC"
+
+[node name="door_sprite" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(4, 4)
+texture = ExtResource("4_0wha2")
+script = ExtResource("5_brg4d")

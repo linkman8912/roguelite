@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://o62g5xrc2qpe"]
+
+[ext_resource type="Texture2D" uid="uid://c2h2fndqux04" path="res://assets/garodge door.png" id="1_xkytv"]
+
+[node name="loading" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 144.0
+offset_bottom = 81.0
+scale = Vector2(8, 8)
+texture = ExtResource("1_xkytv")

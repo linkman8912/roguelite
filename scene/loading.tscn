@@ -5,9 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://cwx4qq47beq51" path="res://assets/imbotwenVS.png" id="2_bxkk0"]
 
 [node name="loading" type="Node2D"]
+scale = Vector2(0.55, 0.55)
 script = ExtResource("1_bxkk0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(76.227, 49)
 texture = ExtResource("1_qb5h4")
 region_enabled = true
@@ -17,3 +19,5 @@ region_rect = Rect2(65, 114.5, 15, 13)
 position = Vector2(4.499938, 5.46873)
 scale = Vector2(7.8819437, 7.8819437)
 texture = ExtResource("2_bxkk0")
+
+[node name="Camera2D" type="Camera2D" parent="."]

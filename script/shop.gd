@@ -11,7 +11,6 @@ var card3
 func _ready() -> void:
 
 	var stats = get_parent().get_stats()
-	print("tried to spawn cards")
 	for key in stats.keys():
 		var label = get_node_or_null("stats/"+str(key))
 		if label:
@@ -19,7 +18,6 @@ func _ready() -> void:
 	#var card1pos = $Marker2D.global_position
 	#var instance = card.instantiate()
 	#add_child(instance, true)
-	#print(get_children(true))
 	#$Control.global_position = card1pos
 	
 	

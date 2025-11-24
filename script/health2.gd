@@ -35,13 +35,8 @@ func _ready():
 func slow():
 	get_parent()
 	#set_max_health(main.stats["health"])
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	print("health:",health,get_parent())
-	
+
 func shake():
-	print("shake")
 	var parent = get_parent()
 	var initial = parent.position 
 	var duration = 1.5  # Total shake duration in seconds
@@ -108,12 +103,9 @@ func damage(attack):
 
 		if get_parent().name == "Player":
 			player_d = true
-			print("deadp")
 		if get_parent().name == "Enemy":
 			enemy_d = true
-			print("deade")
-		if (get_parent().name == "Enemy" and not player_d):
-			print("dead play")
+
 		get_parent().get_node("sword_spawner").queue_free()
 		get_parent().get_node("hit_box_node").kill()
 		shake()
@@ -228,7 +220,6 @@ func damage(attack):
 func set_health(s):
 	health = float(s)
 	is_dead = false
-	print("keys_h:",health)
 	
 func get_max_health():
 	return max_health
@@ -240,6 +231,5 @@ func set_max_health(s):
 	max_health = float(s)
 	reset_health()
 	is_dead = false
-	print(max_health,"max_health")
 func reset_health():
 	set_health(get_max_health())

@@ -20,7 +20,6 @@ func s():
 		attack = attack_node.attack_points()
 		attack_speed = attack_node.attack_speed()
 		sword_length = attack_node.get_length()
-		print("sword set: ",attack_speed)
 
 func set_sword():
 	s()
@@ -39,7 +38,6 @@ func spawn_sword(offset):
 	set_sword()
 	sword_node.set_sword(sword_length,attack_speed,offset,attack)
 	sword_node.name = sword_id
-	#print("sword spawn")
 
 # Delete the sword completely from the scene
 func delete_sword():

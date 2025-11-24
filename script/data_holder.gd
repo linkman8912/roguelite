@@ -21,7 +21,5 @@ func _process(delta: float) -> void:
 func increase(stat: String, number: int):
 	stats[stat] += number
 func start():
-	print("started")
 	get_node("/root/Node2D").set_stats(stats)
 	get_node("/root/Node2D").reset()
-	print(stats)

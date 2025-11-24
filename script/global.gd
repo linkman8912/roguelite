@@ -44,9 +44,9 @@ var enemy_stat_manager
 
 var data = load_data()
 
-var base_battles = 8
+var base_battles = 5
 var battle_number = 1
-var enemy_multiplier = 0.1
+var enemy_multiplier = 0.08
 
 var playing = false
 
@@ -169,11 +169,10 @@ func set_enemy_stats():
 			enemy_stats[i] = 1
 
 func transition_start(door_scene): # TRANS
-	print("transition_start")
 	var instance = door_scene.instantiate()
 	add_child(instance)
 	garage_move()
-	var garage_door = get_node("garage_door")
+	var garage_door = get_node_or_null("garage_door")
 	move_child(garage_door, 0)
 	garage_door.close()
 	sliding = true
@@ -187,7 +186,7 @@ func transition_finish(spawn_scene = true):
 	if child_to_free:
 		child_to_free.queue_free()
 		child_to_free = null
-	var garage_door = get_node("garage_door")
+	var garage_door = get_node_or_null("garage_door")
 	move_child(garage_door, 0)
 
 	garage_door.open()
@@ -207,12 +206,11 @@ func title_transition():
 	scene_to_spawn = shop_scene
 	child_to_free = $"Control"
 	transition_finish()
-	print("title transition")
 
 func shop_transition():
 	scene_to_spawn = shop_scene
 	child_to_free = $"game"
 	transition_start(base_garage_door_scene)
 func garage_move():
-	if get_node("garage_door"):
+	if get_node_or_null("garage_door"):
 		move_child(get_node("garage_door"), -1)

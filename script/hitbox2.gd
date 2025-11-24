@@ -113,15 +113,12 @@ func randi_pitch():
 	sound_node.pitch_scale = rng.randf_range(0.9, 1.0)
 
 func _on_area_entered(area: Area2D) -> void:
-	#print("area entered: " + get_parent().name)
-	#print("area entered, collider: " + str(area.get_parent().name))
 
 	var collider = area.get_parent()
 	var attack_node = collider.get_node_or_null("attack_node")
 	
 	# Handle arena bounce
 	if get_parent().name == "arena" and (collider.name == "Player" or collider.name == "Enemy"):
-		#print("bounce: ", collider)
 		var rng = RandomNumberGenerator.new()
 		rng.randomize()
 		sound_node.pitch_scale = rng.randf_range(0.8, 1.0)
@@ -134,7 +131,6 @@ func _on_area_entered(area: Area2D) -> void:
 	
 	# Handle sword collisions
 	if sword.name == "sword" and collider.name != "arena":
-		#print("sword collision detected")
 		randi_pitch()
 		var rng = RandomNumberGenerator.new()
 		rng.randomize()
@@ -144,11 +140,10 @@ func _on_area_entered(area: Area2D) -> void:
 		if collider.get_parent().name == "sword":
 			# Check if parrying is allowed (not in cooldown)
 			parry(area)
-			area.parry(self)
+			#area.parry(self)
 		else:
-			# Regular hit sound for non-sword collisions
+			 #Regular hit sound for non-sword collisions
 			sound_node.play_sound("hit" + str(s_num))
-			print("regular hit")
 			#start_parry_cooldown()
 
 	
@@ -173,7 +168,6 @@ func _on_area_entered(area: Area2D) -> void:
 func get_collision_point(area: Area2D) -> Vector2:
 	#Get the collision point between two Area2D nodes using ShapeCast2D
 	if not shape_cast:
-		print("ShapeCast2D not found, using parent position as fallback")
 		return get_parent().global_position
 	
 	# Enable the ShapeCast2D temporarily if it's not enabled
@@ -216,10 +210,9 @@ func spawn_parry_sparks(collision_pos: Vector2):
 		for child in sparks.get_children():
 			if child is CPUParticles2D:
 				child.emitting = true
-				print("Spawned sparks at: ", collision_pos)
 				break
 	else:
-		print("Sparks node not found!")
+		pass
 
 func spawn_bounce_particles(collision_pos: Vector2, collider):
 	"""Spawn particle effect at the bounce collision point"""
@@ -231,10 +224,9 @@ func spawn_bounce_particles(collision_pos: Vector2, collider):
 		for child in bounce_particle.get_children():
 			if child is CPUParticles2D:
 				child.emitting = true
-				print("Spawned bounce particles at: ", collision_pos)
 				break
 	else:
-		print("Bounce particle node not found on: ", collider.name)
+		pass
 
 # REMOVED: _process with ShapeCast2D - use Area2D signals only for consistency
 # If you need ShapeCast2D for raycasting, keep it separate from collision detection
@@ -243,7 +235,6 @@ func parry(area):
 	# Check if parrying is allowed (not in cooldown)
 	if can_parry and not global_parry_cooldown:
 		sound_node.play_sound("parry")
-		print("PARRY!")
 		
 		# Get collision point for particle spawn
 		var collision_point = get_collision_point(area)
@@ -264,4 +255,3 @@ func parry(area):
 		var s_num = int(rng.randf_range(1, 4))
 
 		sound_node.play_sound("hit" + str(s_num))
-		print("parry on cooldown - regular hit")

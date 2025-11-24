@@ -32,7 +32,6 @@ func _physics_process(delta: float) -> void:
 		if collision_info && collision_info.get_collider().is_class("StaticBody2D"):
 			#rigidBody.move_and_collide(rigidBody.linear_velocity*delta)
 			rigidBody.linear_velocity = rigidBody.linear_velocity.bounce(collision_info.get_normal())
-			#print(collision_info.get_collider())
 			#(collision_info.get_collider().is_class("StaticBody2D"))
 		#else:
 		#	rigidBody.move_and_collide(-rigidBody.linear_velocity*delta)
@@ -40,12 +39,10 @@ func _physics_process(delta: float) -> void:
 		#if direction:
 		#	characterBody.velocity.x += direction * speed * 0.05
 			
-		#print(characterBody.velocity.x)
 		#if characterBody.velocity.x > speed :
 			#characterBody.velocity.x = move_toward(characterBody.velocity.x, speed * 2, slow)
 		#if characterBody.velocity.x < speed * -1:
 			#characterBody.velocity.x = move_toward(characterBody.velocity.x, speed * -2, slow)
-		#print(rigidBody.linear_velocity.length())
 
 func _bounce(body: Node2D) -> void:
 	if body:

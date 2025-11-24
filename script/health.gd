@@ -17,7 +17,6 @@ func slow():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print("health:",health,get_parent())
 func damage(attack):
 	if get_parent().name == "Player":
 		sound = "win"
@@ -41,4 +40,3 @@ func set_health(s):
 
 func set_max_health(s):
 	max_health = float(s)
-	print(max_health,"max_health")

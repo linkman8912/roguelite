@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dg25r6xsx4oux"]
 
-[ext_resource type="Texture2D" uid="uid://c2h2fndqux04" path="res://assets/garodge door.png" id="1_mxr41"]
-[ext_resource type="Script" uid="uid://c0qblcdwvgmxk" path="res://script/playbutton.gd" id="2_bc2bx"]
+[ext_resource type="Texture2D" uid="uid://dk3j4km8fydpx" path="res://assets/game_over.png" id="1_bc2bx"]
+[ext_resource type="Script" uid="uid://e6215a6tr5dg" path="res://script/play_again_button.gd" id="2_bc2bx"]
 [ext_resource type="FontFile" uid="uid://dnnp4odw6akjh" path="res://pixelFont-7-8x14-sproutLands.ttf" id="3_bc2bx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bc2bx"]
@@ -25,7 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_mxr41")
+texture = ExtResource("1_bc2bx")
 
 [node name="Button" type="Button" parent="."]
 custom_minimum_size = Vector2(500, 100)
@@ -36,9 +36,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -250.0
-offset_top = 61.575012
+offset_top = 196.57501
 offset_right = 250.0
-offset_bottom = 161.57501
+offset_bottom = 296.575
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_bc2bx")

@@ -64,16 +64,6 @@ func _ready() -> void:
 				currentid += 1
 	var jsonString = JSON.stringify(jsonList)
 	save_to_file(jsonString, "res://data/cards.json")
-	#var json = JSON.new()
-	#var error = json.parse(jsonString)
-	
-	#if error == OK:
-		#print("ok")
-	#else:
-		#print("fail")
-		#print("parse error: " + error)
-	#print(jsonList)
-
 
 
 	# Called every frame. 'delta' is the elapsed time since the previous frame.

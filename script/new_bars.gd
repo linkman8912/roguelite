@@ -32,6 +32,5 @@ func _process(delta: float) -> void:
 			var max_e_health = e_h_node.get_max_health()
 			var health = e_h_node.get_heath()
 			e_set_health(0,max_e_health,health)
-			print(max_e_health,":health")
 		else:
 			e_set_health(0,10,0)

@@ -29,6 +29,5 @@ func _process(delta: float) -> void:
 			var e_health = e_h_node.get_health()
 			var health = stats["health"]
 			e_set_health(0,health,e_health)
-			print(e_health,":health")
 		else:
 			e_set_health(0,10,0)

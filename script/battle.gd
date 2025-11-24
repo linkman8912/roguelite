@@ -14,7 +14,6 @@ func _ready() -> void:
 
 func spawn_arena():
 	var randi = int(randf_range(1, 2))
-	print(randi,"rand")
 	var arena_scene = load("res://scene/arena"+str(randi) +".tscn")
 	var arena = arena_scene.instantiate()
 	add_child(arena)

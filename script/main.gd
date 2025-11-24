@@ -14,12 +14,7 @@ func _ready() -> void:
 	
 	Engine.max_fps = 60
 	Console.add_command("reset",reset,0)
-	Console.add_command("who_is_in_paris",paris,0)
 
-
-
-func paris():
-	Console.print_line("not a slur")
 func reset():
 	$Control.visible = false
 	$game.visible = true
@@ -34,7 +29,6 @@ func reset():
 	apply_stats()
 	
 func spawn_enemy():
-	print("en")
 	Enemy_node = Enemy_scene.instantiate()
 	add_child(Enemy_node)
 	Enemy_node.name = enemy_n
@@ -53,7 +47,6 @@ func spawn_player():
 	sword_spawner.set_sword()
 func set_stats(new_stats: Dictionary):
 	stats = new_stats
-	#print("set+stats",new_stats)
 
 func get_stats():
 	return stats

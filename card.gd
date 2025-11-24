@@ -10,10 +10,7 @@ func _ready() -> void:
 	var json_text = load_from_file("res://data/cards.json")
 	#var json = JSON.new()
 	json = JSON.parse_string(json_text)
-	#print(json)
 	#for i in (json[1]["stats"]):
-	#	print(JSON.parse_string(i))
-	print(JSON.parse_string(json[0][0]["stats"])["speed"])
 	json[0][0]
 	var file = FileAccess.open( path, FileAccess.READ)
 	

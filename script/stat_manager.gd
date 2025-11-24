@@ -36,7 +36,6 @@ var stats_multiplier = {
 func set_back_end_stats():
 	for key in stats_multiplier.keys():
 		stats[key] = stats_multiplier[key]*front_stats[key]
-	#print("keys:" + str(stats))
 # Called when the node enters the scene tree for the first time.
 func get_front_stats():
 	return front_stats
@@ -75,7 +74,6 @@ func _process(delta: float) -> void:
 
 func _kill():
 	pass
-	#print("is it nuvu pink")
 
 func set_sword():
 	sword_spawner.set_sword()
@@ -85,14 +83,11 @@ func get_attack_speed():
 		return attack_node.attack_speed()
 		set_sword()
 func set_damage(d):
-	#print("attack set tryed")
 	if attack_node:
-		#print("attack set",get_parent(), d)
 		attack_node.set_damage(d)
 		set_sword()
 func set_weapon_speed(s):
 	if attack_node:
-		#print("attack speed set: ",s)
 		attack_node.set_d_speed(s)
 		set_sword()
 
@@ -105,12 +100,10 @@ func set_health(s):
 		health_node.set_health(s)
 func set_max_health(s):
 	if health_node:
-		#print("health set",s)
 		health_node.set_max_health(s)
 
 func set_speed(s):
 	if physics_node:
-		#print("physics bitch",s)
 		physics_node.set_speed(s)
 func set_control(c):
 	if(parent_node.name == "Player"):

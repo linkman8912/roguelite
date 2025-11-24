@@ -9,12 +9,9 @@ var player = null
 func _ready() -> void:
 	pressed.connect(_on_button_pressed)
 
-	if stat_manager_node:
-		print(stat_manager_node.name)
 	container_node = get_node("../../..")
 	
 func _on_button_pressed():
-	print("start game")
 	#if stat_manager_node:
 		#var current_health =  stat_manager_node.get_health()
 		#stat_manager_node.set_health(current_health + 1)
@@ -22,12 +19,3 @@ func _on_button_pressed():
 		container_node.start()
 
 	return
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-	##player = get_parent().get_parent().get_parent().get_parent().get_parent().get_parent().get_parent().get_parent().get_node_or_null("Player")
-	#player = get_node("/root").get_node_or_null("Node2D/Player")
-	#print(player)#GeneralMenu/StatsMenu/Holder/HBoxContainer/MenuButtonHolder/Play/Button
-	#if player:
-		#print("statmanger called")
-		#stat_manager_node = player.get_node_or_null("stat_manager")

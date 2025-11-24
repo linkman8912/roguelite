@@ -12,5 +12,4 @@ func _process(delta: float) -> void:
 	pass
 
 func spawnCard():
-	print("tried to spawn card")
 	return card.instantiate()

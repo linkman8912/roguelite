@@ -45,8 +45,6 @@ func set_sword():
 			# Place the hilt at the start
 			hilt.position = Vector2.ZERO
 			tip.position=Vector2(next_segment_x,next_segment_y - (tip.texture.get_size().y))
-		print("sword hilt: " + str(hilt.position))
-		print("sword tip: " + str(tip.position))
 		var shape_cast = get_parent().get_node("hit_box_node").get_node("ShapeCast2D")
 		var collision_shape = get_parent().get_node("hit_box_node").get_node("CollisionShape2D")
 		
@@ -91,7 +89,6 @@ func set_sword():
 		#NEW NEW
 		#var new_position = Vector2(0, tip_top.y + (tip_top - hilt_bottom).length())
 		var new_position = Vector2(0, hilt_bottom.y - (tip_top - hilt_bottom).length() + get_offset(segment_count) + 10)
-		print("tip: " + str((tip_top - hilt_bottom).length()))
 
 		
 		#var new_position = Vector2((hilt_bottom + tip_top).x, (hilt.position + tip_top).y)
@@ -106,7 +103,6 @@ func set_sword():
 
 
 		var rectangle = RectangleShape2D.new()
-		#print("tip: " + str((tip.position - hilt.position).length()))
 		#rectangle.size = Vector2(6, (tip.position - hilt.position).length())
 		#rectangle.size = Vector2(6, (tip.position - hilt.position).length()/2)
 		rectangle.size = Vector2(6, (tip_top - hilt_bottom).length()/2)
@@ -115,12 +111,6 @@ func set_sword():
 		shape_cast.set_shape(rectangle)
 		collision_shape.set_shape(rectangle)
 		
-		print("segment_count: " + str(segment_count))
-		print("segment_width: " + str(segment_width))
-		print("y_offset_per_segment: " + str(y_offset_per_segment))
-		print("total segments length: " + str(segment_count * y_offset_per_segment))
-		print("tip texture height: " + str(tip.texture.get_size().y))
-		print("hilt texture height: " + str(hilt.texture.get_size().y))
 
 	# Spawn mid segments with offsets
 	#var y_offset = 0.0
@@ -135,7 +125,6 @@ func set_sword():
 	#tip.position = Vector2(x_offset, y_offset)
 
 func get_offset(length):
-	print("offset: " + str((length - length_threshold) * offset_multiplier))
 	var length_diff = (length - length_threshold)*2
 	if length_diff < 0:
 		return length_diff * offset_multiplier

@@ -1,5 +1,4 @@
 extends Area2D
-#print("Collided with: ", collider.name)
 @onready var main = get_parent().get_parent()
 @onready var player = main.get_node_or_null("Player")
 @onready var enemy = main.get_node_or_null("Enemy")
@@ -18,7 +17,6 @@ func damage(attack,speed):
 			var mat = sprite.material
 			mat.set_shader_parameter("show_white", true)  # switch to white
 			await get_tree().create_timer(0.05*speed).timeout
-			print("lk: ",speed)
 			mat.set_shader_parameter("show_white", false) # back to normal
 
 var hit_stop = 1.0
@@ -33,10 +31,8 @@ func slow():
 func _on_area_entered(area: Area2D) -> void:
 	var collider = area.get_parent() # often the main node that owns the area
 	var attack_node = collider.get_node_or_null("attack_node")
-	print("x",collider.name)
 	if sword.name == "sword" and collider == "Sword":
 		sword.switch()
-		print("sams ")
 		var rng = RandomNumberGenerator.new()
 		rng.randomize()
 		sound_node.pitch_scale = rng.randf_range(0,2)
@@ -44,13 +40,11 @@ func _on_area_entered(area: Area2D) -> void:
 		if not collider.name == "Sword":
 			sound_node.play_sound("hit"+str(s_num))
 		else:
-			print("swrodhitsword:",parent.name)
 			sound_node.play_sound("parry")
 		await get_tree().create_timer(0.5).timeout
 
 
 	if attack_node and (not( collider.name == "Player"  or  collider.name == "Enemy")):
-		print(collider," :attacked")
 		var attack = attack_node.attack_points()
 		var speed = attack_node.attack_speed()
 		damage(attack,speed)
